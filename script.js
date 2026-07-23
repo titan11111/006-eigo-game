@@ -45,11 +45,29 @@ const STAGES = [
 ];
 
 let currentQuestion = 0, score = 0, correctStreak = 0;
-let gameQuestions = [], allQuizData = [];
+let gameQuestions = [];
+/** @type {Array<{name?:string,icon?:string,theme?:string,questions:Array}>} */
+let stageBanks = [];
 let level = 1, experience = 0, totalScore = 0, totalExperience = 0;
 let achievements = new Set(), maxStreak = 0;
 let mp = 0, currentStage = 0, unlockedStage = 0;
 let timeLeft = QUESTION_TIME, timerId = null, answerLocked = false, doubleActive = false;
+
+function getStageBank(stageIndex) {
+  const bank = stageBanks[stageIndex];
+  if (bank && Array.isArray(bank.questions) && bank.questions.length) return bank.questions;
+  // フォールバック: 他ステージから集める
+  const merged = stageBanks.flatMap((s) => (s && Array.isArray(s.questions) ? s.questions : []));
+  return merged;
+}
+
+function pickQuestionsForStage(stageIndex) {
+  const pool = [...getStageBank(stageIndex)];
+  if (!pool.length) return [];
+  pool.sort(() => Math.random() - 0.5);
+  const n = Math.min(QUESTIONS_PER_GAME, pool.length);
+  return pool.slice(0, n);
+}
 
 const ACHIEVEMENTS = {
   firstCorrect: { title:'初回正解', desc:'最初の問題に正解しました！' },
@@ -153,13 +171,16 @@ function showQuestion() {
 function selectAnswer(selected) {
   if (answerLocked) return; answerLocked = true; clearInterval(timerId);
   const current = gameQuestions[currentQuestion], correct = current.answer;
-  const sentenceWithWord = current.sentence.replace('(   )', correct);
+  const sentenceWithWord = current.sentence.replace(/\([^)]*\)/, correct);
   document.querySelectorAll('.choice-btn').forEach(btn => {
     btn.disabled = true;
     if (btn.innerText === selected) btn.classList.add(selected === correct ? 'correct' : 'incorrect');
     if (btn.innerText === correct) btn.classList.add('correct');
   });
   let expGained = 0, streakBonus = 0;
+  const meaning = current.meaning || '—';
+  const synonym = current.synonym || '—';
+  const antonym = current.antonym || '—';
   if (selected === correct) {
     score++; correctStreak++; maxStreak = Math.max(maxStreak, correctStreak);
     const scoreGain = doubleActive ? 20 : 10; totalScore += scoreGain; addMP(MP_PER_CORRECT);
@@ -167,18 +188,23 @@ function selectAnswer(selected) {
     if (correctStreak >= 3) { streakBonus = Math.min(correctStreak - 2, 5) * EXP_PER_STREAK; expGained += streakBonus; }
     if (score === 1) checkAchievement('firstCorrect');
     if (correctStreak === 3) checkAchievement('streak3'); if (correctStreak === 5) checkAchievement('streak5'); if (correctStreak === 10) checkAchievement('streak10');
-    resultEl.innerHTML = `<div class="explain-block correct"><div class="title">${doubleActive ? '⚡ DOUBLE! ' : ''}✅ <strong>正解！</strong></div><div class="line"><strong>● 単語：</strong> ${correct}</div><div class="line"><strong>● 意味：</strong> ${current.meaning}</div><div class="line"><strong>● 類義語：</strong> ${current.synonym}</div><div class="line"><strong>● 反対語：</strong> ${current.antonym}</div><div class="line"><strong>● 獲得：</strong> ${expGained} XP / +${MP_PER_CORRECT} MP / +${scoreGain} SCORE</div></div>`;
+    resultEl.innerHTML = `<div class="explain-block correct"><div class="title">${doubleActive ? '⚡ DOUBLE! ' : ''}✅ <strong>正解！</strong></div><div class="line"><strong>● 単語：</strong> ${correct}</div><div class="line"><strong>● 意味：</strong> ${meaning}</div><div class="line"><strong>● 類義語：</strong> ${synonym}</div><div class="line"><strong>● 反対語：</strong> ${antonym}</div><div class="line"><strong>● 獲得：</strong> ${expGained} XP / +${MP_PER_CORRECT} MP / +${scoreGain} SCORE</div></div>`;
   } else {
     correctStreak = 0;
-    resultEl.innerHTML = `<div class="explain-block incorrect"><div class="title">❌ <strong>不正解…</strong></div><div class="line"><strong>● 正解：</strong> ${correct}</div><div class="line"><strong>● 意味：</strong> ${current.meaning}</div><div class="line"><strong>● 類義語：</strong> ${current.synonym}</div><div class="line"><strong>● 反対語：</strong> ${current.antonym}</div></div>`;
+    resultEl.innerHTML = `<div class="explain-block incorrect"><div class="title">❌ <strong>不正解…</strong></div><div class="line"><strong>● 正解：</strong> ${correct}</div><div class="line"><strong>● 意味：</strong> ${meaning}</div><div class="line"><strong>● 類義語：</strong> ${synonym}</div><div class="line"><strong>● 反対語：</strong> ${antonym}</div></div>`;
   }
   addExperience(expGained); if (totalScore >= 100) checkAchievement('score100'); if (totalScore >= 500) checkAchievement('score500');
   speak(correct); setTimeout(() => speak(sentenceWithWord), 1000); nextBtn.style.display = 'block'; updateUI();
 }
 
 hintBtn.addEventListener('click', () => {
-  if (!spendMP(20)) return; const a = gameQuestions[currentQuestion].answer;
-  skillMessageEl.textContent = `💡 HINT：正解は「${a.charAt(0).toUpperCase()}」から始まる / ${a.length}文字`;
+  if (!spendMP(20)) return;
+  const q = gameQuestions[currentQuestion];
+  const a = q.answer;
+  const custom = typeof q.hint === 'string' && q.hint.trim() ? q.hint.trim() : '';
+  skillMessageEl.textContent = custom
+    ? `💡 HINT：${custom}`
+    : `💡 HINT：正解は「${a.charAt(0).toUpperCase()}」から始まる / ${a.length}文字`;
 });
 halfBtn.addEventListener('click', () => {
   if (!spendMP(30)) return; const correct = gameQuestions[currentQuestion].answer;
@@ -186,7 +212,7 @@ halfBtn.addEventListener('click', () => {
   wrong.forEach(b => { b.disabled = true; b.classList.add('skill-hidden'); }); skillMessageEl.textContent = '✂️ HALF：ハズレを2つ消した！';
 });
 timeBtn.addEventListener('click', () => {
-  if (!spendMP(30)) return; timeLeft += 10; timerEl.textContent = timeLeft; skillMessageEl.textContent = '⏱ TIME+：残り時間 +10秒！';
+  if (!spendMP(30)) return; timeLeft += 5; timerEl.textContent = timeLeft; skillMessageEl.textContent = '⏱ TIME STOP：残り時間 +5秒！';
 });
 doubleBtn.addEventListener('click', () => {
   if (!spendMP(40)) return; doubleActive = true; doubleBtn.classList.add('armed'); skillMessageEl.textContent = '⚡ DOUBLE：この問題のスコアが2倍！';
@@ -211,12 +237,49 @@ function showResult() {
 
 function restartGame() {
   clearInterval(timerId); currentQuestion = 0; score = 0; correctStreak = 0; answerLocked = false;
-  gameQuestions = [...allQuizData].sort(() => Math.random() - .5).slice(0, QUESTIONS_PER_GAME);
-  resultEl.innerHTML = ''; restartBtn.style.display = 'none'; nextBtn.style.display = 'none'; showQuestion();
+  doubleBtn.classList.remove('armed');
+  gameQuestions = pickQuestionsForStage(currentStage);
+  resultEl.innerHTML = ''; restartBtn.style.display = 'none'; nextBtn.style.display = 'none';
+  if (!gameQuestions.length) {
+    questionEl.innerHTML = 'このステージの問題データがありません。';
+    choicesEl.innerHTML = '';
+    return;
+  }
+  showQuestion();
+}
+
+function normalizeQuestionData(data) {
+  // v2: { stages: [ { questions: [...] }, ... ] }
+  if (data && Array.isArray(data.stages) && data.stages.length) {
+    return data.stages.map((s, i) => ({
+      name: s.name || STAGES[i]?.name,
+      icon: s.icon || STAGES[i]?.icon,
+      theme: s.theme || '',
+      questions: Array.isArray(s.questions) ? s.questions : []
+    }));
+  }
+  // v1 互換: フラット配列 → 全ステージ共通（非推奨）
+  if (Array.isArray(data)) {
+    return STAGES.map((meta) => ({ ...meta, theme: 'legacy', questions: data }));
+  }
+  return [];
 }
 
 window.onload = () => {
   window.speechSynthesis.onvoiceschanged = () => {};
-  fetch('questions.fixed.json').then(res => res.json()).then(data => { allQuizData = data; restartGame(); })
-    .catch(err => { questionEl.innerHTML = 'クイズデータの読み込みに失敗しました。'; console.error(err); });
+  fetch('questions.fixed.json')
+    .then((res) => res.json())
+    .then((data) => {
+      stageBanks = normalizeQuestionData(data);
+      // JSON側の名前・アイコンがあれば UI 定義を上書き
+      stageBanks.forEach((s, i) => {
+        if (STAGES[i] && s.name) STAGES[i].name = s.name;
+        if (STAGES[i] && s.icon) STAGES[i].icon = s.icon;
+      });
+      restartGame();
+    })
+    .catch((err) => {
+      questionEl.textContent = 'クイズデータの読み込みに失敗しました。';
+      console.error(err);
+    });
 };

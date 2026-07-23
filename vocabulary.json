@@ -1,0 +1,5447 @@
+[
+ {
+  "id": 1,
+  "word": "accept",
+  "pos": "動",
+  "ipa": "əkˈsept",
+  "kana": "アクセプト",
+  "mean": "受け入れる",
+  "cat": "動詞"
+ },
+ {
+  "id": 2,
+  "word": "achieve",
+  "pos": "動",
+  "ipa": "əˈtʃiːv",
+  "kana": "アチーヴ",
+  "mean": "達成する",
+  "cat": "動詞"
+ },
+ {
+  "id": 3,
+  "word": "add",
+  "pos": "動",
+  "ipa": "æd",
+  "kana": "アド",
+  "mean": "加える",
+  "cat": "動詞"
+ },
+ {
+  "id": 4,
+  "word": "agree",
+  "pos": "動",
+  "ipa": "əˈɡriː",
+  "kana": "アグリー",
+  "mean": "同意する",
+  "cat": "動詞"
+ },
+ {
+  "id": 5,
+  "word": "allow",
+  "pos": "動",
+  "ipa": "əˈlaʊ",
+  "kana": "アラウ",
+  "mean": "許す",
+  "cat": "動詞"
+ },
+ {
+  "id": 6,
+  "word": "answer",
+  "pos": "動・名",
+  "ipa": "ˈænsər",
+  "kana": "アンサー",
+  "mean": "答える",
+  "cat": "動詞"
+ },
+ {
+  "id": 7,
+  "word": "appear",
+  "pos": "動",
+  "ipa": "əˈpɪr",
+  "kana": "アピア",
+  "mean": "現れる",
+  "cat": "動詞"
+ },
+ {
+  "id": 8,
+  "word": "arrive",
+  "pos": "動",
+  "ipa": "əˈraɪv",
+  "kana": "アライヴ",
+  "mean": "到着する",
+  "cat": "動詞"
+ },
+ {
+  "id": 9,
+  "word": "ask",
+  "pos": "動",
+  "ipa": "æsk",
+  "kana": "アスク",
+  "mean": "たずねる",
+  "cat": "動詞"
+ },
+ {
+  "id": 10,
+  "word": "attack",
+  "pos": "動",
+  "ipa": "əˈtæk",
+  "kana": "アタック",
+  "mean": "攻撃する",
+  "cat": "動詞"
+ },
+ {
+  "id": 11,
+  "word": "become",
+  "pos": "動",
+  "ipa": "bɪˈkʌm",
+  "kana": "ビカム",
+  "mean": "〜になる",
+  "cat": "動詞"
+ },
+ {
+  "id": 12,
+  "word": "begin",
+  "pos": "動",
+  "ipa": "bɪˈɡɪn",
+  "kana": "ビギン",
+  "mean": "始める",
+  "cat": "動詞"
+ },
+ {
+  "id": 13,
+  "word": "believe",
+  "pos": "動",
+  "ipa": "bɪˈliːv",
+  "kana": "ビリーヴ",
+  "mean": "信じる",
+  "cat": "動詞"
+ },
+ {
+  "id": 14,
+  "word": "belong",
+  "pos": "動",
+  "ipa": "bɪˈlɔːŋ",
+  "kana": "ビロング",
+  "mean": "所属する",
+  "cat": "動詞"
+ },
+ {
+  "id": 15,
+  "word": "borrow",
+  "pos": "動",
+  "ipa": "ˈbɑːroʊ",
+  "kana": "バロウ",
+  "mean": "借りる",
+  "cat": "動詞"
+ },
+ {
+  "id": 16,
+  "word": "break",
+  "pos": "動",
+  "ipa": "breɪk",
+  "kana": "ブレイク",
+  "mean": "こわす",
+  "cat": "動詞"
+ },
+ {
+  "id": 17,
+  "word": "bring",
+  "pos": "動",
+  "ipa": "brɪŋ",
+  "kana": "ブリング",
+  "mean": "持ってくる",
+  "cat": "動詞"
+ },
+ {
+  "id": 18,
+  "word": "build",
+  "pos": "動",
+  "ipa": "bɪld",
+  "kana": "ビルド",
+  "mean": "建てる",
+  "cat": "動詞"
+ },
+ {
+  "id": 19,
+  "word": "burn",
+  "pos": "動",
+  "ipa": "bɜːrn",
+  "kana": "バーン",
+  "mean": "燃やす",
+  "cat": "動詞"
+ },
+ {
+  "id": 20,
+  "word": "call",
+  "pos": "動",
+  "ipa": "kɔːl",
+  "kana": "コール",
+  "mean": "呼ぶ・電話する",
+  "cat": "動詞"
+ },
+ {
+  "id": 21,
+  "word": "carry",
+  "pos": "動",
+  "ipa": "ˈkæri",
+  "kana": "キャリー",
+  "mean": "運ぶ",
+  "cat": "動詞"
+ },
+ {
+  "id": 22,
+  "word": "catch",
+  "pos": "動",
+  "ipa": "kætʃ",
+  "kana": "キャッチ",
+  "mean": "つかまえる",
+  "cat": "動詞"
+ },
+ {
+  "id": 23,
+  "word": "change",
+  "pos": "動",
+  "ipa": "tʃeɪndʒ",
+  "kana": "チェインジ",
+  "mean": "変える",
+  "cat": "動詞"
+ },
+ {
+  "id": 24,
+  "word": "check",
+  "pos": "動",
+  "ipa": "tʃek",
+  "kana": "チェック",
+  "mean": "確認する",
+  "cat": "動詞"
+ },
+ {
+  "id": 25,
+  "word": "choose",
+  "pos": "動",
+  "ipa": "tʃuːz",
+  "kana": "チューズ",
+  "mean": "選ぶ",
+  "cat": "動詞"
+ },
+ {
+  "id": 26,
+  "word": "clean",
+  "pos": "動",
+  "ipa": "kliːn",
+  "kana": "クリーン",
+  "mean": "そうじする",
+  "cat": "動詞"
+ },
+ {
+  "id": 27,
+  "word": "climb",
+  "pos": "動",
+  "ipa": "klaɪm",
+  "kana": "クライム",
+  "mean": "登る",
+  "cat": "動詞"
+ },
+ {
+  "id": 28,
+  "word": "close",
+  "pos": "動",
+  "ipa": "kloʊz",
+  "kana": "クロウズ",
+  "mean": "閉じる",
+  "cat": "動詞"
+ },
+ {
+  "id": 29,
+  "word": "collect",
+  "pos": "動",
+  "ipa": "kəˈlekt",
+  "kana": "コレクト",
+  "mean": "集める",
+  "cat": "動詞"
+ },
+ {
+  "id": 30,
+  "word": "communicate",
+  "pos": "動",
+  "ipa": "kəˈmjuːnɪkeɪt",
+  "kana": "コミュニケイト",
+  "mean": "意思を伝え合う",
+  "cat": "動詞"
+ },
+ {
+  "id": 31,
+  "word": "compare",
+  "pos": "動",
+  "ipa": "kəmˈper",
+  "kana": "コンペア",
+  "mean": "比べる",
+  "cat": "動詞"
+ },
+ {
+  "id": 32,
+  "word": "connect",
+  "pos": "動",
+  "ipa": "kəˈnekt",
+  "kana": "コネクト",
+  "mean": "つなぐ",
+  "cat": "動詞"
+ },
+ {
+  "id": 33,
+  "word": "continue",
+  "pos": "動",
+  "ipa": "kənˈtɪnjuː",
+  "kana": "コンティニュー",
+  "mean": "続ける",
+  "cat": "動詞"
+ },
+ {
+  "id": 34,
+  "word": "cook",
+  "pos": "動",
+  "ipa": "kʊk",
+  "kana": "クック",
+  "mean": "料理する",
+  "cat": "動詞"
+ },
+ {
+  "id": 35,
+  "word": "count",
+  "pos": "動",
+  "ipa": "kaʊnt",
+  "kana": "カウント",
+  "mean": "数える",
+  "cat": "動詞"
+ },
+ {
+  "id": 36,
+  "word": "create",
+  "pos": "動",
+  "ipa": "kriˈeɪt",
+  "kana": "クリエイト",
+  "mean": "創造する",
+  "cat": "動詞"
+ },
+ {
+  "id": 37,
+  "word": "cross",
+  "pos": "動",
+  "ipa": "krɔːs",
+  "kana": "クロース",
+  "mean": "横断する",
+  "cat": "動詞"
+ },
+ {
+  "id": 38,
+  "word": "cry",
+  "pos": "動",
+  "ipa": "kraɪ",
+  "kana": "クライ",
+  "mean": "泣く",
+  "cat": "動詞"
+ },
+ {
+  "id": 39,
+  "word": "cut",
+  "pos": "動",
+  "ipa": "kʌt",
+  "kana": "カット",
+  "mean": "切る",
+  "cat": "動詞"
+ },
+ {
+  "id": 40,
+  "word": "decide",
+  "pos": "動",
+  "ipa": "dɪˈsaɪd",
+  "kana": "ディサイド",
+  "mean": "決める",
+  "cat": "動詞"
+ },
+ {
+  "id": 41,
+  "word": "deliver",
+  "pos": "動",
+  "ipa": "dɪˈlɪvər",
+  "kana": "デリヴァー",
+  "mean": "配達する",
+  "cat": "動詞"
+ },
+ {
+  "id": 42,
+  "word": "depend",
+  "pos": "動",
+  "ipa": "dɪˈpend",
+  "kana": "ディペンド",
+  "mean": "たよる",
+  "cat": "動詞"
+ },
+ {
+  "id": 43,
+  "word": "describe",
+  "pos": "動",
+  "ipa": "dɪˈskraɪb",
+  "kana": "ディスクライブ",
+  "mean": "描写する",
+  "cat": "動詞"
+ },
+ {
+  "id": 44,
+  "word": "destroy",
+  "pos": "動",
+  "ipa": "dɪˈstrɔɪ",
+  "kana": "ディストロイ",
+  "mean": "破壊する",
+  "cat": "動詞"
+ },
+ {
+  "id": 45,
+  "word": "develop",
+  "pos": "動",
+  "ipa": "dɪˈveləp",
+  "kana": "ディヴェロップ",
+  "mean": "発展させる",
+  "cat": "動詞"
+ },
+ {
+  "id": 46,
+  "word": "die",
+  "pos": "動",
+  "ipa": "daɪ",
+  "kana": "ダイ",
+  "mean": "死ぬ",
+  "cat": "動詞"
+ },
+ {
+  "id": 47,
+  "word": "discover",
+  "pos": "動",
+  "ipa": "dɪˈskʌvər",
+  "kana": "ディスカヴァー",
+  "mean": "発見する",
+  "cat": "動詞"
+ },
+ {
+  "id": 48,
+  "word": "discuss",
+  "pos": "動",
+  "ipa": "dɪˈskʌs",
+  "kana": "ディスカス",
+  "mean": "話し合う",
+  "cat": "動詞"
+ },
+ {
+  "id": 49,
+  "word": "draw",
+  "pos": "動",
+  "ipa": "drɔː",
+  "kana": "ドロー",
+  "mean": "（線で）描く",
+  "cat": "動詞"
+ },
+ {
+  "id": 50,
+  "word": "drop",
+  "pos": "動",
+  "ipa": "drɑːp",
+  "kana": "ドロップ",
+  "mean": "落とす",
+  "cat": "動詞"
+ },
+ {
+  "id": 51,
+  "word": "enjoy",
+  "pos": "動",
+  "ipa": "ɪnˈdʒɔɪ",
+  "kana": "エンジョイ",
+  "mean": "楽しむ",
+  "cat": "動詞"
+ },
+ {
+  "id": 52,
+  "word": "enter",
+  "pos": "動",
+  "ipa": "ˈentər",
+  "kana": "エンター",
+  "mean": "入る",
+  "cat": "動詞"
+ },
+ {
+  "id": 53,
+  "word": "escape",
+  "pos": "動",
+  "ipa": "ɪˈskeɪp",
+  "kana": "エスケイプ",
+  "mean": "逃げる",
+  "cat": "動詞"
+ },
+ {
+  "id": 54,
+  "word": "expect",
+  "pos": "動",
+  "ipa": "ɪkˈspekt",
+  "kana": "エクスペクト",
+  "mean": "予期する",
+  "cat": "動詞"
+ },
+ {
+  "id": 55,
+  "word": "experience",
+  "pos": "動",
+  "ipa": "ɪkˈspɪriəns",
+  "kana": "エクスピアリエンス",
+  "mean": "経験する",
+  "cat": "動詞"
+ },
+ {
+  "id": 56,
+  "word": "explain",
+  "pos": "動",
+  "ipa": "ɪkˈspleɪn",
+  "kana": "エクスプレイン",
+  "mean": "説明する",
+  "cat": "動詞"
+ },
+ {
+  "id": 57,
+  "word": "express",
+  "pos": "動",
+  "ipa": "ɪkˈspres",
+  "kana": "エクスプレス",
+  "mean": "表現する",
+  "cat": "動詞"
+ },
+ {
+  "id": 58,
+  "word": "fail",
+  "pos": "動",
+  "ipa": "feɪl",
+  "kana": "フェイル",
+  "mean": "失敗する",
+  "cat": "動詞"
+ },
+ {
+  "id": 59,
+  "word": "fall",
+  "pos": "動",
+  "ipa": "fɔːl",
+  "kana": "フォール",
+  "mean": "落ちる",
+  "cat": "動詞"
+ },
+ {
+  "id": 60,
+  "word": "feel",
+  "pos": "動",
+  "ipa": "fiːl",
+  "kana": "フィール",
+  "mean": "感じる",
+  "cat": "動詞"
+ },
+ {
+  "id": 61,
+  "word": "fight",
+  "pos": "動",
+  "ipa": "faɪt",
+  "kana": "ファイト",
+  "mean": "戦う",
+  "cat": "動詞"
+ },
+ {
+  "id": 62,
+  "word": "fill",
+  "pos": "動",
+  "ipa": "fɪl",
+  "kana": "フィル",
+  "mean": "満たす",
+  "cat": "動詞"
+ },
+ {
+  "id": 63,
+  "word": "find",
+  "pos": "動",
+  "ipa": "faɪnd",
+  "kana": "ファインド",
+  "mean": "見つける",
+  "cat": "動詞"
+ },
+ {
+  "id": 64,
+  "word": "finish",
+  "pos": "動",
+  "ipa": "ˈfɪnɪʃ",
+  "kana": "フィニッシュ",
+  "mean": "終える",
+  "cat": "動詞"
+ },
+ {
+  "id": 65,
+  "word": "fix",
+  "pos": "動",
+  "ipa": "fɪks",
+  "kana": "フィックス",
+  "mean": "修理する",
+  "cat": "動詞"
+ },
+ {
+  "id": 66,
+  "word": "fly",
+  "pos": "動",
+  "ipa": "flaɪ",
+  "kana": "フライ",
+  "mean": "飛ぶ",
+  "cat": "動詞"
+ },
+ {
+  "id": 67,
+  "word": "follow",
+  "pos": "動",
+  "ipa": "ˈfɑːloʊ",
+  "kana": "フォロウ",
+  "mean": "ついていく",
+  "cat": "動詞"
+ },
+ {
+  "id": 68,
+  "word": "forget",
+  "pos": "動",
+  "ipa": "fərˈɡet",
+  "kana": "フォゲット",
+  "mean": "忘れる",
+  "cat": "動詞"
+ },
+ {
+  "id": 69,
+  "word": "give",
+  "pos": "動",
+  "ipa": "ɡɪv",
+  "kana": "ギヴ",
+  "mean": "与える",
+  "cat": "動詞"
+ },
+ {
+  "id": 70,
+  "word": "grow",
+  "pos": "動",
+  "ipa": "ɡroʊ",
+  "kana": "グロウ",
+  "mean": "成長する",
+  "cat": "動詞"
+ },
+ {
+  "id": 71,
+  "word": "guess",
+  "pos": "動",
+  "ipa": "ɡes",
+  "kana": "ゲス",
+  "mean": "推測する",
+  "cat": "動詞"
+ },
+ {
+  "id": 72,
+  "word": "happen",
+  "pos": "動",
+  "ipa": "ˈhæpən",
+  "kana": "ハプン",
+  "mean": "起こる",
+  "cat": "動詞"
+ },
+ {
+  "id": 73,
+  "word": "hate",
+  "pos": "動",
+  "ipa": "heɪt",
+  "kana": "ヘイト",
+  "mean": "ひどく嫌う",
+  "cat": "動詞"
+ },
+ {
+  "id": 74,
+  "word": "help",
+  "pos": "動",
+  "ipa": "help",
+  "kana": "ヘルプ",
+  "mean": "助ける",
+  "cat": "動詞"
+ },
+ {
+  "id": 75,
+  "word": "hide",
+  "pos": "動",
+  "ipa": "haɪd",
+  "kana": "ハイド",
+  "mean": "隠す",
+  "cat": "動詞"
+ },
+ {
+  "id": 76,
+  "word": "hit",
+  "pos": "動",
+  "ipa": "hɪt",
+  "kana": "ヒット",
+  "mean": "打つ",
+  "cat": "動詞"
+ },
+ {
+  "id": 77,
+  "word": "hold",
+  "pos": "動",
+  "ipa": "hoʊld",
+  "kana": "ホウルド",
+  "mean": "持つ・開催する",
+  "cat": "動詞"
+ },
+ {
+  "id": 78,
+  "word": "hope",
+  "pos": "動・名",
+  "ipa": "hoʊp",
+  "kana": "ホウプ",
+  "mean": "望む／希望",
+  "cat": "動詞"
+ },
+ {
+  "id": 79,
+  "word": "hurry",
+  "pos": "動",
+  "ipa": "ˈhɜːri",
+  "kana": "ハリー",
+  "mean": "急ぐ",
+  "cat": "動詞"
+ },
+ {
+  "id": 80,
+  "word": "imagine",
+  "pos": "動",
+  "ipa": "ɪˈmædʒɪn",
+  "kana": "イマジン",
+  "mean": "想像する",
+  "cat": "動詞"
+ },
+ {
+  "id": 81,
+  "word": "improve",
+  "pos": "動",
+  "ipa": "ɪmˈpruːv",
+  "kana": "インプルーヴ",
+  "mean": "改善する",
+  "cat": "動詞"
+ },
+ {
+  "id": 82,
+  "word": "include",
+  "pos": "動",
+  "ipa": "ɪnˈkluːd",
+  "kana": "インクルード",
+  "mean": "含む",
+  "cat": "動詞"
+ },
+ {
+  "id": 83,
+  "word": "increase",
+  "pos": "動",
+  "ipa": "ɪnˈkriːs",
+  "kana": "インクリース",
+  "mean": "増える",
+  "cat": "動詞"
+ },
+ {
+  "id": 84,
+  "word": "introduce",
+  "pos": "動",
+  "ipa": "ˌɪntrəˈduːs",
+  "kana": "イントロデュース",
+  "mean": "紹介する",
+  "cat": "動詞"
+ },
+ {
+  "id": 85,
+  "word": "invent",
+  "pos": "動",
+  "ipa": "ɪnˈvent",
+  "kana": "インヴェント",
+  "mean": "発明する",
+  "cat": "動詞"
+ },
+ {
+  "id": 86,
+  "word": "invite",
+  "pos": "動",
+  "ipa": "ɪnˈvaɪt",
+  "kana": "インヴァイト",
+  "mean": "招待する",
+  "cat": "動詞"
+ },
+ {
+  "id": 87,
+  "word": "join",
+  "pos": "動",
+  "ipa": "dʒɔɪn",
+  "kana": "ジョイン",
+  "mean": "参加する",
+  "cat": "動詞"
+ },
+ {
+  "id": 88,
+  "word": "keep",
+  "pos": "動",
+  "ipa": "kiːp",
+  "kana": "キープ",
+  "mean": "保つ",
+  "cat": "動詞"
+ },
+ {
+  "id": 89,
+  "word": "kill",
+  "pos": "動",
+  "ipa": "kɪl",
+  "kana": "キル",
+  "mean": "殺す",
+  "cat": "動詞"
+ },
+ {
+  "id": 90,
+  "word": "knock",
+  "pos": "動",
+  "ipa": "nɑːk",
+  "kana": "ノック",
+  "mean": "ノックする",
+  "cat": "動詞"
+ },
+ {
+  "id": 91,
+  "word": "laugh",
+  "pos": "動",
+  "ipa": "læf",
+  "kana": "ラフ",
+  "mean": "笑う",
+  "cat": "動詞"
+ },
+ {
+  "id": 92,
+  "word": "lead",
+  "pos": "動",
+  "ipa": "liːd",
+  "kana": "リード",
+  "mean": "導く",
+  "cat": "動詞"
+ },
+ {
+  "id": 93,
+  "word": "learn",
+  "pos": "動",
+  "ipa": "lɜːrn",
+  "kana": "ラーン",
+  "mean": "学ぶ",
+  "cat": "動詞"
+ },
+ {
+  "id": 94,
+  "word": "leave",
+  "pos": "動",
+  "ipa": "liːv",
+  "kana": "リーヴ",
+  "mean": "去る・置いていく",
+  "cat": "動詞"
+ },
+ {
+  "id": 95,
+  "word": "lend",
+  "pos": "動",
+  "ipa": "lend",
+  "kana": "レンド",
+  "mean": "貸す",
+  "cat": "動詞"
+ },
+ {
+  "id": 96,
+  "word": "lie",
+  "pos": "動",
+  "ipa": "laɪ",
+  "kana": "ライ",
+  "mean": "横たわる・うそをつく",
+  "cat": "動詞"
+ },
+ {
+  "id": 97,
+  "word": "lose",
+  "pos": "動",
+  "ipa": "luːz",
+  "kana": "ルーズ",
+  "mean": "失う・負ける",
+  "cat": "動詞"
+ },
+ {
+  "id": 98,
+  "word": "marry",
+  "pos": "動",
+  "ipa": "ˈmæri",
+  "kana": "マリー",
+  "mean": "結婚する",
+  "cat": "動詞"
+ },
+ {
+  "id": 99,
+  "word": "mean",
+  "pos": "動",
+  "ipa": "miːn",
+  "kana": "ミーン",
+  "mean": "意味する",
+  "cat": "動詞"
+ },
+ {
+  "id": 100,
+  "word": "meet",
+  "pos": "動",
+  "ipa": "miːt",
+  "kana": "ミート",
+  "mean": "会う",
+  "cat": "動詞"
+ },
+ {
+  "id": 101,
+  "word": "miss",
+  "pos": "動",
+  "ipa": "mɪs",
+  "kana": "ミス",
+  "mean": "のがす・恋しく思う",
+  "cat": "動詞"
+ },
+ {
+  "id": 102,
+  "word": "move",
+  "pos": "動",
+  "ipa": "muːv",
+  "kana": "ムーヴ",
+  "mean": "動かす・引っ越す",
+  "cat": "動詞"
+ },
+ {
+  "id": 103,
+  "word": "notice",
+  "pos": "動",
+  "ipa": "ˈnoʊtɪs",
+  "kana": "ノウティス",
+  "mean": "気づく",
+  "cat": "動詞"
+ },
+ {
+  "id": 104,
+  "word": "offer",
+  "pos": "動",
+  "ipa": "ˈɔːfər",
+  "kana": "オファー",
+  "mean": "申し出る",
+  "cat": "動詞"
+ },
+ {
+  "id": 105,
+  "word": "order",
+  "pos": "動",
+  "ipa": "ˈɔːrdər",
+  "kana": "オーダー",
+  "mean": "注文する",
+  "cat": "動詞"
+ },
+ {
+  "id": 106,
+  "word": "pass",
+  "pos": "動",
+  "ipa": "pæs",
+  "kana": "パス",
+  "mean": "通り過ぎる・合格する",
+  "cat": "動詞"
+ },
+ {
+  "id": 107,
+  "word": "pay",
+  "pos": "動",
+  "ipa": "peɪ",
+  "kana": "ペイ",
+  "mean": "支払う",
+  "cat": "動詞"
+ },
+ {
+  "id": 108,
+  "word": "perform",
+  "pos": "動",
+  "ipa": "pərˈfɔːrm",
+  "kana": "パフォーム",
+  "mean": "演じる",
+  "cat": "動詞"
+ },
+ {
+  "id": 109,
+  "word": "pick",
+  "pos": "動",
+  "ipa": "pɪk",
+  "kana": "ピック",
+  "mean": "選ぶ・つむ",
+  "cat": "動詞"
+ },
+ {
+  "id": 110,
+  "word": "plant",
+  "pos": "動",
+  "ipa": "plænt",
+  "kana": "プラント",
+  "mean": "植える",
+  "cat": "動詞"
+ },
+ {
+  "id": 111,
+  "word": "practice",
+  "pos": "動",
+  "ipa": "ˈpræktɪs",
+  "kana": "プラクティス",
+  "mean": "練習する",
+  "cat": "動詞"
+ },
+ {
+  "id": 112,
+  "word": "prepare",
+  "pos": "動",
+  "ipa": "prɪˈper",
+  "kana": "プリペア",
+  "mean": "準備する",
+  "cat": "動詞"
+ },
+ {
+  "id": 113,
+  "word": "produce",
+  "pos": "動",
+  "ipa": "prəˈduːs",
+  "kana": "プロデュース",
+  "mean": "生産する",
+  "cat": "動詞"
+ },
+ {
+  "id": 114,
+  "word": "promise",
+  "pos": "動",
+  "ipa": "ˈprɑːmɪs",
+  "kana": "プロミス",
+  "mean": "約束する",
+  "cat": "動詞"
+ },
+ {
+  "id": 115,
+  "word": "protect",
+  "pos": "動",
+  "ipa": "prəˈtekt",
+  "kana": "プロテクト",
+  "mean": "守る",
+  "cat": "動詞"
+ },
+ {
+  "id": 116,
+  "word": "pull",
+  "pos": "動",
+  "ipa": "pʊl",
+  "kana": "プル",
+  "mean": "引く",
+  "cat": "動詞"
+ },
+ {
+  "id": 117,
+  "word": "push",
+  "pos": "動",
+  "ipa": "pʊʃ",
+  "kana": "プッシュ",
+  "mean": "押す",
+  "cat": "動詞"
+ },
+ {
+  "id": 118,
+  "word": "raise",
+  "pos": "動",
+  "ipa": "reɪz",
+  "kana": "レイズ",
+  "mean": "上げる・育てる",
+  "cat": "動詞"
+ },
+ {
+  "id": 119,
+  "word": "reach",
+  "pos": "動",
+  "ipa": "riːtʃ",
+  "kana": "リーチ",
+  "mean": "到達する",
+  "cat": "動詞"
+ },
+ {
+  "id": 120,
+  "word": "realize",
+  "pos": "動",
+  "ipa": "ˈriːəlaɪz",
+  "kana": "リアライズ",
+  "mean": "気づく・実現する",
+  "cat": "動詞"
+ },
+ {
+  "id": 121,
+  "word": "receive",
+  "pos": "動",
+  "ipa": "rɪˈsiːv",
+  "kana": "レシーヴ",
+  "mean": "受け取る",
+  "cat": "動詞"
+ },
+ {
+  "id": 122,
+  "word": "recycle",
+  "pos": "動",
+  "ipa": "riːˈsaɪkl",
+  "kana": "リサイクル",
+  "mean": "再生利用する",
+  "cat": "動詞"
+ },
+ {
+  "id": 123,
+  "word": "reduce",
+  "pos": "動",
+  "ipa": "rɪˈduːs",
+  "kana": "リデュース",
+  "mean": "減らす",
+  "cat": "動詞"
+ },
+ {
+  "id": 124,
+  "word": "remember",
+  "pos": "動",
+  "ipa": "rɪˈmembər",
+  "kana": "リメンバー",
+  "mean": "覚えている",
+  "cat": "動詞"
+ },
+ {
+  "id": 125,
+  "word": "repeat",
+  "pos": "動",
+  "ipa": "rɪˈpiːt",
+  "kana": "リピート",
+  "mean": "くり返す",
+  "cat": "動詞"
+ },
+ {
+  "id": 126,
+  "word": "reply",
+  "pos": "動",
+  "ipa": "rɪˈplaɪ",
+  "kana": "リプライ",
+  "mean": "返事をする",
+  "cat": "動詞"
+ },
+ {
+  "id": 127,
+  "word": "report",
+  "pos": "動",
+  "ipa": "rɪˈpɔːrt",
+  "kana": "リポート",
+  "mean": "報告する",
+  "cat": "動詞"
+ },
+ {
+  "id": 128,
+  "word": "respect",
+  "pos": "動",
+  "ipa": "rɪˈspekt",
+  "kana": "リスペクト",
+  "mean": "尊敬する",
+  "cat": "動詞"
+ },
+ {
+  "id": 129,
+  "word": "return",
+  "pos": "動",
+  "ipa": "rɪˈtɜːrn",
+  "kana": "リターン",
+  "mean": "帰る・返す",
+  "cat": "動詞"
+ },
+ {
+  "id": 130,
+  "word": "ride",
+  "pos": "動",
+  "ipa": "raɪd",
+  "kana": "ライド",
+  "mean": "乗る",
+  "cat": "動詞"
+ },
+ {
+  "id": 131,
+  "word": "save",
+  "pos": "動",
+  "ipa": "seɪv",
+  "kana": "セイヴ",
+  "mean": "救う・節約する",
+  "cat": "動詞"
+ },
+ {
+  "id": 132,
+  "word": "search",
+  "pos": "動",
+  "ipa": "sɜːrtʃ",
+  "kana": "サーチ",
+  "mean": "探す",
+  "cat": "動詞"
+ },
+ {
+  "id": 133,
+  "word": "seem",
+  "pos": "動",
+  "ipa": "siːm",
+  "kana": "シーム",
+  "mean": "〜のように見える",
+  "cat": "動詞"
+ },
+ {
+  "id": 134,
+  "word": "sell",
+  "pos": "動",
+  "ipa": "sel",
+  "kana": "セル",
+  "mean": "売る",
+  "cat": "動詞"
+ },
+ {
+  "id": 135,
+  "word": "send",
+  "pos": "動",
+  "ipa": "send",
+  "kana": "センド",
+  "mean": "送る",
+  "cat": "動詞"
+ },
+ {
+  "id": 136,
+  "word": "share",
+  "pos": "動",
+  "ipa": "ʃer",
+  "kana": "シェア",
+  "mean": "分け合う",
+  "cat": "動詞"
+ },
+ {
+  "id": 137,
+  "word": "shout",
+  "pos": "動",
+  "ipa": "ʃaʊt",
+  "kana": "シャウト",
+  "mean": "さけぶ",
+  "cat": "動詞"
+ },
+ {
+  "id": 138,
+  "word": "smell",
+  "pos": "動",
+  "ipa": "smel",
+  "kana": "スメル",
+  "mean": "においがする",
+  "cat": "動詞"
+ },
+ {
+  "id": 139,
+  "word": "solve",
+  "pos": "動",
+  "ipa": "sɑːlv",
+  "kana": "ソルヴ",
+  "mean": "解決する",
+  "cat": "動詞"
+ },
+ {
+  "id": 140,
+  "word": "spend",
+  "pos": "動",
+  "ipa": "spend",
+  "kana": "スペンド",
+  "mean": "費やす",
+  "cat": "動詞"
+ },
+ {
+  "id": 141,
+  "word": "spread",
+  "pos": "動",
+  "ipa": "spred",
+  "kana": "スプレッド",
+  "mean": "広がる",
+  "cat": "動詞"
+ },
+ {
+  "id": 142,
+  "word": "steal",
+  "pos": "動",
+  "ipa": "stiːl",
+  "kana": "スティール",
+  "mean": "盗む",
+  "cat": "動詞"
+ },
+ {
+  "id": 143,
+  "word": "succeed",
+  "pos": "動",
+  "ipa": "səkˈsiːd",
+  "kana": "サクシード",
+  "mean": "成功する",
+  "cat": "動詞"
+ },
+ {
+  "id": 144,
+  "word": "suggest",
+  "pos": "動",
+  "ipa": "səɡˈdʒest",
+  "kana": "サジェスト",
+  "mean": "提案する",
+  "cat": "動詞"
+ },
+ {
+  "id": 145,
+  "word": "support",
+  "pos": "動・名",
+  "ipa": "səˈpɔːrt",
+  "kana": "サポート",
+  "mean": "支える／支援",
+  "cat": "動詞"
+ },
+ {
+  "id": 146,
+  "word": "surprise",
+  "pos": "動",
+  "ipa": "sərˈpraɪz",
+  "kana": "サプライズ",
+  "mean": "驚かせる",
+  "cat": "動詞"
+ },
+ {
+  "id": 147,
+  "word": "survive",
+  "pos": "動",
+  "ipa": "sərˈvaɪv",
+  "kana": "サヴァイヴ",
+  "mean": "生き残る",
+  "cat": "動詞"
+ },
+ {
+  "id": 148,
+  "word": "taste",
+  "pos": "動",
+  "ipa": "teɪst",
+  "kana": "テイスト",
+  "mean": "味がする",
+  "cat": "動詞"
+ },
+ {
+  "id": 149,
+  "word": "throw",
+  "pos": "動",
+  "ipa": "θroʊ",
+  "kana": "スロウ",
+  "mean": "投げる",
+  "cat": "動詞"
+ },
+ {
+  "id": 150,
+  "word": "touch",
+  "pos": "動",
+  "ipa": "tʌtʃ",
+  "kana": "タッチ",
+  "mean": "さわる",
+  "cat": "動詞"
+ },
+ {
+  "id": 151,
+  "word": "translate",
+  "pos": "動",
+  "ipa": "ˈtrænsleɪt",
+  "kana": "トランスレイト",
+  "mean": "翻訳する",
+  "cat": "動詞"
+ },
+ {
+  "id": 152,
+  "word": "travel",
+  "pos": "動",
+  "ipa": "ˈtrævl",
+  "kana": "トラヴェル",
+  "mean": "旅行する",
+  "cat": "動詞"
+ },
+ {
+  "id": 153,
+  "word": "try",
+  "pos": "動",
+  "ipa": "traɪ",
+  "kana": "トライ",
+  "mean": "試す",
+  "cat": "動詞"
+ },
+ {
+  "id": 154,
+  "word": "turn",
+  "pos": "動",
+  "ipa": "tɜːrn",
+  "kana": "ターン",
+  "mean": "曲がる・変わる",
+  "cat": "動詞"
+ },
+ {
+  "id": 155,
+  "word": "understand",
+  "pos": "動",
+  "ipa": "ˌʌndərˈstænd",
+  "kana": "アンダースタンド",
+  "mean": "理解する",
+  "cat": "動詞"
+ },
+ {
+  "id": 156,
+  "word": "visit",
+  "pos": "動",
+  "ipa": "ˈvɪzɪt",
+  "kana": "ヴィジット",
+  "mean": "訪れる",
+  "cat": "動詞"
+ },
+ {
+  "id": 157,
+  "word": "wait",
+  "pos": "動",
+  "ipa": "weɪt",
+  "kana": "ウェイト",
+  "mean": "待つ",
+  "cat": "動詞"
+ },
+ {
+  "id": 158,
+  "word": "wake",
+  "pos": "動",
+  "ipa": "weɪk",
+  "kana": "ウェイク",
+  "mean": "目を覚ます",
+  "cat": "動詞"
+ },
+ {
+  "id": 159,
+  "word": "wear",
+  "pos": "動",
+  "ipa": "wer",
+  "kana": "ウェア",
+  "mean": "身につけている",
+  "cat": "動詞"
+ },
+ {
+  "id": 160,
+  "word": "win",
+  "pos": "動",
+  "ipa": "wɪn",
+  "kana": "ウィン",
+  "mean": "勝つ",
+  "cat": "動詞"
+ },
+ {
+  "id": 161,
+  "word": "wish",
+  "pos": "動",
+  "ipa": "wɪʃ",
+  "kana": "ウィッシュ",
+  "mean": "願う",
+  "cat": "動詞"
+ },
+ {
+  "id": 162,
+  "word": "wonder",
+  "pos": "動・名",
+  "ipa": "ˈwʌndər",
+  "kana": "ワンダー",
+  "mean": "〜かなと思う／驚き・不思議",
+  "cat": "動詞"
+ },
+ {
+  "id": 163,
+  "word": "worry",
+  "pos": "動",
+  "ipa": "ˈwɜːri",
+  "kana": "ワリー",
+  "mean": "心配する",
+  "cat": "動詞"
+ },
+ {
+  "id": 164,
+  "word": "write",
+  "pos": "動",
+  "ipa": "raɪt",
+  "kana": "ライト",
+  "mean": "書く",
+  "cat": "動詞"
+ },
+ {
+  "id": 165,
+  "word": "ability",
+  "pos": "名",
+  "ipa": "əˈbɪləti",
+  "kana": "アビリティ",
+  "mean": "能力",
+  "cat": "名詞"
+ },
+ {
+  "id": 166,
+  "word": "accident",
+  "pos": "名",
+  "ipa": "ˈæksɪdənt",
+  "kana": "アクシデント",
+  "mean": "事故",
+  "cat": "名詞"
+ },
+ {
+  "id": 167,
+  "word": "action",
+  "pos": "名",
+  "ipa": "ˈækʃn",
+  "kana": "アクション",
+  "mean": "行動",
+  "cat": "名詞"
+ },
+ {
+  "id": 168,
+  "word": "activity",
+  "pos": "名",
+  "ipa": "ækˈtɪvəti",
+  "kana": "アクティヴィティ",
+  "mean": "活動",
+  "cat": "名詞"
+ },
+ {
+  "id": 169,
+  "word": "advice",
+  "pos": "名",
+  "ipa": "ədˈvaɪs",
+  "kana": "アドヴァイス",
+  "mean": "助言",
+  "cat": "名詞"
+ },
+ {
+  "id": 170,
+  "word": "age",
+  "pos": "名",
+  "ipa": "eɪdʒ",
+  "kana": "エイジ",
+  "mean": "年齢・時代",
+  "cat": "名詞"
+ },
+ {
+  "id": 171,
+  "word": "agriculture",
+  "pos": "名",
+  "ipa": "ˈæɡrɪkʌltʃər",
+  "kana": "アグリカルチャー",
+  "mean": "農業",
+  "cat": "名詞"
+ },
+ {
+  "id": 172,
+  "word": "air",
+  "pos": "名",
+  "ipa": "er",
+  "kana": "エア",
+  "mean": "空気",
+  "cat": "名詞"
+ },
+ {
+  "id": 173,
+  "word": "animal",
+  "pos": "名",
+  "ipa": "ˈænɪml",
+  "kana": "アニマル",
+  "mean": "動物",
+  "cat": "名詞"
+ },
+ {
+  "id": 174,
+  "word": "area",
+  "pos": "名",
+  "ipa": "ˈeriə",
+  "kana": "エリア",
+  "mean": "地域",
+  "cat": "名詞"
+ },
+ {
+  "id": 175,
+  "word": "art",
+  "pos": "名",
+  "ipa": "ɑːrt",
+  "kana": "アート",
+  "mean": "芸術",
+  "cat": "名詞"
+ },
+ {
+  "id": 176,
+  "word": "article",
+  "pos": "名",
+  "ipa": "ˈɑːrtɪkl",
+  "kana": "アーティクル",
+  "mean": "記事",
+  "cat": "名詞"
+ },
+ {
+  "id": 177,
+  "word": "artist",
+  "pos": "名",
+  "ipa": "ˈɑːrtɪst",
+  "kana": "アーティスト",
+  "mean": "芸術家",
+  "cat": "名詞"
+ },
+ {
+  "id": 178,
+  "word": "audience",
+  "pos": "名",
+  "ipa": "ˈɔːdiəns",
+  "kana": "オーディエンス",
+  "mean": "観客",
+  "cat": "名詞"
+ },
+ {
+  "id": 179,
+  "word": "author",
+  "pos": "名",
+  "ipa": "ˈɔːθər",
+  "kana": "オーサー",
+  "mean": "著者",
+  "cat": "名詞"
+ },
+ {
+  "id": 180,
+  "word": "bank",
+  "pos": "名",
+  "ipa": "bæŋk",
+  "kana": "バンク",
+  "mean": "銀行",
+  "cat": "名詞"
+ },
+ {
+  "id": 181,
+  "word": "battle",
+  "pos": "名",
+  "ipa": "ˈbætl",
+  "kana": "バトル",
+  "mean": "戦い",
+  "cat": "名詞"
+ },
+ {
+  "id": 182,
+  "word": "beach",
+  "pos": "名",
+  "ipa": "biːtʃ",
+  "kana": "ビーチ",
+  "mean": "浜辺",
+  "cat": "名詞"
+ },
+ {
+  "id": 183,
+  "word": "bridge",
+  "pos": "名",
+  "ipa": "brɪdʒ",
+  "kana": "ブリッジ",
+  "mean": "橋",
+  "cat": "名詞"
+ },
+ {
+  "id": 184,
+  "word": "business",
+  "pos": "名",
+  "ipa": "ˈbɪznəs",
+  "kana": "ビジネス",
+  "mean": "仕事・商売",
+  "cat": "名詞"
+ },
+ {
+  "id": 185,
+  "word": "capital",
+  "pos": "名",
+  "ipa": "ˈkæpɪtl",
+  "kana": "キャピタル",
+  "mean": "首都",
+  "cat": "名詞"
+ },
+ {
+  "id": 186,
+  "word": "century",
+  "pos": "名",
+  "ipa": "ˈsentʃəri",
+  "kana": "センチュリー",
+  "mean": "世紀",
+  "cat": "名詞"
+ },
+ {
+  "id": 187,
+  "word": "ceremony",
+  "pos": "名",
+  "ipa": "ˈserəmoʊni",
+  "kana": "セレモニー",
+  "mean": "式典",
+  "cat": "名詞"
+ },
+ {
+  "id": 188,
+  "word": "chance",
+  "pos": "名",
+  "ipa": "tʃæns",
+  "kana": "チャンス",
+  "mean": "機会",
+  "cat": "名詞"
+ },
+ {
+  "id": 189,
+  "word": "character",
+  "pos": "名",
+  "ipa": "ˈkærəktər",
+  "kana": "キャラクター",
+  "mean": "性格・登場人物",
+  "cat": "名詞"
+ },
+ {
+  "id": 190,
+  "word": "chart",
+  "pos": "名",
+  "ipa": "tʃɑːrt",
+  "kana": "チャート",
+  "mean": "図表",
+  "cat": "名詞"
+ },
+ {
+  "id": 191,
+  "word": "chemical",
+  "pos": "名",
+  "ipa": "ˈkemɪkl",
+  "kana": "ケミカル",
+  "mean": "化学物質",
+  "cat": "名詞"
+ },
+ {
+  "id": 192,
+  "word": "choice",
+  "pos": "名",
+  "ipa": "tʃɔɪs",
+  "kana": "チョイス",
+  "mean": "選択",
+  "cat": "名詞"
+ },
+ {
+  "id": 193,
+  "word": "citizen",
+  "pos": "名",
+  "ipa": "ˈsɪtɪzn",
+  "kana": "シティズン",
+  "mean": "市民",
+  "cat": "名詞"
+ },
+ {
+  "id": 194,
+  "word": "climate",
+  "pos": "名",
+  "ipa": "ˈklaɪmət",
+  "kana": "クライメット",
+  "mean": "気候",
+  "cat": "名詞"
+ },
+ {
+  "id": 195,
+  "word": "comment",
+  "pos": "名",
+  "ipa": "ˈkɑːment",
+  "kana": "コメント",
+  "mean": "意見",
+  "cat": "名詞"
+ },
+ {
+  "id": 196,
+  "word": "communication",
+  "pos": "名",
+  "ipa": "kəˌmjuːnɪˈkeɪʃn",
+  "kana": "コミュニケイション",
+  "mean": "伝達",
+  "cat": "名詞"
+ },
+ {
+  "id": 197,
+  "word": "community",
+  "pos": "名",
+  "ipa": "kəˈmjuːnəti",
+  "kana": "コミュニティ",
+  "mean": "地域社会",
+  "cat": "名詞"
+ },
+ {
+  "id": 198,
+  "word": "company",
+  "pos": "名",
+  "ipa": "ˈkʌmpəni",
+  "kana": "カンパニー",
+  "mean": "会社",
+  "cat": "名詞"
+ },
+ {
+  "id": 199,
+  "word": "computer",
+  "pos": "名",
+  "ipa": "kəmˈpjuːtər",
+  "kana": "コンピューター",
+  "mean": "コンピューター",
+  "cat": "名詞"
+ },
+ {
+  "id": 200,
+  "word": "condition",
+  "pos": "名",
+  "ipa": "kənˈdɪʃn",
+  "kana": "コンディション",
+  "mean": "状態",
+  "cat": "名詞"
+ },
+ {
+  "id": 201,
+  "word": "contest",
+  "pos": "名",
+  "ipa": "ˈkɑːntest",
+  "kana": "コンテスト",
+  "mean": "競技会",
+  "cat": "名詞"
+ },
+ {
+  "id": 202,
+  "word": "continent",
+  "pos": "名",
+  "ipa": "ˈkɑːntɪnənt",
+  "kana": "コンティネント",
+  "mean": "大陸",
+  "cat": "名詞"
+ },
+ {
+  "id": 203,
+  "word": "conversation",
+  "pos": "名",
+  "ipa": "ˌkɑːnvərˈseɪʃn",
+  "kana": "カンヴァセイション",
+  "mean": "会話",
+  "cat": "名詞"
+ },
+ {
+  "id": 204,
+  "word": "country",
+  "pos": "名",
+  "ipa": "ˈkʌntri",
+  "kana": "カントリー",
+  "mean": "国・田舎",
+  "cat": "名詞"
+ },
+ {
+  "id": 205,
+  "word": "courage",
+  "pos": "名",
+  "ipa": "ˈkɜːrɪdʒ",
+  "kana": "カリッジ",
+  "mean": "勇気",
+  "cat": "名詞"
+ },
+ {
+  "id": 206,
+  "word": "crop",
+  "pos": "名",
+  "ipa": "krɑːp",
+  "kana": "クロップ",
+  "mean": "作物",
+  "cat": "名詞"
+ },
+ {
+  "id": 207,
+  "word": "culture",
+  "pos": "名",
+  "ipa": "ˈkʌltʃər",
+  "kana": "カルチャー",
+  "mean": "文化",
+  "cat": "名詞"
+ },
+ {
+  "id": 208,
+  "word": "custom",
+  "pos": "名",
+  "ipa": "ˈkʌstəm",
+  "kana": "カスタム",
+  "mean": "習慣",
+  "cat": "名詞"
+ },
+ {
+  "id": 209,
+  "word": "customer",
+  "pos": "名",
+  "ipa": "ˈkʌstəmər",
+  "kana": "カスタマー",
+  "mean": "客",
+  "cat": "名詞"
+ },
+ {
+  "id": 210,
+  "word": "damage",
+  "pos": "名",
+  "ipa": "ˈdæmɪdʒ",
+  "kana": "ダメージ",
+  "mean": "損害",
+  "cat": "名詞"
+ },
+ {
+  "id": 211,
+  "word": "danger",
+  "pos": "名",
+  "ipa": "ˈdeɪndʒər",
+  "kana": "デインジャー",
+  "mean": "危険",
+  "cat": "名詞"
+ },
+ {
+  "id": 212,
+  "word": "decision",
+  "pos": "名",
+  "ipa": "dɪˈsɪʒn",
+  "kana": "ディシジョン",
+  "mean": "決定",
+  "cat": "名詞"
+ },
+ {
+  "id": 213,
+  "word": "desert",
+  "pos": "名",
+  "ipa": "ˈdezərt",
+  "kana": "デザート",
+  "mean": "砂漠",
+  "cat": "名詞"
+ },
+ {
+  "id": 214,
+  "word": "difference",
+  "pos": "名",
+  "ipa": "ˈdɪfrəns",
+  "kana": "ディファレンス",
+  "mean": "違い",
+  "cat": "名詞"
+ },
+ {
+  "id": 215,
+  "word": "direction",
+  "pos": "名",
+  "ipa": "dəˈrekʃn",
+  "kana": "ディレクション",
+  "mean": "方向",
+  "cat": "名詞"
+ },
+ {
+  "id": 216,
+  "word": "disaster",
+  "pos": "名",
+  "ipa": "dɪˈzæstər",
+  "kana": "ディザスター",
+  "mean": "災害",
+  "cat": "名詞"
+ },
+ {
+  "id": 217,
+  "word": "discussion",
+  "pos": "名",
+  "ipa": "dɪˈskʌʃn",
+  "kana": "ディスカッション",
+  "mean": "議論",
+  "cat": "名詞"
+ },
+ {
+  "id": 218,
+  "word": "disease",
+  "pos": "名",
+  "ipa": "dɪˈziːz",
+  "kana": "ディジーズ",
+  "mean": "病気",
+  "cat": "名詞"
+ },
+ {
+  "id": 219,
+  "word": "distance",
+  "pos": "名",
+  "ipa": "ˈdɪstəns",
+  "kana": "ディスタンス",
+  "mean": "距離",
+  "cat": "名詞"
+ },
+ {
+  "id": 220,
+  "word": "dream",
+  "pos": "名",
+  "ipa": "driːm",
+  "kana": "ドリーム",
+  "mean": "夢",
+  "cat": "名詞"
+ },
+ {
+  "id": 221,
+  "word": "earth",
+  "pos": "名",
+  "ipa": "ɜːrθ",
+  "kana": "アース",
+  "mean": "地球",
+  "cat": "名詞"
+ },
+ {
+  "id": 222,
+  "word": "earthquake",
+  "pos": "名",
+  "ipa": "ˈɜːrθkweɪk",
+  "kana": "アースクエイク",
+  "mean": "地震",
+  "cat": "名詞"
+ },
+ {
+  "id": 223,
+  "word": "economy",
+  "pos": "名",
+  "ipa": "ɪˈkɑːnəmi",
+  "kana": "エコノミー",
+  "mean": "経済",
+  "cat": "名詞"
+ },
+ {
+  "id": 224,
+  "word": "education",
+  "pos": "名",
+  "ipa": "ˌedʒuˈkeɪʃn",
+  "kana": "エデュケイション",
+  "mean": "教育",
+  "cat": "名詞"
+ },
+ {
+  "id": 225,
+  "word": "effort",
+  "pos": "名",
+  "ipa": "ˈefərt",
+  "kana": "エフォート",
+  "mean": "努力",
+  "cat": "名詞"
+ },
+ {
+  "id": 226,
+  "word": "electricity",
+  "pos": "名",
+  "ipa": "ɪˌlekˈtrɪsəti",
+  "kana": "エレクトリシティ",
+  "mean": "電気",
+  "cat": "名詞"
+ },
+ {
+  "id": 227,
+  "word": "emergency",
+  "pos": "名",
+  "ipa": "ɪˈmɜːrdʒənsi",
+  "kana": "エマージェンシー",
+  "mean": "緊急事態",
+  "cat": "名詞"
+ },
+ {
+  "id": 228,
+  "word": "energy",
+  "pos": "名",
+  "ipa": "ˈenərdʒi",
+  "kana": "エナジー",
+  "mean": "エネルギー",
+  "cat": "名詞"
+ },
+ {
+  "id": 229,
+  "word": "engineer",
+  "pos": "名",
+  "ipa": "ˌendʒɪˈnɪr",
+  "kana": "エンジニア",
+  "mean": "技師",
+  "cat": "名詞"
+ },
+ {
+  "id": 230,
+  "word": "environment",
+  "pos": "名",
+  "ipa": "ɪnˈvaɪrənmənt",
+  "kana": "エンヴァイロンメント",
+  "mean": "環境",
+  "cat": "名詞"
+ },
+ {
+  "id": 231,
+  "word": "event",
+  "pos": "名",
+  "ipa": "ɪˈvent",
+  "kana": "イヴェント",
+  "mean": "行事",
+  "cat": "名詞"
+ },
+ {
+  "id": 232,
+  "word": "example",
+  "pos": "名",
+  "ipa": "ɪɡˈzæmpl",
+  "kana": "イグザンプル",
+  "mean": "例",
+  "cat": "名詞"
+ },
+ {
+  "id": 233,
+  "word": "exam",
+  "pos": "名",
+  "ipa": "ɪɡˈzæm",
+  "kana": "イグザム",
+  "mean": "試験",
+  "cat": "名詞"
+ },
+ {
+  "id": 234,
+  "word": "expression",
+  "pos": "名",
+  "ipa": "ɪkˈspreʃn",
+  "kana": "エクスプレッション",
+  "mean": "表現",
+  "cat": "名詞"
+ },
+ {
+  "id": 235,
+  "word": "fact",
+  "pos": "名",
+  "ipa": "fækt",
+  "kana": "ファクト",
+  "mean": "事実",
+  "cat": "名詞"
+ },
+ {
+  "id": 236,
+  "word": "factory",
+  "pos": "名",
+  "ipa": "ˈfæktri",
+  "kana": "ファクトリー",
+  "mean": "工場",
+  "cat": "名詞"
+ },
+ {
+  "id": 237,
+  "word": "farmer",
+  "pos": "名",
+  "ipa": "ˈfɑːrmər",
+  "kana": "ファーマー",
+  "mean": "農場主",
+  "cat": "名詞"
+ },
+ {
+  "id": 238,
+  "word": "feeling",
+  "pos": "名",
+  "ipa": "ˈfiːlɪŋ",
+  "kana": "フィーリング",
+  "mean": "感情",
+  "cat": "名詞"
+ },
+ {
+  "id": 239,
+  "word": "festival",
+  "pos": "名",
+  "ipa": "ˈfestɪvl",
+  "kana": "フェスティヴァル",
+  "mean": "祭り",
+  "cat": "名詞"
+ },
+ {
+  "id": 240,
+  "word": "field",
+  "pos": "名",
+  "ipa": "fiːld",
+  "kana": "フィールド",
+  "mean": "野原・分野",
+  "cat": "名詞"
+ },
+ {
+  "id": 241,
+  "word": "fire",
+  "pos": "名",
+  "ipa": "ˈfaɪər",
+  "kana": "ファイア",
+  "mean": "火・火事",
+  "cat": "名詞"
+ },
+ {
+  "id": 242,
+  "word": "flag",
+  "pos": "名",
+  "ipa": "flæɡ",
+  "kana": "フラッグ",
+  "mean": "旗",
+  "cat": "名詞"
+ },
+ {
+  "id": 243,
+  "word": "flood",
+  "pos": "名",
+  "ipa": "flʌd",
+  "kana": "フラッド",
+  "mean": "洪水",
+  "cat": "名詞"
+ },
+ {
+  "id": 244,
+  "word": "forest",
+  "pos": "名",
+  "ipa": "ˈfɔːrɪst",
+  "kana": "フォレスト",
+  "mean": "森林",
+  "cat": "名詞"
+ },
+ {
+  "id": 245,
+  "word": "freedom",
+  "pos": "名",
+  "ipa": "ˈfriːdəm",
+  "kana": "フリーダム",
+  "mean": "自由",
+  "cat": "名詞"
+ },
+ {
+  "id": 246,
+  "word": "friendship",
+  "pos": "名",
+  "ipa": "ˈfrendʃɪp",
+  "kana": "フレンドシップ",
+  "mean": "友情",
+  "cat": "名詞"
+ },
+ {
+  "id": 247,
+  "word": "future",
+  "pos": "名",
+  "ipa": "ˈfjuːtʃər",
+  "kana": "フューチャー",
+  "mean": "未来",
+  "cat": "名詞"
+ },
+ {
+  "id": 248,
+  "word": "garbage",
+  "pos": "名",
+  "ipa": "ˈɡɑːrbɪdʒ",
+  "kana": "ガービッジ",
+  "mean": "ごみ",
+  "cat": "名詞"
+ },
+ {
+  "id": 249,
+  "word": "gas",
+  "pos": "名",
+  "ipa": "ɡæs",
+  "kana": "ガス",
+  "mean": "気体・ガソリン",
+  "cat": "名詞"
+ },
+ {
+  "id": 250,
+  "word": "goal",
+  "pos": "名",
+  "ipa": "ɡoʊl",
+  "kana": "ゴール",
+  "mean": "目標",
+  "cat": "名詞"
+ },
+ {
+  "id": 251,
+  "word": "government",
+  "pos": "名",
+  "ipa": "ˈɡʌvərnmənt",
+  "kana": "ガヴァメント",
+  "mean": "政府",
+  "cat": "名詞"
+ },
+ {
+  "id": 252,
+  "word": "graph",
+  "pos": "名",
+  "ipa": "ɡræf",
+  "kana": "グラフ",
+  "mean": "グラフ",
+  "cat": "名詞"
+ },
+ {
+  "id": 253,
+  "word": "group",
+  "pos": "名",
+  "ipa": "ɡruːp",
+  "kana": "グループ",
+  "mean": "集団",
+  "cat": "名詞"
+ },
+ {
+  "id": 254,
+  "word": "guide",
+  "pos": "名",
+  "ipa": "ɡaɪd",
+  "kana": "ガイド",
+  "mean": "案内人",
+  "cat": "名詞"
+ },
+ {
+  "id": 255,
+  "word": "habit",
+  "pos": "名",
+  "ipa": "ˈhæbɪt",
+  "kana": "ハビット",
+  "mean": "習慣",
+  "cat": "名詞"
+ },
+ {
+  "id": 256,
+  "word": "health",
+  "pos": "名",
+  "ipa": "helθ",
+  "kana": "ヘルス",
+  "mean": "健康",
+  "cat": "名詞"
+ },
+ {
+  "id": 257,
+  "word": "heart",
+  "pos": "名",
+  "ipa": "hɑːrt",
+  "kana": "ハート",
+  "mean": "心臓・心",
+  "cat": "名詞"
+ },
+ {
+  "id": 258,
+  "word": "history",
+  "pos": "名",
+  "ipa": "ˈhɪstri",
+  "kana": "ヒストリー",
+  "mean": "歴史",
+  "cat": "名詞"
+ },
+ {
+  "id": 259,
+  "word": "hometown",
+  "pos": "名",
+  "ipa": "ˈhoʊmtaʊn",
+  "kana": "ホウムタウン",
+  "mean": "故郷",
+  "cat": "名詞"
+ },
+ {
+  "id": 260,
+  "word": "human",
+  "pos": "名",
+  "ipa": "ˈhjuːmən",
+  "kana": "ヒューマン",
+  "mean": "人間",
+  "cat": "名詞"
+ },
+ {
+  "id": 261,
+  "word": "idea",
+  "pos": "名",
+  "ipa": "aɪˈdiːə",
+  "kana": "アイディア",
+  "mean": "考え",
+  "cat": "名詞"
+ },
+ {
+  "id": 262,
+  "word": "image",
+  "pos": "名",
+  "ipa": "ˈɪmɪdʒ",
+  "kana": "イミッジ",
+  "mean": "印象・画像",
+  "cat": "名詞"
+ },
+ {
+  "id": 263,
+  "word": "industry",
+  "pos": "名",
+  "ipa": "ˈɪndəstri",
+  "kana": "インダストリー",
+  "mean": "産業",
+  "cat": "名詞"
+ },
+ {
+  "id": 264,
+  "word": "information",
+  "pos": "名",
+  "ipa": "ˌɪnfərˈmeɪʃn",
+  "kana": "インフォメイション",
+  "mean": "情報",
+  "cat": "名詞"
+ },
+ {
+  "id": 265,
+  "word": "injury",
+  "pos": "名",
+  "ipa": "ˈɪndʒəri",
+  "kana": "インジュリー",
+  "mean": "けが",
+  "cat": "名詞"
+ },
+ {
+  "id": 266,
+  "word": "instrument",
+  "pos": "名",
+  "ipa": "ˈɪnstrəmənt",
+  "kana": "インストゥルメント",
+  "mean": "楽器・器具",
+  "cat": "名詞"
+ },
+ {
+  "id": 267,
+  "word": "interview",
+  "pos": "名",
+  "ipa": "ˈɪntərvjuː",
+  "kana": "インタヴュー",
+  "mean": "面接・取材",
+  "cat": "名詞"
+ },
+ {
+  "id": 268,
+  "word": "invention",
+  "pos": "名",
+  "ipa": "ɪnˈvenʃn",
+  "kana": "インヴェンション",
+  "mean": "発明",
+  "cat": "名詞"
+ },
+ {
+  "id": 269,
+  "word": "island",
+  "pos": "名",
+  "ipa": "ˈaɪlənd",
+  "kana": "アイランド",
+  "mean": "島",
+  "cat": "名詞"
+ },
+ {
+  "id": 270,
+  "word": "issue",
+  "pos": "名",
+  "ipa": "ˈɪʃuː",
+  "kana": "イシュー",
+  "mean": "問題・論点",
+  "cat": "名詞"
+ },
+ {
+  "id": 271,
+  "word": "journey",
+  "pos": "名",
+  "ipa": "ˈdʒɜːrni",
+  "kana": "ジャーニー",
+  "mean": "旅",
+  "cat": "名詞"
+ },
+ {
+  "id": 272,
+  "word": "knowledge",
+  "pos": "名",
+  "ipa": "ˈnɑːlɪdʒ",
+  "kana": "ナリッジ",
+  "mean": "知識",
+  "cat": "名詞"
+ },
+ {
+  "id": 273,
+  "word": "language",
+  "pos": "名",
+  "ipa": "ˈlæŋɡwɪdʒ",
+  "kana": "ラングウィッジ",
+  "mean": "言語",
+  "cat": "名詞"
+ },
+ {
+  "id": 274,
+  "word": "law",
+  "pos": "名",
+  "ipa": "lɔː",
+  "kana": "ロー",
+  "mean": "法律",
+  "cat": "名詞"
+ },
+ {
+  "id": 275,
+  "word": "leader",
+  "pos": "名",
+  "ipa": "ˈliːdər",
+  "kana": "リーダー",
+  "mean": "指導者",
+  "cat": "名詞"
+ },
+ {
+  "id": 276,
+  "word": "level",
+  "pos": "名",
+  "ipa": "ˈlevl",
+  "kana": "レヴェル",
+  "mean": "水準",
+  "cat": "名詞"
+ },
+ {
+  "id": 277,
+  "word": "life",
+  "pos": "名",
+  "ipa": "laɪf",
+  "kana": "ライフ",
+  "mean": "生活・命",
+  "cat": "名詞"
+ },
+ {
+  "id": 278,
+  "word": "machine",
+  "pos": "名",
+  "ipa": "məˈʃiːn",
+  "kana": "マシーン",
+  "mean": "機械",
+  "cat": "名詞"
+ },
+ {
+  "id": 279,
+  "word": "material",
+  "pos": "名",
+  "ipa": "məˈtɪriəl",
+  "kana": "マテリアル",
+  "mean": "材料",
+  "cat": "名詞"
+ },
+ {
+  "id": 280,
+  "word": "meaning",
+  "pos": "名",
+  "ipa": "ˈmiːnɪŋ",
+  "kana": "ミーニング",
+  "mean": "意味",
+  "cat": "名詞"
+ },
+ {
+  "id": 281,
+  "word": "medicine",
+  "pos": "名",
+  "ipa": "ˈmedɪsn",
+  "kana": "メディスン",
+  "mean": "薬・医学",
+  "cat": "名詞"
+ },
+ {
+  "id": 282,
+  "word": "meeting",
+  "pos": "名",
+  "ipa": "ˈmiːtɪŋ",
+  "kana": "ミーティング",
+  "mean": "会議",
+  "cat": "名詞"
+ },
+ {
+  "id": 283,
+  "word": "member",
+  "pos": "名",
+  "ipa": "ˈmembər",
+  "kana": "メンバー",
+  "mean": "一員",
+  "cat": "名詞"
+ },
+ {
+  "id": 284,
+  "word": "memory",
+  "pos": "名",
+  "ipa": "ˈmeməri",
+  "kana": "メモリー",
+  "mean": "記憶・思い出",
+  "cat": "名詞"
+ },
+ {
+  "id": 285,
+  "word": "message",
+  "pos": "名",
+  "ipa": "ˈmesɪdʒ",
+  "kana": "メッセージ",
+  "mean": "伝言",
+  "cat": "名詞"
+ },
+ {
+  "id": 286,
+  "word": "mind",
+  "pos": "名",
+  "ipa": "maɪnd",
+  "kana": "マインド",
+  "mean": "心・精神",
+  "cat": "名詞"
+ },
+ {
+  "id": 287,
+  "word": "mistake",
+  "pos": "名",
+  "ipa": "mɪˈsteɪk",
+  "kana": "ミステイク",
+  "mean": "誤り",
+  "cat": "名詞"
+ },
+ {
+  "id": 288,
+  "word": "moment",
+  "pos": "名",
+  "ipa": "ˈmoʊmənt",
+  "kana": "モウメント",
+  "mean": "瞬間",
+  "cat": "名詞"
+ },
+ {
+  "id": 289,
+  "word": "nature",
+  "pos": "名",
+  "ipa": "ˈneɪtʃər",
+  "kana": "ネイチャー",
+  "mean": "自然",
+  "cat": "名詞"
+ },
+ {
+  "id": 290,
+  "word": "neighbor",
+  "pos": "名",
+  "ipa": "ˈneɪbər",
+  "kana": "ネイバー",
+  "mean": "隣人",
+  "cat": "名詞"
+ },
+ {
+  "id": 291,
+  "word": "news",
+  "pos": "名",
+  "ipa": "nuːz",
+  "kana": "ニューズ",
+  "mean": "知らせ",
+  "cat": "名詞"
+ },
+ {
+  "id": 292,
+  "word": "noise",
+  "pos": "名",
+  "ipa": "nɔɪz",
+  "kana": "ノイズ",
+  "mean": "騒音",
+  "cat": "名詞"
+ },
+ {
+  "id": 293,
+  "word": "nurse",
+  "pos": "名",
+  "ipa": "nɜːrs",
+  "kana": "ナース",
+  "mean": "看護師",
+  "cat": "名詞"
+ },
+ {
+  "id": 294,
+  "word": "ocean",
+  "pos": "名",
+  "ipa": "ˈoʊʃn",
+  "kana": "オウシャン",
+  "mean": "大洋",
+  "cat": "名詞"
+ },
+ {
+  "id": 295,
+  "word": "opinion",
+  "pos": "名",
+  "ipa": "əˈpɪnjən",
+  "kana": "オピニオン",
+  "mean": "意見",
+  "cat": "名詞"
+ },
+ {
+  "id": 296,
+  "word": "opportunity",
+  "pos": "名",
+  "ipa": "ˌɑːpərˈtuːnəti",
+  "kana": "オポチュニティ",
+  "mean": "機会",
+  "cat": "名詞"
+ },
+ {
+  "id": 297,
+  "word": "pain",
+  "pos": "名",
+  "ipa": "peɪn",
+  "kana": "ペイン",
+  "mean": "痛み",
+  "cat": "名詞"
+ },
+ {
+  "id": 298,
+  "word": "passenger",
+  "pos": "名",
+  "ipa": "ˈpæsɪndʒər",
+  "kana": "パセンジャー",
+  "mean": "乗客",
+  "cat": "名詞"
+ },
+ {
+  "id": 299,
+  "word": "peace",
+  "pos": "名",
+  "ipa": "piːs",
+  "kana": "ピース",
+  "mean": "平和",
+  "cat": "名詞"
+ },
+ {
+  "id": 300,
+  "word": "percent",
+  "pos": "名",
+  "ipa": "pərˈsent",
+  "kana": "パーセント",
+  "mean": "パーセント",
+  "cat": "名詞"
+ },
+ {
+  "id": 301,
+  "word": "performance",
+  "pos": "名",
+  "ipa": "pərˈfɔːrməns",
+  "kana": "パフォーマンス",
+  "mean": "上演・成績",
+  "cat": "名詞"
+ },
+ {
+  "id": 302,
+  "word": "period",
+  "pos": "名",
+  "ipa": "ˈpɪriəd",
+  "kana": "ピリオド",
+  "mean": "期間",
+  "cat": "名詞"
+ },
+ {
+  "id": 303,
+  "word": "person",
+  "pos": "名",
+  "ipa": "ˈpɜːrsn",
+  "kana": "パースン",
+  "mean": "人",
+  "cat": "名詞"
+ },
+ {
+  "id": 304,
+  "word": "plastic",
+  "pos": "名",
+  "ipa": "ˈplæstɪk",
+  "kana": "プラスティック",
+  "mean": "プラスチック",
+  "cat": "名詞"
+ },
+ {
+  "id": 305,
+  "word": "point",
+  "pos": "名",
+  "ipa": "pɔɪnt",
+  "kana": "ポイント",
+  "mean": "点・要点",
+  "cat": "名詞"
+ },
+ {
+  "id": 306,
+  "word": "pollution",
+  "pos": "名",
+  "ipa": "pəˈluːʃn",
+  "kana": "ポルーション",
+  "mean": "汚染",
+  "cat": "名詞"
+ },
+ {
+  "id": 307,
+  "word": "population",
+  "pos": "名",
+  "ipa": "ˌpɑːpjuˈleɪʃn",
+  "kana": "ポピュレイション",
+  "mean": "人口",
+  "cat": "名詞"
+ },
+ {
+  "id": 308,
+  "word": "power",
+  "pos": "名",
+  "ipa": "ˈpaʊər",
+  "kana": "パワー",
+  "mean": "力・電力",
+  "cat": "名詞"
+ },
+ {
+  "id": 309,
+  "word": "presentation",
+  "pos": "名",
+  "ipa": "ˌpriːzenˈteɪʃn",
+  "kana": "プレゼンテイション",
+  "mean": "発表",
+  "cat": "名詞"
+ },
+ {
+  "id": 310,
+  "word": "price",
+  "pos": "名",
+  "ipa": "praɪs",
+  "kana": "プライス",
+  "mean": "値段",
+  "cat": "名詞"
+ },
+ {
+  "id": 311,
+  "word": "problem",
+  "pos": "名",
+  "ipa": "ˈprɑːbləm",
+  "kana": "プロブレム",
+  "mean": "問題",
+  "cat": "名詞"
+ },
+ {
+  "id": 312,
+  "word": "product",
+  "pos": "名",
+  "ipa": "ˈprɑːdʌkt",
+  "kana": "プロダクト",
+  "mean": "製品",
+  "cat": "名詞"
+ },
+ {
+  "id": 313,
+  "word": "professor",
+  "pos": "名",
+  "ipa": "prəˈfesər",
+  "kana": "プロフェサー",
+  "mean": "教授",
+  "cat": "名詞"
+ },
+ {
+  "id": 314,
+  "word": "program",
+  "pos": "名",
+  "ipa": "ˈproʊɡræm",
+  "kana": "プログラム",
+  "mean": "番組・計画",
+  "cat": "名詞"
+ },
+ {
+  "id": 315,
+  "word": "progress",
+  "pos": "名",
+  "ipa": "ˈprɑːɡres",
+  "kana": "プログレス",
+  "mean": "進歩",
+  "cat": "名詞"
+ },
+ {
+  "id": 316,
+  "word": "project",
+  "pos": "名",
+  "ipa": "ˈprɑːdʒekt",
+  "kana": "プロジェクト",
+  "mean": "計画・企画",
+  "cat": "名詞"
+ },
+ {
+  "id": 317,
+  "word": "purpose",
+  "pos": "名",
+  "ipa": "ˈpɜːrpəs",
+  "kana": "パーパス",
+  "mean": "目的",
+  "cat": "名詞"
+ },
+ {
+  "id": 318,
+  "word": "quality",
+  "pos": "名",
+  "ipa": "ˈkwɑːləti",
+  "kana": "クオリティ",
+  "mean": "質",
+  "cat": "名詞"
+ },
+ {
+  "id": 319,
+  "word": "reason",
+  "pos": "名",
+  "ipa": "ˈriːzn",
+  "kana": "リーズン",
+  "mean": "理由",
+  "cat": "名詞"
+ },
+ {
+  "id": 320,
+  "word": "relationship",
+  "pos": "名",
+  "ipa": "rɪˈleɪʃnʃɪp",
+  "kana": "リレイションシップ",
+  "mean": "関係",
+  "cat": "名詞"
+ },
+ {
+  "id": 321,
+  "word": "religion",
+  "pos": "名",
+  "ipa": "rɪˈlɪdʒən",
+  "kana": "リリジョン",
+  "mean": "宗教",
+  "cat": "名詞"
+ },
+ {
+  "id": 322,
+  "word": "research",
+  "pos": "名",
+  "ipa": "ˈriːsɜːrtʃ",
+  "kana": "リサーチ",
+  "mean": "研究",
+  "cat": "名詞"
+ },
+ {
+  "id": 323,
+  "word": "resource",
+  "pos": "名",
+  "ipa": "ˈriːsɔːrs",
+  "kana": "リソース",
+  "mean": "資源",
+  "cat": "名詞"
+ },
+ {
+  "id": 324,
+  "word": "result",
+  "pos": "名",
+  "ipa": "rɪˈzʌlt",
+  "kana": "リザルト",
+  "mean": "結果",
+  "cat": "名詞"
+ },
+ {
+  "id": 325,
+  "word": "role",
+  "pos": "名",
+  "ipa": "roʊl",
+  "kana": "ロウル",
+  "mean": "役割",
+  "cat": "名詞"
+ },
+ {
+  "id": 326,
+  "word": "rule",
+  "pos": "名",
+  "ipa": "ruːl",
+  "kana": "ルール",
+  "mean": "規則",
+  "cat": "名詞"
+ },
+ {
+  "id": 327,
+  "word": "safety",
+  "pos": "名",
+  "ipa": "ˈseɪfti",
+  "kana": "セイフティ",
+  "mean": "安全",
+  "cat": "名詞"
+ },
+ {
+  "id": 328,
+  "word": "scene",
+  "pos": "名",
+  "ipa": "siːn",
+  "kana": "シーン",
+  "mean": "場面",
+  "cat": "名詞"
+ },
+ {
+  "id": 329,
+  "word": "science",
+  "pos": "名",
+  "ipa": "ˈsaɪəns",
+  "kana": "サイエンス",
+  "mean": "科学",
+  "cat": "名詞"
+ },
+ {
+  "id": 330,
+  "word": "scientist",
+  "pos": "名",
+  "ipa": "ˈsaɪəntɪst",
+  "kana": "サイエンティスト",
+  "mean": "科学者",
+  "cat": "名詞"
+ },
+ {
+  "id": 331,
+  "word": "season",
+  "pos": "名",
+  "ipa": "ˈsiːzn",
+  "kana": "シーズン",
+  "mean": "季節",
+  "cat": "名詞"
+ },
+ {
+  "id": 332,
+  "word": "secret",
+  "pos": "名",
+  "ipa": "ˈsiːkrət",
+  "kana": "シークレット",
+  "mean": "秘密",
+  "cat": "名詞"
+ },
+ {
+  "id": 333,
+  "word": "sense",
+  "pos": "名",
+  "ipa": "sens",
+  "kana": "センス",
+  "mean": "感覚",
+  "cat": "名詞"
+ },
+ {
+  "id": 334,
+  "word": "shape",
+  "pos": "名",
+  "ipa": "ʃeɪp",
+  "kana": "シェイプ",
+  "mean": "形",
+  "cat": "名詞"
+ },
+ {
+  "id": 335,
+  "word": "shelter",
+  "pos": "名",
+  "ipa": "ˈʃeltər",
+  "kana": "シェルター",
+  "mean": "避難所",
+  "cat": "名詞"
+ },
+ {
+  "id": 336,
+  "word": "sight",
+  "pos": "名",
+  "ipa": "saɪt",
+  "kana": "サイト",
+  "mean": "視力・光景",
+  "cat": "名詞"
+ },
+ {
+  "id": 337,
+  "word": "sign",
+  "pos": "名",
+  "ipa": "saɪn",
+  "kana": "サイン",
+  "mean": "標識・しるし",
+  "cat": "名詞"
+ },
+ {
+  "id": 338,
+  "word": "silence",
+  "pos": "名",
+  "ipa": "ˈsaɪləns",
+  "kana": "サイレンス",
+  "mean": "沈黙",
+  "cat": "名詞"
+ },
+ {
+  "id": 339,
+  "word": "situation",
+  "pos": "名",
+  "ipa": "ˌsɪtʃuˈeɪʃn",
+  "kana": "シチュエイション",
+  "mean": "状況",
+  "cat": "名詞"
+ },
+ {
+  "id": 340,
+  "word": "skill",
+  "pos": "名",
+  "ipa": "skɪl",
+  "kana": "スキル",
+  "mean": "技能",
+  "cat": "名詞"
+ },
+ {
+  "id": 341,
+  "word": "society",
+  "pos": "名",
+  "ipa": "səˈsaɪəti",
+  "kana": "ソサイエティ",
+  "mean": "社会",
+  "cat": "名詞"
+ },
+ {
+  "id": 342,
+  "word": "soil",
+  "pos": "名",
+  "ipa": "sɔɪl",
+  "kana": "ソイル",
+  "mean": "土壌",
+  "cat": "名詞"
+ },
+ {
+  "id": 343,
+  "word": "soldier",
+  "pos": "名",
+  "ipa": "ˈsoʊldʒər",
+  "kana": "ソウルジャー",
+  "mean": "兵士",
+  "cat": "名詞"
+ },
+ {
+  "id": 344,
+  "word": "solution",
+  "pos": "名",
+  "ipa": "səˈluːʃn",
+  "kana": "ソルーション",
+  "mean": "解決策",
+  "cat": "名詞"
+ },
+ {
+  "id": 345,
+  "word": "space",
+  "pos": "名",
+  "ipa": "speɪs",
+  "kana": "スペイス",
+  "mean": "宇宙・空間",
+  "cat": "名詞"
+ },
+ {
+  "id": 346,
+  "word": "speech",
+  "pos": "名",
+  "ipa": "spiːtʃ",
+  "kana": "スピーチ",
+  "mean": "演説",
+  "cat": "名詞"
+ },
+ {
+  "id": 347,
+  "word": "spirit",
+  "pos": "名",
+  "ipa": "ˈspɪrɪt",
+  "kana": "スピリット",
+  "mean": "精神",
+  "cat": "名詞"
+ },
+ {
+  "id": 348,
+  "word": "step",
+  "pos": "名",
+  "ipa": "step",
+  "kana": "ステップ",
+  "mean": "歩み・段階",
+  "cat": "名詞"
+ },
+ {
+  "id": 349,
+  "word": "stress",
+  "pos": "名",
+  "ipa": "stres",
+  "kana": "ストレス",
+  "mean": "緊張・圧力",
+  "cat": "名詞"
+ },
+ {
+  "id": 350,
+  "word": "subject",
+  "pos": "名",
+  "ipa": "ˈsʌbdʒɪkt",
+  "kana": "サブジェクト",
+  "mean": "教科・主題",
+  "cat": "名詞"
+ },
+ {
+  "id": 351,
+  "word": "success",
+  "pos": "名",
+  "ipa": "səkˈses",
+  "kana": "サクセス",
+  "mean": "成功",
+  "cat": "名詞"
+ },
+ {
+  "id": 352,
+  "word": "surface",
+  "pos": "名",
+  "ipa": "ˈsɜːrfɪs",
+  "kana": "サーフィス",
+  "mean": "表面",
+  "cat": "名詞"
+ },
+ {
+  "id": 353,
+  "word": "survey",
+  "pos": "名",
+  "ipa": "ˈsɜːrveɪ",
+  "kana": "サーヴェイ",
+  "mean": "調査",
+  "cat": "名詞"
+ },
+ {
+  "id": 354,
+  "word": "symbol",
+  "pos": "名",
+  "ipa": "ˈsɪmbl",
+  "kana": "シンボル",
+  "mean": "象徴",
+  "cat": "名詞"
+ },
+ {
+  "id": 355,
+  "word": "system",
+  "pos": "名",
+  "ipa": "ˈsɪstəm",
+  "kana": "システム",
+  "mean": "制度・組織",
+  "cat": "名詞"
+ },
+ {
+  "id": 356,
+  "word": "teamwork",
+  "pos": "名",
+  "ipa": "ˈtiːmwɜːrk",
+  "kana": "チームワーク",
+  "mean": "協力",
+  "cat": "名詞"
+ },
+ {
+  "id": 357,
+  "word": "technology",
+  "pos": "名",
+  "ipa": "tekˈnɑːlədʒi",
+  "kana": "テクノロジー",
+  "mean": "科学技術",
+  "cat": "名詞"
+ },
+ {
+  "id": 358,
+  "word": "temperature",
+  "pos": "名",
+  "ipa": "ˈtemprətʃər",
+  "kana": "テンプラチャー",
+  "mean": "温度",
+  "cat": "名詞"
+ },
+ {
+  "id": 359,
+  "word": "theater",
+  "pos": "名",
+  "ipa": "ˈθiːətər",
+  "kana": "シアター",
+  "mean": "劇場",
+  "cat": "名詞"
+ },
+ {
+  "id": 360,
+  "word": "thought",
+  "pos": "名",
+  "ipa": "θɔːt",
+  "kana": "ソート",
+  "mean": "考え",
+  "cat": "名詞"
+ },
+ {
+  "id": 361,
+  "word": "tool",
+  "pos": "名",
+  "ipa": "tuːl",
+  "kana": "トゥール",
+  "mean": "道具",
+  "cat": "名詞"
+ },
+ {
+  "id": 362,
+  "word": "tradition",
+  "pos": "名",
+  "ipa": "trəˈdɪʃn",
+  "kana": "トラディション",
+  "mean": "伝統",
+  "cat": "名詞"
+ },
+ {
+  "id": 363,
+  "word": "traffic",
+  "pos": "名",
+  "ipa": "ˈtræfɪk",
+  "kana": "トラフィック",
+  "mean": "交通",
+  "cat": "名詞"
+ },
+ {
+  "id": 364,
+  "word": "trouble",
+  "pos": "名",
+  "ipa": "ˈtrʌbl",
+  "kana": "トラブル",
+  "mean": "困難",
+  "cat": "名詞"
+ },
+ {
+  "id": 365,
+  "word": "truth",
+  "pos": "名",
+  "ipa": "truːθ",
+  "kana": "トゥルース",
+  "mean": "真実",
+  "cat": "名詞"
+ },
+ {
+  "id": 366,
+  "word": "universe",
+  "pos": "名",
+  "ipa": "ˈjuːnɪvɜːrs",
+  "kana": "ユニヴァース",
+  "mean": "宇宙",
+  "cat": "名詞"
+ },
+ {
+  "id": 367,
+  "word": "university",
+  "pos": "名",
+  "ipa": "ˌjuːnɪˈvɜːrsəti",
+  "kana": "ユニヴァーシティ",
+  "mean": "大学",
+  "cat": "名詞"
+ },
+ {
+  "id": 368,
+  "word": "value",
+  "pos": "名",
+  "ipa": "ˈvæljuː",
+  "kana": "ヴァリュー",
+  "mean": "価値",
+  "cat": "名詞"
+ },
+ {
+  "id": 369,
+  "word": "victim",
+  "pos": "名",
+  "ipa": "ˈvɪktɪm",
+  "kana": "ヴィクティム",
+  "mean": "犠牲者",
+  "cat": "名詞"
+ },
+ {
+  "id": 370,
+  "word": "view",
+  "pos": "名",
+  "ipa": "vjuː",
+  "kana": "ヴュー",
+  "mean": "眺め・見方",
+  "cat": "名詞"
+ },
+ {
+  "id": 371,
+  "word": "village",
+  "pos": "名",
+  "ipa": "ˈvɪlɪdʒ",
+  "kana": "ヴィレッジ",
+  "mean": "村",
+  "cat": "名詞"
+ },
+ {
+  "id": 372,
+  "word": "voice",
+  "pos": "名",
+  "ipa": "vɔɪs",
+  "kana": "ヴォイス",
+  "mean": "声",
+  "cat": "名詞"
+ },
+ {
+  "id": 373,
+  "word": "volunteer",
+  "pos": "名",
+  "ipa": "ˌvɑːlənˈtɪr",
+  "kana": "ヴォランティア",
+  "mean": "ボランティア",
+  "cat": "名詞"
+ },
+ {
+  "id": 374,
+  "word": "war",
+  "pos": "名",
+  "ipa": "wɔːr",
+  "kana": "ウォー",
+  "mean": "戦争",
+  "cat": "名詞"
+ },
+ {
+  "id": 375,
+  "word": "waste",
+  "pos": "名",
+  "ipa": "weɪst",
+  "kana": "ウェイスト",
+  "mean": "廃棄物・むだ",
+  "cat": "名詞"
+ },
+ {
+  "id": 376,
+  "word": "weather",
+  "pos": "名",
+  "ipa": "ˈweðər",
+  "kana": "ウェザー",
+  "mean": "天気",
+  "cat": "名詞"
+ },
+ {
+  "id": 377,
+  "word": "wildlife",
+  "pos": "名",
+  "ipa": "ˈwaɪldlaɪf",
+  "kana": "ワイルドライフ",
+  "mean": "野生生物",
+  "cat": "名詞"
+ },
+ {
+  "id": 378,
+  "word": "world",
+  "pos": "名",
+  "ipa": "wɜːrld",
+  "kana": "ワールド",
+  "mean": "世界",
+  "cat": "名詞"
+ },
+ {
+  "id": 379,
+  "word": "able",
+  "pos": "形",
+  "ipa": "ˈeɪbl",
+  "kana": "エイブル",
+  "mean": "〜できる",
+  "cat": "形容詞"
+ },
+ {
+  "id": 380,
+  "word": "afraid",
+  "pos": "形",
+  "ipa": "əˈfreɪd",
+  "kana": "アフレイド",
+  "mean": "こわがって",
+  "cat": "形容詞"
+ },
+ {
+  "id": 381,
+  "word": "alive",
+  "pos": "形",
+  "ipa": "əˈlaɪv",
+  "kana": "アライヴ",
+  "mean": "生きている",
+  "cat": "形容詞"
+ },
+ {
+  "id": 382,
+  "word": "ancient",
+  "pos": "形",
+  "ipa": "ˈeɪnʃənt",
+  "kana": "エインシェント",
+  "mean": "古代の",
+  "cat": "形容詞"
+ },
+ {
+  "id": 383,
+  "word": "angry",
+  "pos": "形",
+  "ipa": "ˈæŋɡri",
+  "kana": "アングリー",
+  "mean": "怒った",
+  "cat": "形容詞"
+ },
+ {
+  "id": 384,
+  "word": "anxious",
+  "pos": "形",
+  "ipa": "ˈæŋkʃəs",
+  "kana": "アンクシャス",
+  "mean": "心配して",
+  "cat": "形容詞"
+ },
+ {
+  "id": 385,
+  "word": "available",
+  "pos": "形",
+  "ipa": "əˈveɪləbl",
+  "kana": "アヴェイラブル",
+  "mean": "利用できる",
+  "cat": "形容詞"
+ },
+ {
+  "id": 386,
+  "word": "basic",
+  "pos": "形",
+  "ipa": "ˈbeɪsɪk",
+  "kana": "ベイシック",
+  "mean": "基本的な",
+  "cat": "形容詞"
+ },
+ {
+  "id": 387,
+  "word": "bright",
+  "pos": "形",
+  "ipa": "braɪt",
+  "kana": "ブライト",
+  "mean": "明るい",
+  "cat": "形容詞"
+ },
+ {
+  "id": 388,
+  "word": "careful",
+  "pos": "形",
+  "ipa": "ˈkerfl",
+  "kana": "ケアフル",
+  "mean": "注意深い",
+  "cat": "形容詞"
+ },
+ {
+  "id": 389,
+  "word": "cheap",
+  "pos": "形",
+  "ipa": "tʃiːp",
+  "kana": "チープ",
+  "mean": "安い",
+  "cat": "形容詞"
+ },
+ {
+  "id": 390,
+  "word": "clear",
+  "pos": "形",
+  "ipa": "klɪr",
+  "kana": "クリア",
+  "mean": "はっきりした",
+  "cat": "形容詞"
+ },
+ {
+  "id": 391,
+  "word": "comfortable",
+  "pos": "形",
+  "ipa": "ˈkʌmftəbl",
+  "kana": "カンフタブル",
+  "mean": "快適な",
+  "cat": "形容詞"
+ },
+ {
+  "id": 392,
+  "word": "common",
+  "pos": "形",
+  "ipa": "ˈkɑːmən",
+  "kana": "カモン",
+  "mean": "共通の・ふつうの",
+  "cat": "形容詞"
+ },
+ {
+  "id": 393,
+  "word": "convenient",
+  "pos": "形",
+  "ipa": "kənˈviːniənt",
+  "kana": "コンヴィーニエント",
+  "mean": "便利な",
+  "cat": "形容詞"
+ },
+ {
+  "id": 394,
+  "word": "correct",
+  "pos": "形",
+  "ipa": "kəˈrekt",
+  "kana": "コレクト",
+  "mean": "正しい",
+  "cat": "形容詞"
+ },
+ {
+  "id": 395,
+  "word": "crowded",
+  "pos": "形",
+  "ipa": "ˈkraʊdɪd",
+  "kana": "クラウディッド",
+  "mean": "混雑した",
+  "cat": "形容詞"
+ },
+ {
+  "id": 396,
+  "word": "dangerous",
+  "pos": "形",
+  "ipa": "ˈdeɪndʒərəs",
+  "kana": "デインジャラス",
+  "mean": "危険な",
+  "cat": "形容詞"
+ },
+ {
+  "id": 397,
+  "word": "dark",
+  "pos": "形",
+  "ipa": "dɑːrk",
+  "kana": "ダーク",
+  "mean": "暗い",
+  "cat": "形容詞"
+ },
+ {
+  "id": 398,
+  "word": "dead",
+  "pos": "形",
+  "ipa": "ded",
+  "kana": "デッド",
+  "mean": "死んでいる",
+  "cat": "形容詞"
+ },
+ {
+  "id": 399,
+  "word": "deep",
+  "pos": "形",
+  "ipa": "diːp",
+  "kana": "ディープ",
+  "mean": "深い",
+  "cat": "形容詞"
+ },
+ {
+  "id": 400,
+  "word": "delicious",
+  "pos": "形",
+  "ipa": "dɪˈlɪʃəs",
+  "kana": "デリシャス",
+  "mean": "おいしい",
+  "cat": "形容詞"
+ },
+ {
+  "id": 401,
+  "word": "different",
+  "pos": "形",
+  "ipa": "ˈdɪfrənt",
+  "kana": "ディファレント",
+  "mean": "異なる",
+  "cat": "形容詞"
+ },
+ {
+  "id": 402,
+  "word": "difficult",
+  "pos": "形",
+  "ipa": "ˈdɪfɪkəlt",
+  "kana": "ディフィカルト",
+  "mean": "難しい",
+  "cat": "形容詞"
+ },
+ {
+  "id": 403,
+  "word": "dirty",
+  "pos": "形",
+  "ipa": "ˈdɜːrti",
+  "kana": "ダーティ",
+  "mean": "汚い",
+  "cat": "形容詞"
+ },
+ {
+  "id": 404,
+  "word": "easy",
+  "pos": "形",
+  "ipa": "ˈiːzi",
+  "kana": "イージー",
+  "mean": "簡単な",
+  "cat": "形容詞"
+ },
+ {
+  "id": 405,
+  "word": "empty",
+  "pos": "形",
+  "ipa": "ˈempti",
+  "kana": "エンプティ",
+  "mean": "からの",
+  "cat": "形容詞"
+ },
+ {
+  "id": 406,
+  "word": "enough",
+  "pos": "形",
+  "ipa": "ɪˈnʌf",
+  "kana": "イナフ",
+  "mean": "十分な",
+  "cat": "形容詞"
+ },
+ {
+  "id": 407,
+  "word": "excited",
+  "pos": "形",
+  "ipa": "ɪkˈsaɪtɪd",
+  "kana": "エクサイティッド",
+  "mean": "わくわくした",
+  "cat": "形容詞"
+ },
+ {
+  "id": 408,
+  "word": "exciting",
+  "pos": "形",
+  "ipa": "ɪkˈsaɪtɪŋ",
+  "kana": "エクサイティング",
+  "mean": "わくわくさせる",
+  "cat": "形容詞"
+ },
+ {
+  "id": 409,
+  "word": "expensive",
+  "pos": "形",
+  "ipa": "ɪkˈspensɪv",
+  "kana": "エクスペンシヴ",
+  "mean": "高価な",
+  "cat": "形容詞"
+ },
+ {
+  "id": 410,
+  "word": "famous",
+  "pos": "形",
+  "ipa": "ˈfeɪməs",
+  "kana": "フェイマス",
+  "mean": "有名な",
+  "cat": "形容詞"
+ },
+ {
+  "id": 411,
+  "word": "foreign",
+  "pos": "形",
+  "ipa": "ˈfɔːrən",
+  "kana": "フォーリン",
+  "mean": "外国の",
+  "cat": "形容詞"
+ },
+ {
+  "id": 412,
+  "word": "free",
+  "pos": "形",
+  "ipa": "friː",
+  "kana": "フリー",
+  "mean": "自由な・無料の",
+  "cat": "形容詞"
+ },
+ {
+  "id": 413,
+  "word": "fresh",
+  "pos": "形",
+  "ipa": "freʃ",
+  "kana": "フレッシュ",
+  "mean": "新鮮な",
+  "cat": "形容詞"
+ },
+ {
+  "id": 414,
+  "word": "friendly",
+  "pos": "形",
+  "ipa": "ˈfrendli",
+  "kana": "フレンドリー",
+  "mean": "親しみやすい",
+  "cat": "形容詞"
+ },
+ {
+  "id": 415,
+  "word": "global",
+  "pos": "形",
+  "ipa": "ˈɡloʊbl",
+  "kana": "グローバル",
+  "mean": "世界的な",
+  "cat": "形容詞"
+ },
+ {
+  "id": 416,
+  "word": "healthy",
+  "pos": "形",
+  "ipa": "ˈhelθi",
+  "kana": "ヘルシー",
+  "mean": "健康的な",
+  "cat": "形容詞"
+ },
+ {
+  "id": 417,
+  "word": "heavy",
+  "pos": "形",
+  "ipa": "ˈhevi",
+  "kana": "ヘヴィ",
+  "mean": "重い",
+  "cat": "形容詞"
+ },
+ {
+  "id": 418,
+  "word": "helpful",
+  "pos": "形",
+  "ipa": "ˈhelpfl",
+  "kana": "ヘルプフル",
+  "mean": "役に立つ",
+  "cat": "形容詞"
+ },
+ {
+  "id": 419,
+  "word": "huge",
+  "pos": "形",
+  "ipa": "hjuːdʒ",
+  "kana": "ヒュージ",
+  "mean": "巨大な",
+  "cat": "形容詞"
+ },
+ {
+  "id": 420,
+  "word": "impossible",
+  "pos": "形",
+  "ipa": "ɪmˈpɑːsəbl",
+  "kana": "インポシブル",
+  "mean": "不可能な",
+  "cat": "形容詞"
+ },
+ {
+  "id": 421,
+  "word": "important",
+  "pos": "形",
+  "ipa": "ɪmˈpɔːrtnt",
+  "kana": "インポータント",
+  "mean": "重要な",
+  "cat": "形容詞"
+ },
+ {
+  "id": 422,
+  "word": "independent",
+  "pos": "形",
+  "ipa": "ˌɪndɪˈpendənt",
+  "kana": "インディペンデント",
+  "mean": "独立した",
+  "cat": "形容詞"
+ },
+ {
+  "id": 423,
+  "word": "interested",
+  "pos": "形",
+  "ipa": "ˈɪntrəstɪd",
+  "kana": "インタレスティッド",
+  "mean": "興味がある",
+  "cat": "形容詞"
+ },
+ {
+  "id": 424,
+  "word": "international",
+  "pos": "形",
+  "ipa": "ˌɪntərˈnæʃnəl",
+  "kana": "インターナショナル",
+  "mean": "国際的な",
+  "cat": "形容詞"
+ },
+ {
+  "id": 425,
+  "word": "kind",
+  "pos": "形",
+  "ipa": "kaɪnd",
+  "kana": "カインド",
+  "mean": "親切な",
+  "cat": "形容詞"
+ },
+ {
+  "id": 426,
+  "word": "local",
+  "pos": "形",
+  "ipa": "ˈloʊkl",
+  "kana": "ローカル",
+  "mean": "地元の",
+  "cat": "形容詞"
+ },
+ {
+  "id": 427,
+  "word": "lonely",
+  "pos": "形",
+  "ipa": "ˈloʊnli",
+  "kana": "ロウンリー",
+  "mean": "孤独な",
+  "cat": "形容詞"
+ },
+ {
+  "id": 428,
+  "word": "loud",
+  "pos": "形",
+  "ipa": "laʊd",
+  "kana": "ラウド",
+  "mean": "（音が）大きい",
+  "cat": "形容詞"
+ },
+ {
+  "id": 429,
+  "word": "lucky",
+  "pos": "形",
+  "ipa": "ˈlʌki",
+  "kana": "ラッキー",
+  "mean": "幸運な",
+  "cat": "形容詞"
+ },
+ {
+  "id": 430,
+  "word": "main",
+  "pos": "形",
+  "ipa": "meɪn",
+  "kana": "メイン",
+  "mean": "主な",
+  "cat": "形容詞"
+ },
+ {
+  "id": 431,
+  "word": "modern",
+  "pos": "形",
+  "ipa": "ˈmɑːdərn",
+  "kana": "モダン",
+  "mean": "現代の",
+  "cat": "形容詞"
+ },
+ {
+  "id": 432,
+  "word": "narrow",
+  "pos": "形",
+  "ipa": "ˈnæroʊ",
+  "kana": "ナロウ",
+  "mean": "狭い",
+  "cat": "形容詞"
+ },
+ {
+  "id": 433,
+  "word": "national",
+  "pos": "形",
+  "ipa": "ˈnæʃnəl",
+  "kana": "ナショナル",
+  "mean": "国家の",
+  "cat": "形容詞"
+ },
+ {
+  "id": 434,
+  "word": "natural",
+  "pos": "形",
+  "ipa": "ˈnætʃrəl",
+  "kana": "ナチュラル",
+  "mean": "自然の",
+  "cat": "形容詞"
+ },
+ {
+  "id": 435,
+  "word": "necessary",
+  "pos": "形",
+  "ipa": "ˈnesəseri",
+  "kana": "ネセサリー",
+  "mean": "必要な",
+  "cat": "形容詞"
+ },
+ {
+  "id": 436,
+  "word": "nervous",
+  "pos": "形",
+  "ipa": "ˈnɜːrvəs",
+  "kana": "ナーヴァス",
+  "mean": "緊張した",
+  "cat": "形容詞"
+ },
+ {
+  "id": 437,
+  "word": "official",
+  "pos": "形",
+  "ipa": "əˈfɪʃl",
+  "kana": "オフィシャル",
+  "mean": "公式の",
+  "cat": "形容詞"
+ },
+ {
+  "id": 438,
+  "word": "ordinary",
+  "pos": "形",
+  "ipa": "ˈɔːrdneri",
+  "kana": "オーディナリー",
+  "mean": "ふつうの",
+  "cat": "形容詞"
+ },
+ {
+  "id": 439,
+  "word": "original",
+  "pos": "形",
+  "ipa": "əˈrɪdʒənl",
+  "kana": "オリジナル",
+  "mean": "独創的な・元の",
+  "cat": "形容詞"
+ },
+ {
+  "id": 440,
+  "word": "perfect",
+  "pos": "形",
+  "ipa": "ˈpɜːrfɪkt",
+  "kana": "パーフェクト",
+  "mean": "完璧な",
+  "cat": "形容詞"
+ },
+ {
+  "id": 441,
+  "word": "polite",
+  "pos": "形",
+  "ipa": "pəˈlaɪt",
+  "kana": "ポライト",
+  "mean": "礼儀正しい",
+  "cat": "形容詞"
+ },
+ {
+  "id": 442,
+  "word": "poor",
+  "pos": "形",
+  "ipa": "pʊr",
+  "kana": "プア",
+  "mean": "貧しい",
+  "cat": "形容詞"
+ },
+ {
+  "id": 443,
+  "word": "popular",
+  "pos": "形",
+  "ipa": "ˈpɑːpjələr",
+  "kana": "ポピュラー",
+  "mean": "人気のある",
+  "cat": "形容詞"
+ },
+ {
+  "id": 444,
+  "word": "possible",
+  "pos": "形",
+  "ipa": "ˈpɑːsəbl",
+  "kana": "ポシブル",
+  "mean": "可能な",
+  "cat": "形容詞"
+ },
+ {
+  "id": 445,
+  "word": "powerful",
+  "pos": "形",
+  "ipa": "ˈpaʊərfl",
+  "kana": "パワフル",
+  "mean": "強力な",
+  "cat": "形容詞"
+ },
+ {
+  "id": 446,
+  "word": "proud",
+  "pos": "形",
+  "ipa": "praʊd",
+  "kana": "プラウド",
+  "mean": "誇りに思う",
+  "cat": "形容詞"
+ },
+ {
+  "id": 447,
+  "word": "public",
+  "pos": "形",
+  "ipa": "ˈpʌblɪk",
+  "kana": "パブリック",
+  "mean": "公共の",
+  "cat": "形容詞"
+ },
+ {
+  "id": 448,
+  "word": "quiet",
+  "pos": "形",
+  "ipa": "ˈkwaɪət",
+  "kana": "クワイエット",
+  "mean": "静かな",
+  "cat": "形容詞"
+ },
+ {
+  "id": 449,
+  "word": "rare",
+  "pos": "形",
+  "ipa": "rer",
+  "kana": "レア",
+  "mean": "まれな",
+  "cat": "形容詞"
+ },
+ {
+  "id": 450,
+  "word": "real",
+  "pos": "形",
+  "ipa": "ˈriːəl",
+  "kana": "リアル",
+  "mean": "本当の",
+  "cat": "形容詞"
+ },
+ {
+  "id": 451,
+  "word": "recent",
+  "pos": "形",
+  "ipa": "ˈriːsnt",
+  "kana": "リースント",
+  "mean": "最近の",
+  "cat": "形容詞"
+ },
+ {
+  "id": 452,
+  "word": "rich",
+  "pos": "形",
+  "ipa": "rɪtʃ",
+  "kana": "リッチ",
+  "mean": "裕福な",
+  "cat": "形容詞"
+ },
+ {
+  "id": 453,
+  "word": "safe",
+  "pos": "形",
+  "ipa": "seɪf",
+  "kana": "セイフ",
+  "mean": "安全な",
+  "cat": "形容詞"
+ },
+ {
+  "id": 454,
+  "word": "serious",
+  "pos": "形",
+  "ipa": "ˈsɪriəs",
+  "kana": "シリアス",
+  "mean": "深刻な・まじめな",
+  "cat": "形容詞"
+ },
+ {
+  "id": 455,
+  "word": "several",
+  "pos": "形",
+  "ipa": "ˈsevrəl",
+  "kana": "セヴラル",
+  "mean": "いくつかの",
+  "cat": "形容詞"
+ },
+ {
+  "id": 456,
+  "word": "similar",
+  "pos": "形",
+  "ipa": "ˈsɪmələr",
+  "kana": "シミラー",
+  "mean": "似ている",
+  "cat": "形容詞"
+ },
+ {
+  "id": 457,
+  "word": "simple",
+  "pos": "形",
+  "ipa": "ˈsɪmpl",
+  "kana": "シンプル",
+  "mean": "簡単な",
+  "cat": "形容詞"
+ },
+ {
+  "id": 458,
+  "word": "smart",
+  "pos": "形",
+  "ipa": "smɑːrt",
+  "kana": "スマート",
+  "mean": "賢い",
+  "cat": "形容詞"
+ },
+ {
+  "id": 459,
+  "word": "special",
+  "pos": "形",
+  "ipa": "ˈspeʃl",
+  "kana": "スペシャル",
+  "mean": "特別な",
+  "cat": "形容詞"
+ },
+ {
+  "id": 460,
+  "word": "strange",
+  "pos": "形",
+  "ipa": "streɪndʒ",
+  "kana": "ストレインジ",
+  "mean": "奇妙な",
+  "cat": "形容詞"
+ },
+ {
+  "id": 461,
+  "word": "strong",
+  "pos": "形",
+  "ipa": "strɔːŋ",
+  "kana": "ストロング",
+  "mean": "強い",
+  "cat": "形容詞"
+ },
+ {
+  "id": 462,
+  "word": "successful",
+  "pos": "形",
+  "ipa": "səkˈsesfl",
+  "kana": "サクセスフル",
+  "mean": "成功した",
+  "cat": "形容詞"
+ },
+ {
+  "id": 463,
+  "word": "sudden",
+  "pos": "形",
+  "ipa": "ˈsʌdn",
+  "kana": "サドゥン",
+  "mean": "突然の",
+  "cat": "形容詞"
+ },
+ {
+  "id": 464,
+  "word": "sure",
+  "pos": "形",
+  "ipa": "ʃʊr",
+  "kana": "シュア",
+  "mean": "確信して",
+  "cat": "形容詞"
+ },
+ {
+  "id": 465,
+  "word": "terrible",
+  "pos": "形",
+  "ipa": "ˈterəbl",
+  "kana": "テリブル",
+  "mean": "ひどい",
+  "cat": "形容詞"
+ },
+ {
+  "id": 466,
+  "word": "thick",
+  "pos": "形",
+  "ipa": "θɪk",
+  "kana": "シック",
+  "mean": "厚い",
+  "cat": "形容詞"
+ },
+ {
+  "id": 467,
+  "word": "thin",
+  "pos": "形",
+  "ipa": "θɪn",
+  "kana": "シン",
+  "mean": "薄い・やせた",
+  "cat": "形容詞"
+ },
+ {
+  "id": 468,
+  "word": "thirsty",
+  "pos": "形",
+  "ipa": "ˈθɜːrsti",
+  "kana": "サースティ",
+  "mean": "のどがかわいた",
+  "cat": "形容詞"
+ },
+ {
+  "id": 469,
+  "word": "tired",
+  "pos": "形",
+  "ipa": "ˈtaɪərd",
+  "kana": "タイアド",
+  "mean": "疲れた",
+  "cat": "形容詞"
+ },
+ {
+  "id": 470,
+  "word": "traditional",
+  "pos": "形",
+  "ipa": "trəˈdɪʃənl",
+  "kana": "トラディショナル",
+  "mean": "伝統的な",
+  "cat": "形容詞"
+ },
+ {
+  "id": 471,
+  "word": "true",
+  "pos": "形",
+  "ipa": "truː",
+  "kana": "トゥルー",
+  "mean": "本当の",
+  "cat": "形容詞"
+ },
+ {
+  "id": 472,
+  "word": "uncomfortable",
+  "pos": "形",
+  "ipa": "ʌnˈkʌmftəbl",
+  "kana": "アンカンフタブル",
+  "mean": "居心地の悪い",
+  "cat": "形容詞"
+ },
+ {
+  "id": 473,
+  "word": "unique",
+  "pos": "形",
+  "ipa": "juˈniːk",
+  "kana": "ユニーク",
+  "mean": "唯一の・独特な",
+  "cat": "形容詞"
+ },
+ {
+  "id": 474,
+  "word": "useful",
+  "pos": "形",
+  "ipa": "ˈjuːsfl",
+  "kana": "ユースフル",
+  "mean": "役に立つ",
+  "cat": "形容詞"
+ },
+ {
+  "id": 475,
+  "word": "usual",
+  "pos": "形",
+  "ipa": "ˈjuːʒuəl",
+  "kana": "ユージュアル",
+  "mean": "いつもの",
+  "cat": "形容詞"
+ },
+ {
+  "id": 476,
+  "word": "various",
+  "pos": "形",
+  "ipa": "ˈveriəs",
+  "kana": "ヴェアリアス",
+  "mean": "さまざまな",
+  "cat": "形容詞"
+ },
+ {
+  "id": 477,
+  "word": "warm",
+  "pos": "形",
+  "ipa": "wɔːrm",
+  "kana": "ウォーム",
+  "mean": "暖かい",
+  "cat": "形容詞"
+ },
+ {
+  "id": 478,
+  "word": "weak",
+  "pos": "形",
+  "ipa": "wiːk",
+  "kana": "ウィーク",
+  "mean": "弱い",
+  "cat": "形容詞"
+ },
+ {
+  "id": 479,
+  "word": "wide",
+  "pos": "形",
+  "ipa": "waɪd",
+  "kana": "ワイド",
+  "mean": "広い",
+  "cat": "形容詞"
+ },
+ {
+  "id": 480,
+  "word": "wonderful",
+  "pos": "形",
+  "ipa": "ˈwʌndərfl",
+  "kana": "ワンダフル",
+  "mean": "すばらしい",
+  "cat": "形容詞"
+ },
+ {
+  "id": 481,
+  "word": "worried",
+  "pos": "形",
+  "ipa": "ˈwɜːrid",
+  "kana": "ワリード",
+  "mean": "心配した",
+  "cat": "形容詞"
+ },
+ {
+  "id": 482,
+  "word": "wrong",
+  "pos": "形",
+  "ipa": "rɔːŋ",
+  "kana": "ロング",
+  "mean": "間違った",
+  "cat": "形容詞"
+ },
+ {
+  "id": 483,
+  "word": "abroad",
+  "pos": "副",
+  "ipa": "əˈbrɔːd",
+  "kana": "アブロード",
+  "mean": "外国へ",
+  "cat": "副詞"
+ },
+ {
+  "id": 484,
+  "word": "actually",
+  "pos": "副",
+  "ipa": "ˈæktʃuəli",
+  "kana": "アクチュアリー",
+  "mean": "実は",
+  "cat": "副詞"
+ },
+ {
+  "id": 485,
+  "word": "almost",
+  "pos": "副",
+  "ipa": "ˈɔːlmoʊst",
+  "kana": "オールモウスト",
+  "mean": "ほとんど",
+  "cat": "副詞"
+ },
+ {
+  "id": 486,
+  "word": "already",
+  "pos": "副",
+  "ipa": "ɔːlˈredi",
+  "kana": "オールレディ",
+  "mean": "すでに",
+  "cat": "副詞"
+ },
+ {
+  "id": 487,
+  "word": "also",
+  "pos": "副",
+  "ipa": "ˈɔːlsoʊ",
+  "kana": "オールソウ",
+  "mean": "〜もまた",
+  "cat": "副詞"
+ },
+ {
+  "id": 488,
+  "word": "always",
+  "pos": "副",
+  "ipa": "ˈɔːlweɪz",
+  "kana": "オールウェイズ",
+  "mean": "いつも",
+  "cat": "副詞"
+ },
+ {
+  "id": 489,
+  "word": "anymore",
+  "pos": "副",
+  "ipa": "ˌeniˈmɔːr",
+  "kana": "エニモア",
+  "mean": "もはや",
+  "cat": "副詞"
+ },
+ {
+  "id": 490,
+  "word": "anyway",
+  "pos": "副",
+  "ipa": "ˈeniweɪ",
+  "kana": "エニウェイ",
+  "mean": "とにかく",
+  "cat": "副詞"
+ },
+ {
+  "id": 491,
+  "word": "carefully",
+  "pos": "副",
+  "ipa": "ˈkerfəli",
+  "kana": "ケアフリー",
+  "mean": "注意深く",
+  "cat": "副詞"
+ },
+ {
+  "id": 492,
+  "word": "certainly",
+  "pos": "副",
+  "ipa": "ˈsɜːrtnli",
+  "kana": "サートンリー",
+  "mean": "確かに",
+  "cat": "副詞"
+ },
+ {
+  "id": 493,
+  "word": "clearly",
+  "pos": "副",
+  "ipa": "ˈklɪrli",
+  "kana": "クリアリー",
+  "mean": "はっきりと",
+  "cat": "副詞"
+ },
+ {
+  "id": 494,
+  "word": "easily",
+  "pos": "副",
+  "ipa": "ˈiːzəli",
+  "kana": "イージリー",
+  "mean": "簡単に",
+  "cat": "副詞"
+ },
+ {
+  "id": 495,
+  "word": "especially",
+  "pos": "副",
+  "ipa": "ɪˈspeʃəli",
+  "kana": "エスペシャリー",
+  "mean": "特に",
+  "cat": "副詞"
+ },
+ {
+  "id": 496,
+  "word": "even",
+  "pos": "副",
+  "ipa": "ˈiːvn",
+  "kana": "イーヴン",
+  "mean": "〜でさえ",
+  "cat": "副詞"
+ },
+ {
+  "id": 497,
+  "word": "ever",
+  "pos": "副",
+  "ipa": "ˈevər",
+  "kana": "エヴァー",
+  "mean": "今までに",
+  "cat": "副詞"
+ },
+ {
+  "id": 498,
+  "word": "exactly",
+  "pos": "副",
+  "ipa": "ɪɡˈzæktli",
+  "kana": "イグザクトリー",
+  "mean": "正確に",
+  "cat": "副詞"
+ },
+ {
+  "id": 499,
+  "word": "finally",
+  "pos": "副",
+  "ipa": "ˈfaɪnəli",
+  "kana": "ファイナリー",
+  "mean": "ついに",
+  "cat": "副詞"
+ },
+ {
+  "id": 500,
+  "word": "fortunately",
+  "pos": "副",
+  "ipa": "ˈfɔːrtʃənətli",
+  "kana": "フォーチュネットリー",
+  "mean": "幸運にも",
+  "cat": "副詞"
+ },
+ {
+  "id": 501,
+  "word": "hardly",
+  "pos": "副",
+  "ipa": "ˈhɑːrdli",
+  "kana": "ハードリー",
+  "mean": "ほとんど〜ない",
+  "cat": "副詞"
+ },
+ {
+  "id": 502,
+  "word": "however",
+  "pos": "副",
+  "ipa": "haʊˈevər",
+  "kana": "ハウエヴァー",
+  "mean": "しかしながら",
+  "cat": "副詞"
+ },
+ {
+  "id": 503,
+  "word": "immediately",
+  "pos": "副",
+  "ipa": "ɪˈmiːdiətli",
+  "kana": "イミーディエットリー",
+  "mean": "ただちに",
+  "cat": "副詞"
+ },
+ {
+  "id": 504,
+  "word": "instead",
+  "pos": "副",
+  "ipa": "ɪnˈsted",
+  "kana": "インステッド",
+  "mean": "代わりに",
+  "cat": "副詞"
+ },
+ {
+  "id": 505,
+  "word": "later",
+  "pos": "副",
+  "ipa": "ˈleɪtər",
+  "kana": "レイター",
+  "mean": "あとで",
+  "cat": "副詞"
+ },
+ {
+  "id": 506,
+  "word": "maybe",
+  "pos": "副",
+  "ipa": "ˈmeɪbi",
+  "kana": "メイビー",
+  "mean": "たぶん",
+  "cat": "副詞"
+ },
+ {
+  "id": 507,
+  "word": "nearly",
+  "pos": "副",
+  "ipa": "ˈnɪrli",
+  "kana": "ニアリー",
+  "mean": "ほぼ",
+  "cat": "副詞"
+ },
+ {
+  "id": 508,
+  "word": "never",
+  "pos": "副",
+  "ipa": "ˈnevər",
+  "kana": "ネヴァー",
+  "mean": "決して〜ない",
+  "cat": "副詞"
+ },
+ {
+  "id": 509,
+  "word": "often",
+  "pos": "副",
+  "ipa": "ˈɔːfn",
+  "kana": "オーフン",
+  "mean": "しばしば",
+  "cat": "副詞"
+ },
+ {
+  "id": 510,
+  "word": "once",
+  "pos": "副",
+  "ipa": "wʌns",
+  "kana": "ワンス",
+  "mean": "一度",
+  "cat": "副詞"
+ },
+ {
+  "id": 511,
+  "word": "perhaps",
+  "pos": "副",
+  "ipa": "pərˈhæps",
+  "kana": "パハップス",
+  "mean": "もしかすると",
+  "cat": "副詞"
+ },
+ {
+  "id": 512,
+  "word": "probably",
+  "pos": "副",
+  "ipa": "ˈprɑːbəbli",
+  "kana": "プロバブリー",
+  "mean": "おそらく",
+  "cat": "副詞"
+ },
+ {
+  "id": 513,
+  "word": "quickly",
+  "pos": "副",
+  "ipa": "ˈkwɪkli",
+  "kana": "クイックリー",
+  "mean": "すばやく",
+  "cat": "副詞"
+ },
+ {
+  "id": 514,
+  "word": "quite",
+  "pos": "副",
+  "ipa": "kwaɪt",
+  "kana": "クワイト",
+  "mean": "かなり",
+  "cat": "副詞"
+ },
+ {
+  "id": 515,
+  "word": "recently",
+  "pos": "副",
+  "ipa": "ˈriːsntli",
+  "kana": "リースントリー",
+  "mean": "最近",
+  "cat": "副詞"
+ },
+ {
+  "id": 516,
+  "word": "seldom",
+  "pos": "副",
+  "ipa": "ˈseldəm",
+  "kana": "セルダム",
+  "mean": "めったに〜ない",
+  "cat": "副詞"
+ },
+ {
+  "id": 517,
+  "word": "simply",
+  "pos": "副",
+  "ipa": "ˈsɪmpli",
+  "kana": "シンプリー",
+  "mean": "単に",
+  "cat": "副詞"
+ },
+ {
+  "id": 518,
+  "word": "slowly",
+  "pos": "副",
+  "ipa": "ˈsloʊli",
+  "kana": "スロウリー",
+  "mean": "ゆっくりと",
+  "cat": "副詞"
+ },
+ {
+  "id": 519,
+  "word": "sometimes",
+  "pos": "副",
+  "ipa": "ˈsʌmtaɪmz",
+  "kana": "サムタイムズ",
+  "mean": "ときどき",
+  "cat": "副詞"
+ },
+ {
+  "id": 520,
+  "word": "soon",
+  "pos": "副",
+  "ipa": "suːn",
+  "kana": "スーン",
+  "mean": "まもなく",
+  "cat": "副詞"
+ },
+ {
+  "id": 521,
+  "word": "still",
+  "pos": "副",
+  "ipa": "stɪl",
+  "kana": "スティル",
+  "mean": "まだ",
+  "cat": "副詞"
+ },
+ {
+  "id": 522,
+  "word": "suddenly",
+  "pos": "副",
+  "ipa": "ˈsʌdnli",
+  "kana": "サドゥンリー",
+  "mean": "突然",
+  "cat": "副詞"
+ },
+ {
+  "id": 523,
+  "word": "together",
+  "pos": "副",
+  "ipa": "təˈɡeðər",
+  "kana": "トゥゲザー",
+  "mean": "いっしょに",
+  "cat": "副詞"
+ },
+ {
+  "id": 524,
+  "word": "usually",
+  "pos": "副",
+  "ipa": "ˈjuːʒuəli",
+  "kana": "ユージュアリー",
+  "mean": "たいてい",
+  "cat": "副詞"
+ },
+ {
+  "id": 525,
+  "word": "yet",
+  "pos": "副",
+  "ipa": "jet",
+  "kana": "イェット",
+  "mean": "まだ・もう",
+  "cat": "副詞"
+ },
+ {
+  "id": 526,
+  "word": "although",
+  "pos": "接",
+  "ipa": "ɔːlˈðoʊ",
+  "kana": "オールゾウ",
+  "mean": "〜だけれども",
+  "cat": "接続詞・前置詞など"
+ },
+ {
+  "id": 527,
+  "word": "among",
+  "pos": "前",
+  "ipa": "əˈmʌŋ",
+  "kana": "アマング",
+  "mean": "〜の間で(3つ以上)",
+  "cat": "接続詞・前置詞など"
+ },
+ {
+  "id": 528,
+  "word": "because",
+  "pos": "接",
+  "ipa": "bɪˈkɔːz",
+  "kana": "ビコーズ",
+  "mean": "なぜなら",
+  "cat": "接続詞・前置詞など"
+ },
+ {
+  "id": 529,
+  "word": "before",
+  "pos": "接",
+  "ipa": "bɪˈfɔːr",
+  "kana": "ビフォー",
+  "mean": "〜の前に",
+  "cat": "接続詞・前置詞など"
+ },
+ {
+  "id": 530,
+  "word": "behind",
+  "pos": "前",
+  "ipa": "bɪˈhaɪnd",
+  "kana": "ビハインド",
+  "mean": "〜の後ろに",
+  "cat": "接続詞・前置詞など"
+ },
+ {
+  "id": 531,
+  "word": "below",
+  "pos": "前",
+  "ipa": "bɪˈloʊ",
+  "kana": "ビロウ",
+  "mean": "〜の下に",
+  "cat": "接続詞・前置詞など"
+ },
+ {
+  "id": 532,
+  "word": "between",
+  "pos": "前",
+  "ipa": "bɪˈtwiːn",
+  "kana": "ビトウィーン",
+  "mean": "〜の間に(2つ)",
+  "cat": "接続詞・前置詞など"
+ },
+ {
+  "id": 533,
+  "word": "during",
+  "pos": "前",
+  "ipa": "ˈdʊrɪŋ",
+  "kana": "デュアリング",
+  "mean": "〜の間ずっと",
+  "cat": "接続詞・前置詞など"
+ },
+ {
+  "id": 534,
+  "word": "either",
+  "pos": "接",
+  "ipa": "ˈiːðər",
+  "kana": "イーザー",
+  "mean": "どちらか",
+  "cat": "接続詞・前置詞など"
+ },
+ {
+  "id": 535,
+  "word": "everything",
+  "pos": "代",
+  "ipa": "ˈevriθɪŋ",
+  "kana": "エヴリシング",
+  "mean": "すべてのもの",
+  "cat": "接続詞・前置詞など"
+ },
+ {
+  "id": 536,
+  "word": "everyone",
+  "pos": "代",
+  "ipa": "ˈevriwʌn",
+  "kana": "エヴリワン",
+  "mean": "みんな",
+  "cat": "接続詞・前置詞など"
+ },
+ {
+  "id": 537,
+  "word": "if",
+  "pos": "接",
+  "ipa": "ɪf",
+  "kana": "イフ",
+  "mean": "もし〜ならば",
+  "cat": "接続詞・前置詞など"
+ },
+ {
+  "id": 538,
+  "word": "neither",
+  "pos": "接",
+  "ipa": "ˈniːðər",
+  "kana": "ニーザー",
+  "mean": "どちらも〜ない",
+  "cat": "接続詞・前置詞など"
+ },
+ {
+  "id": 539,
+  "word": "nobody",
+  "pos": "代",
+  "ipa": "ˈnoʊbədi",
+  "kana": "ノウバディ",
+  "mean": "だれも〜ない",
+  "cat": "接続詞・前置詞など"
+ },
+ {
+  "id": 540,
+  "word": "nothing",
+  "pos": "代",
+  "ipa": "ˈnʌθɪŋ",
+  "kana": "ナッシング",
+  "mean": "何も〜ない",
+  "cat": "接続詞・前置詞など"
+ },
+ {
+  "id": 541,
+  "word": "since",
+  "pos": "接",
+  "ipa": "sɪns",
+  "kana": "シンス",
+  "mean": "〜以来・〜なので",
+  "cat": "接続詞・前置詞など"
+ },
+ {
+  "id": 542,
+  "word": "someone",
+  "pos": "代",
+  "ipa": "ˈsʌmwʌn",
+  "kana": "サムワン",
+  "mean": "だれか",
+  "cat": "接続詞・前置詞など"
+ },
+ {
+  "id": 543,
+  "word": "something",
+  "pos": "代",
+  "ipa": "ˈsʌmθɪŋ",
+  "kana": "サムシング",
+  "mean": "何か",
+  "cat": "接続詞・前置詞など"
+ },
+ {
+  "id": 544,
+  "word": "through",
+  "pos": "前",
+  "ipa": "θruː",
+  "kana": "スルー",
+  "mean": "〜を通って",
+  "cat": "接続詞・前置詞など"
+ },
+ {
+  "id": 545,
+  "word": "toward",
+  "pos": "前",
+  "ipa": "tɔːrd",
+  "kana": "トワード",
+  "mean": "〜の方へ",
+  "cat": "接続詞・前置詞など"
+ },
+ {
+  "id": 546,
+  "word": "unless",
+  "pos": "接",
+  "ipa": "ənˈles",
+  "kana": "アンレス",
+  "mean": "〜でない限り",
+  "cat": "接続詞・前置詞など"
+ },
+ {
+  "id": 547,
+  "word": "until",
+  "pos": "接",
+  "ipa": "ənˈtɪl",
+  "kana": "アンティル",
+  "mean": "〜まで",
+  "cat": "接続詞・前置詞など"
+ },
+ {
+  "id": 548,
+  "word": "while",
+  "pos": "接",
+  "ipa": "waɪl",
+  "kana": "ワイル",
+  "mean": "〜する間に",
+  "cat": "接続詞・前置詞など"
+ },
+ {
+  "id": 549,
+  "word": "without",
+  "pos": "前",
+  "ipa": "wɪˈðaʊt",
+  "kana": "ウィザウト",
+  "mean": "〜なしで",
+  "cat": "接続詞・前置詞など"
+ },
+ {
+  "id": 550,
+  "word": "myself",
+  "pos": "代",
+  "ipa": "maɪˈself",
+  "kana": "マイセルフ",
+  "mean": "私自身",
+  "cat": "接続詞・前置詞など"
+ },
+ {
+  "id": 551,
+  "word": "yourself",
+  "pos": "代",
+  "ipa": "jɔːrˈself",
+  "kana": "ユアセルフ",
+  "mean": "あなた自身",
+  "cat": "接続詞・前置詞など"
+ },
+ {
+  "id": 552,
+  "word": "himself",
+  "pos": "代",
+  "ipa": "hɪmˈself",
+  "kana": "ヒムセルフ",
+  "mean": "彼自身",
+  "cat": "接続詞・前置詞など"
+ },
+ {
+  "id": 553,
+  "word": "herself",
+  "pos": "代",
+  "ipa": "hɜːrˈself",
+  "kana": "ハーセルフ",
+  "mean": "彼女自身",
+  "cat": "接続詞・前置詞など"
+ },
+ {
+  "id": 554,
+  "word": "ourselves",
+  "pos": "代",
+  "ipa": "ɑːrˈselvz",
+  "kana": "アワセルヴズ",
+  "mean": "私たち自身",
+  "cat": "接続詞・前置詞など"
+ },
+ {
+  "id": 555,
+  "word": "themselves",
+  "pos": "代",
+  "ipa": "ðəmˈselvz",
+  "kana": "ゼムセルヴズ",
+  "mean": "彼ら自身",
+  "cat": "接続詞・前置詞など"
+ },
+ {
+  "id": 556,
+  "word": "be able to",
+  "pos": "熟",
+  "ipa": "bi ˈeɪbl tuː",
+  "kana": "ビ エイブル トゥ",
+  "mean": "〜することができる",
+  "cat": "熟語・連語"
+ },
+ {
+  "id": 557,
+  "word": "be afraid of",
+  "pos": "熟",
+  "ipa": "bi əˈfreɪd ʌv",
+  "kana": "ビ アフレイド オヴ",
+  "mean": "〜をこわがる",
+  "cat": "熟語・連語"
+ },
+ {
+  "id": 558,
+  "word": "be full of",
+  "pos": "熟",
+  "ipa": "bi fʊl ʌv",
+  "kana": "ビ フル オヴ",
+  "mean": "〜でいっぱいだ",
+  "cat": "熟語・連語"
+ },
+ {
+  "id": 559,
+  "word": "be good at",
+  "pos": "熟",
+  "ipa": "bi ɡʊd æt",
+  "kana": "ビ グッド アット",
+  "mean": "〜が得意だ",
+  "cat": "熟語・連語"
+ },
+ {
+  "id": 560,
+  "word": "be interested in",
+  "pos": "熟",
+  "ipa": "bi ˈɪntrəstɪd ɪn",
+  "kana": "ビ インタレスティッド イン",
+  "mean": "〜に興味がある",
+  "cat": "熟語・連語"
+ },
+ {
+  "id": 561,
+  "word": "be known as",
+  "pos": "熟",
+  "ipa": "bi noʊn æz",
+  "kana": "ビ ノウン アズ",
+  "mean": "〜として知られている",
+  "cat": "熟語・連語"
+ },
+ {
+  "id": 562,
+  "word": "be made of",
+  "pos": "熟",
+  "ipa": "bi meɪd ʌv",
+  "kana": "ビ メイド オヴ",
+  "mean": "〜でできている",
+  "cat": "熟語・連語"
+ },
+ {
+  "id": 563,
+  "word": "be proud of",
+  "pos": "熟",
+  "ipa": "bi praʊd ʌv",
+  "kana": "ビ プラウド オヴ",
+  "mean": "〜を誇りに思う",
+  "cat": "熟語・連語"
+ },
+ {
+  "id": 564,
+  "word": "be surprised at",
+  "pos": "熟",
+  "ipa": "bi sərˈpraɪzd æt",
+  "kana": "ビ サプライズド アット",
+  "mean": "〜に驚く",
+  "cat": "熟語・連語"
+ },
+ {
+  "id": 565,
+  "word": "a lot of",
+  "pos": "熟",
+  "ipa": "ə lɑːt ʌv",
+  "kana": "ア ロット オヴ",
+  "mean": "たくさんの",
+  "cat": "熟語・連語"
+ },
+ {
+  "id": 566,
+  "word": "after all",
+  "pos": "熟",
+  "ipa": "ˈæftər ɔːl",
+  "kana": "アフター オール",
+  "mean": "結局",
+  "cat": "熟語・連語"
+ },
+ {
+  "id": 567,
+  "word": "as soon as",
+  "pos": "熟",
+  "ipa": "æz suːn æz",
+  "kana": "アズ スーン アズ",
+  "mean": "〜するとすぐに",
+  "cat": "熟語・連語"
+ },
+ {
+  "id": 568,
+  "word": "as well as",
+  "pos": "熟",
+  "ipa": "æz wel æz",
+  "kana": "アズ ウェル アズ",
+  "mean": "〜と同様に",
+  "cat": "熟語・連語"
+ },
+ {
+  "id": 569,
+  "word": "at first",
+  "pos": "熟",
+  "ipa": "æt fɜːrst",
+  "kana": "アット ファースト",
+  "mean": "最初は",
+  "cat": "熟語・連語"
+ },
+ {
+  "id": 570,
+  "word": "at last",
+  "pos": "熟",
+  "ipa": "æt læst",
+  "kana": "アット ラスト",
+  "mean": "ついに",
+  "cat": "熟語・連語"
+ },
+ {
+  "id": 571,
+  "word": "at least",
+  "pos": "熟",
+  "ipa": "æt liːst",
+  "kana": "アット リースト",
+  "mean": "少なくとも",
+  "cat": "熟語・連語"
+ },
+ {
+  "id": 572,
+  "word": "at the same time",
+  "pos": "熟",
+  "ipa": "æt ðə seɪm taɪm",
+  "kana": "アット ザ セイム タイム",
+  "mean": "同時に",
+  "cat": "熟語・連語"
+ },
+ {
+  "id": 573,
+  "word": "because of",
+  "pos": "熟",
+  "ipa": "bɪˈkɔːz ʌv",
+  "kana": "ビコーズ オヴ",
+  "mean": "〜のために",
+  "cat": "熟語・連語"
+ },
+ {
+  "id": 574,
+  "word": "come true",
+  "pos": "熟",
+  "ipa": "kʌm truː",
+  "kana": "カム トゥルー",
+  "mean": "実現する",
+  "cat": "熟語・連語"
+ },
+ {
+  "id": 575,
+  "word": "each other",
+  "pos": "熟",
+  "ipa": "iːtʃ ˈʌðər",
+  "kana": "イーチ アザー",
+  "mean": "お互い",
+  "cat": "熟語・連語"
+ },
+ {
+  "id": 576,
+  "word": "for example",
+  "pos": "熟",
+  "ipa": "fɔːr ɪɡˈzæmpl",
+  "kana": "フォー イグザンプル",
+  "mean": "たとえば",
+  "cat": "熟語・連語"
+ },
+ {
+  "id": 577,
+  "word": "for the first time",
+  "pos": "熟",
+  "ipa": "fɔːr ðə fɜːrst taɪm",
+  "kana": "フォー ザ ファースト タイム",
+  "mean": "初めて",
+  "cat": "熟語・連語"
+ },
+ {
+  "id": 578,
+  "word": "get up",
+  "pos": "熟",
+  "ipa": "ɡet ʌp",
+  "kana": "ゲット アップ",
+  "mean": "起きる",
+  "cat": "熟語・連語"
+ },
+ {
+  "id": 579,
+  "word": "give up",
+  "pos": "熟",
+  "ipa": "ɡɪv ʌp",
+  "kana": "ギヴ アップ",
+  "mean": "あきらめる",
+  "cat": "熟語・連語"
+ },
+ {
+  "id": 580,
+  "word": "grow up",
+  "pos": "熟",
+  "ipa": "ɡroʊ ʌp",
+  "kana": "グロウ アップ",
+  "mean": "成長する",
+  "cat": "熟語・連語"
+ },
+ {
+  "id": 581,
+  "word": "in fact",
+  "pos": "熟",
+  "ipa": "ɪn fækt",
+  "kana": "イン ファクト",
+  "mean": "実際は",
+  "cat": "熟語・連語"
+ },
+ {
+  "id": 582,
+  "word": "in front of",
+  "pos": "熟",
+  "ipa": "ɪn frʌnt ʌv",
+  "kana": "イン フロント オヴ",
+  "mean": "〜の前に",
+  "cat": "熟語・連語"
+ },
+ {
+  "id": 583,
+  "word": "in order to",
+  "pos": "熟",
+  "ipa": "ɪn ˈɔːrdər tuː",
+  "kana": "イン オーダー トゥ",
+  "mean": "〜するために",
+  "cat": "熟語・連語"
+ },
+ {
+  "id": 584,
+  "word": "instead of",
+  "pos": "熟",
+  "ipa": "ɪnˈsted ʌv",
+  "kana": "インステッド オヴ",
+  "mean": "〜の代わりに",
+  "cat": "熟語・連語"
+ },
+ {
+  "id": 585,
+  "word": "look after",
+  "pos": "熟",
+  "ipa": "lʊk ˈæftər",
+  "kana": "ルック アフター",
+  "mean": "世話をする",
+  "cat": "熟語・連語"
+ },
+ {
+  "id": 586,
+  "word": "look for",
+  "pos": "熟",
+  "ipa": "lʊk fɔːr",
+  "kana": "ルック フォー",
+  "mean": "〜を探す",
+  "cat": "熟語・連語"
+ },
+ {
+  "id": 587,
+  "word": "look forward to",
+  "pos": "熟",
+  "ipa": "lʊk ˈfɔːrwərd tuː",
+  "kana": "ルック フォワード トゥ",
+  "mean": "〜を楽しみに待つ",
+  "cat": "熟語・連語"
+ },
+ {
+  "id": 588,
+  "word": "make friends with",
+  "pos": "熟",
+  "ipa": "meɪk frendz wɪð",
+  "kana": "メイク フレンズ ウィズ",
+  "mean": "〜と友達になる",
+  "cat": "熟語・連語"
+ },
+ {
+  "id": 589,
+  "word": "more and more",
+  "pos": "熟",
+  "ipa": "mɔːr ənd mɔːr",
+  "kana": "モア アンド モア",
+  "mean": "ますます多くの",
+  "cat": "熟語・連語"
+ },
+ {
+  "id": 590,
+  "word": "no longer",
+  "pos": "熟",
+  "ipa": "noʊ ˈlɔːŋɡər",
+  "kana": "ノウ ロンガー",
+  "mean": "もはや〜ない",
+  "cat": "熟語・連語"
+ },
+ {
+  "id": 591,
+  "word": "not only ~ but also",
+  "pos": "熟",
+  "ipa": "nɑːt ˈoʊnli bʌt ˈɔːlsoʊ",
+  "kana": "ノット オンリー バット オールソウ",
+  "mean": "〜だけでなく…も",
+  "cat": "熟語・連語"
+ },
+ {
+  "id": 592,
+  "word": "one another",
+  "pos": "熟",
+  "ipa": "wʌn əˈnʌðər",
+  "kana": "ワン アナザー",
+  "mean": "お互い",
+  "cat": "熟語・連語"
+ },
+ {
+  "id": 593,
+  "word": "out of",
+  "pos": "熟",
+  "ipa": "aʊt ʌv",
+  "kana": "アウト オヴ",
+  "mean": "〜の外へ",
+  "cat": "熟語・連語"
+ },
+ {
+  "id": 594,
+  "word": "pick up",
+  "pos": "熟",
+  "ipa": "pɪk ʌp",
+  "kana": "ピック アップ",
+  "mean": "拾い上げる",
+  "cat": "熟語・連語"
+ },
+ {
+  "id": 595,
+  "word": "put on",
+  "pos": "熟",
+  "ipa": "pʊt ɑːn",
+  "kana": "プット オン",
+  "mean": "身につける",
+  "cat": "熟語・連語"
+ },
+ {
+  "id": 596,
+  "word": "run out of",
+  "pos": "熟",
+  "ipa": "rʌn aʊt ʌv",
+  "kana": "ラン アウト オヴ",
+  "mean": "〜を使い果たす",
+  "cat": "熟語・連語"
+ },
+ {
+  "id": 597,
+  "word": "take care of",
+  "pos": "熟",
+  "ipa": "teɪk ker ʌv",
+  "kana": "テイク ケア オヴ",
+  "mean": "〜の世話をする",
+  "cat": "熟語・連語"
+ },
+ {
+  "id": 598,
+  "word": "take part in",
+  "pos": "熟",
+  "ipa": "teɪk pɑːrt ɪn",
+  "kana": "テイク パート イン",
+  "mean": "〜に参加する",
+  "cat": "熟語・連語"
+ },
+ {
+  "id": 599,
+  "word": "thanks to",
+  "pos": "熟",
+  "ipa": "θæŋks tuː",
+  "kana": "サンクス トゥ",
+  "mean": "〜のおかげで",
+  "cat": "熟語・連語"
+ },
+ {
+  "id": 600,
+  "word": "these days",
+  "pos": "熟",
+  "ipa": "ðiːz deɪz",
+  "kana": "ジーズ デイズ",
+  "mean": "最近",
+  "cat": "熟語・連語"
+ },
+ {
+  "id": 601,
+  "word": "think of",
+  "pos": "熟",
+  "ipa": "θɪŋk ʌv",
+  "kana": "シンク オヴ",
+  "mean": "〜のことを考える",
+  "cat": "熟語・連語"
+ },
+ {
+  "id": 602,
+  "word": "throw away",
+  "pos": "熟",
+  "ipa": "θroʊ əˈweɪ",
+  "kana": "スロウ アウェイ",
+  "mean": "捨てる",
+  "cat": "熟語・連語"
+ },
+ {
+  "id": 603,
+  "word": "turn off",
+  "pos": "熟",
+  "ipa": "tɜːrn ɔːf",
+  "kana": "ターン オフ",
+  "mean": "（電源を）切る",
+  "cat": "熟語・連語"
+ },
+ {
+  "id": 604,
+  "word": "turn on",
+  "pos": "熟",
+  "ipa": "tɜːrn ɑːn",
+  "kana": "ターン オン",
+  "mean": "（電源を）入れる",
+  "cat": "熟語・連語"
+ },
+ {
+  "id": 605,
+  "word": "would like to",
+  "pos": "熟",
+  "ipa": "wʊd laɪk tuː",
+  "kana": "ウッド ライク トゥ",
+  "mean": "〜したい",
+  "cat": "熟語・連語"
+ }
+]

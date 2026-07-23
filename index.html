@@ -1,94 +1,1081 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
-  <meta name="theme-color" content="#0c0c14" />
-  <meta name="apple-mobile-web-app-capable" content="yes" />
-  <meta name="description" content="必殺技と5ステージで進める英単語クイズ" />
-  <title>English Quest</title>
-  <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="game-features.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>Word Quest</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=M+PLUS+Rounded+1c:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after {
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+            user-select: none;
+            -webkit-user-drag: none;
+        }
+        ::selection { background: transparent; color: inherit; }
+        input, textarea, button, a {
+            -webkit-user-select: none;
+            user-select: none;
+            -webkit-touch-callout: none;
+            -webkit-tap-highlight-color: transparent;
+        }
+        html, body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            overscroll-behavior: none;
+            background: #0f172a;
+            font-family: 'M PLUS Rounded 1c', sans-serif;
+            color: #f8fafc;
+            touch-action: none;
+        }
+        #app {
+            position: fixed;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            height: 100dvh;
+            height: -webkit-fill-available;
+            display: flex;
+            flex-direction: column;
+            padding:
+                max(6px, env(safe-area-inset-top))
+                max(8px, env(safe-area-inset-right))
+                max(8px, env(safe-area-inset-bottom))
+                max(8px, env(safe-area-inset-left));
+            gap: 6px;
+            max-width: 480px;
+            margin: 0 auto;
+        }
+        .pixel-font { font-family: 'Press Start 2P', monospace; }
+        .hp-bar-transition { transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
+        @keyframes monsterHurt {
+            0% { transform: translateX(0); filter: brightness(1); }
+            20% { transform: translateX(8px) rotate(3deg); filter: brightness(3) sepia(1) hue-rotate(-50deg); }
+            40% { transform: translateX(-8px) rotate(-3deg); }
+            100% { transform: translateX(0); filter: brightness(1); }
+        }
+        .animate-hurt { animation: monsterHurt 0.4s ease-in-out; }
+        @keyframes heroAttack {
+            0% { transform: translateX(0); }
+            30% { transform: translateX(28px) scale(1.08); }
+            100% { transform: translateX(0); }
+        }
+        .animate-hero-attack { animation: heroAttack 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
+        @keyframes floatEffect {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-5px); }
+        }
+        .animate-float { animation: floatEffect 2.5s ease-in-out infinite; }
+        @keyframes comboPulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+        }
+        .animate-combo { animation: comboPulse 0.3s ease-out; }
+        .damage-pop {
+            position: absolute;
+            font-weight: 900;
+            font-size: 1.5rem;
+            color: #facc15;
+            text-shadow: 2px 2px 0 #000, -2px -2px 0 #000;
+            pointer-events: none;
+            animation: popUp 0.8s ease-out forwards;
+        }
+        @keyframes popUp {
+            0% { opacity: 1; transform: translateY(0) scale(0.8); }
+            50% { opacity: 1; transform: translateY(-28px) scale(1.2); }
+            100% { opacity: 0; transform: translateY(-48px) scale(1); }
+        }
+        .tap-btn {
+            touch-action: manipulation;
+            transition: transform 0.08s ease, opacity 0.08s ease;
+            min-height: 48px;
+        }
+        .tap-btn:active {
+            transform: scale(0.96);
+            opacity: 0.88;
+        }
+        #options-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+            gap: 8px;
+            flex: 1;
+            min-height: 0;
+            overflow: hidden;
+        }
+        #options-container .opt-btn {
+            min-height: 0;
+            height: 100%;
+            touch-action: manipulation;
+            transition: transform 0.08s ease, opacity 0.08s ease, filter 0.08s ease;
+            align-items: center;
+            -webkit-user-select: none;
+            user-select: none;
+            -webkit-touch-callout: none;
+            -webkit-tap-highlight-color: transparent;
+        }
+        #options-container .opt-btn:active,
+        #options-container .opt-btn.is-pressed {
+            transform: scale(0.94);
+            opacity: 0.85;
+            filter: brightness(1.15);
+        }
+        #options-container .opt-btn .opt-label {
+            width: 22px;
+            height: 22px;
+            flex-shrink: 0;
+            border-radius: 6px;
+            background: #1e293b;
+            border: 1px solid #475569;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 11px;
+            font-weight: 900;
+            color: #a5b4fc;
+        }
+        #options-container .opt-btn .opt-text {
+            flex: 1;
+            min-width: 0;
+            font-size: 12px;
+            line-height: 1.25;
+            font-weight: 700;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            word-break: break-word;
+        }
+        #start-overlay {
+            position: fixed;
+            inset: 0;
+            z-index: 100;
+            background: radial-gradient(ellipse at center, #1e1b4b 0%, #0f172a 70%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: max(24px, env(safe-area-inset-top)) 24px max(24px, env(safe-area-inset-bottom));
+            text-align: center;
+        }
+        #start-overlay.hidden { display: none; }
+        .start-pulse {
+            animation: comboPulse 1.4s ease-in-out infinite;
+        }
+    </style>
 </head>
 <body>
-  <div class="stars" aria-hidden="true"></div>
-  <div class="stars2" aria-hidden="true"></div>
+<div id="app">
 
-  <div class="app" id="app">
-    <!-- 1行HUD：情報を圧縮 -->
-    <header class="hud">
-      <div class="hud-lv">
-        <span class="hud-lv-num" id="level-number">1</span>
-        <span class="hud-lv-label">LV</span>
-      </div>
-      <div class="hud-mid">
-        <div class="hud-row">
-          <span class="hud-chip" title="連続正解"><span aria-hidden="true">🔥</span><span id="streak">0</span></span>
-          <span class="hud-chip" title="スコア"><span aria-hidden="true">⭐</span><span id="total-score">0</span></span>
-          <span class="hud-chip timer-chip" title="残り時間"><span aria-hidden="true">⏱</span><strong id="timer">15</strong></span>
-          <span class="hud-counter" id="question-counter">1/10</span>
+    <!-- コンパクトヘッダー（1行） -->
+    <header class="shrink-0 bg-slate-800/95 border border-indigo-500/40 rounded-xl px-2.5 py-1.5">
+        <div class="flex items-center gap-2">
+            <div class="w-8 h-8 shrink-0 bg-indigo-600 border border-indigo-400 rounded-lg flex items-center justify-center">
+                <span class="text-sm">⚔️</span>
+            </div>
+            <div class="flex-1 min-w-0">
+                <div class="flex items-center justify-between gap-2">
+                    <h1 class="text-sm font-black text-amber-300 truncate">WORD QUEST</h1>
+                    <span id="progress-text" class="text-[10px] font-bold text-slate-300 shrink-0">1/20</span>
+                </div>
+                <p class="text-[10px] text-indigo-300 font-semibold truncate leading-tight" id="stage-title">ステージ 1 : はじまりの森</p>
+                <div class="w-full h-1.5 mt-0.5 bg-slate-900 rounded-full overflow-hidden border border-slate-700">
+                    <div id="map-progress-bar" class="h-full bg-gradient-to-r from-indigo-500 to-pink-500 rounded-full transition-all duration-500" style="width: 5%;"></div>
+                </div>
+            </div>
+            <button id="sound-btn" type="button" onclick="toggleSound()" class="tap-btn w-10 h-10 shrink-0 bg-slate-700 border border-slate-500 rounded-xl text-base flex items-center justify-center">
+                <span id="sound-icon">🔊</span>
+            </button>
         </div>
-        <div class="hud-bars">
-          <div class="bar xp-bar" aria-hidden="true"><div class="bar-fill xp-fill" id="exp-fill"></div></div>
-          <div class="bar mp-bar" aria-hidden="true"><div class="bar-fill mp-fill" id="mp-fill"></div></div>
-        </div>
-        <div class="hud-bar-labels">
-          <span id="exp-text">0/100 XP</span>
-          <span id="mp-text">0/100 MP</span>
-        </div>
-      </div>
     </header>
 
-    <!-- ステージ：タイトル＋マップを1行に -->
-    <section class="stage-bar">
-      <div class="stage-now">
-        <span id="stage-icon">🌲</span>
-        <span class="stage-now-text"><span id="stage-number">1</span>. <span id="stage-name">単語の森</span></span>
-      </div>
-      <div class="stage-map" id="stage-map"></div>
-    </section>
+    <!-- バトル（高さ制限・約32%） -->
+    <main class="shrink-0 relative overflow-hidden rounded-xl border border-slate-700 bg-slate-900" style="height: min(32vh, 220px);">
+        <div class="absolute inset-0 z-0">
+            <svg id="battle-bg-svg" class="w-full h-full" preserveAspectRatio="none" viewBox="0 0 800 400">
+                <defs>
+                    <linearGradient id="skyGrad1" x1="0%" y1="0%" x2="0%" y2="100%">
+                        <stop offset="0%" stop-color="#1e1b4b" />
+                        <stop offset="100%" stop-color="#312e81" />
+                    </linearGradient>
+                    <linearGradient id="groundGrad1" x1="0%" y1="0%" x2="0%" y2="100%">
+                        <stop offset="0%" stop-color="#064e3b" />
+                        <stop offset="100%" stop-color="#022c22" />
+                    </linearGradient>
+                </defs>
+                <rect width="800" height="280" fill="url(#skyGrad1)" />
+                <polygon points="0,280 150,160 300,280" fill="#2e1065" opacity="0.6" />
+                <polygon points="200,280 400,120 600,280" fill="#3b0764" opacity="0.5" />
+                <polygon points="500,280 680,180 800,280" fill="#2e1065" opacity="0.6" />
+                <circle cx="700" cy="80" r="40" fill="#fef08a" opacity="0.8" />
+                <rect y="280" width="800" height="120" fill="url(#groundGrad1)" />
+                <line x1="0" y1="282" x2="800" y2="282" stroke="#10b981" stroke-width="4" />
+            </svg>
+        </div>
+        <div id="damage-container" class="absolute inset-0 pointer-events-none z-30"></div>
 
-    <main class="play" id="play">
-      <div class="question-card" id="question-card">
-        <div class="progress-bar" aria-hidden="true"><div class="progress-fill" id="progress-fill"></div></div>
-        <div id="question" class="question" aria-live="polite"></div>
-      </div>
+        <div class="relative z-10 h-full flex justify-between items-end px-3 pb-2 pt-1">
+            <!-- 勇者 -->
+            <div class="flex flex-col items-center w-[30%]">
+                <div class="bg-slate-800/90 border border-slate-600 rounded-md px-1.5 py-0.5 mb-1 w-full text-center">
+                    <div class="text-[10px] font-bold text-amber-300 flex justify-between gap-1">
+                        <span>勇者</span>
+                        <span id="player-hp-text">100/100</span>
+                    </div>
+                    <div class="w-full bg-slate-900 rounded-full h-1.5 border border-slate-700 overflow-hidden mt-0.5">
+                        <div id="player-hp-bar" class="bg-emerald-500 h-full rounded-full hp-bar-transition" style="width: 100%;"></div>
+                    </div>
+                </div>
+                <div id="hero-svg-container" class="w-14 h-16 animate-float">
+                    <svg viewBox="0 0 100 120" class="w-full h-full drop-shadow-lg">
+                        <path d="M 30,50 L 15,100 L 45,95 Z" fill="#dc2626" />
+                        <rect x="35" y="45" width="30" height="40" rx="6" fill="#3b82f6" />
+                        <path d="M 40,50 L 60,50 L 55,70 L 45,70 Z" fill="#94a3b8" />
+                        <circle cx="50" cy="30" r="18" fill="#cbd5e1" />
+                        <path d="M 32,25 Q 50,10 68,25 L 68,32 Q 50,22 32,32 Z" fill="#e2e8f0" />
+                        <path d="M 50,12 C 45,0 55,0 50,12" stroke="#ef4444" stroke-width="4" fill="none" />
+                        <circle cx="56" cy="30" r="3" fill="#0f172a" />
+                        <g transform="rotate(-20 65 55)">
+                            <rect x="65" y="20" width="6" height="45" rx="2" fill="#e2e8f0" stroke="#64748b" stroke-width="1" />
+                            <rect x="58" y="60" width="20" height="5" rx="1" fill="#f59e0b" />
+                            <rect x="66" y="65" width="4" height="12" fill="#78350f" />
+                        </g>
+                        <path d="M 25,50 C 25,50 20,75 35,85 C 50,75 45,50 45,50 Z" fill="#f59e0b" stroke="#b45309" stroke-width="2" />
+                        <polygon points="35,58 38,66 45,66 39,70 41,78 35,73 29,78 31,70 25,66 32,66" fill="#fff" />
+                    </svg>
+                </div>
+            </div>
 
-      <div id="choices" class="choices"></div>
+            <!-- 中央バッジ -->
+            <div class="flex flex-col items-center justify-end pb-3 w-[28%]">
+                <div id="combo-display" class="hidden text-center mb-1">
+                    <div id="combo-count" class="pixel-font text-sm text-yellow-300 animate-combo">0</div>
+                </div>
+                <div id="review-badge" class="hidden text-[10px] font-black text-amber-300 bg-amber-900/90 px-2 py-0.5 rounded-full border border-amber-500">
+                    📚<span id="review-remaining">0</span>
+                </div>
+                <div class="text-[9px] font-bold text-slate-400 bg-slate-800/80 px-1.5 py-0.5 rounded-full border border-slate-700 mt-1">
+                    10問撃破
+                </div>
+            </div>
 
-      <div id="skill-message" class="skill-message" aria-live="polite"></div>
-      <div id="result" class="result" aria-live="polite"></div>
-
-      <div class="actions">
-        <button id="next-btn" class="action-btn next-btn tap" type="button" hidden>次へ →</button>
-        <button id="restart-btn" class="action-btn restart-btn tap" type="button" hidden>再挑戦</button>
-      </div>
+            <!-- 敵 -->
+            <div class="flex flex-col items-center w-[30%]">
+                <div class="bg-slate-800/90 border border-slate-600 rounded-md px-1.5 py-0.5 mb-1 w-full text-center">
+                    <div class="text-[10px] font-bold text-red-400 flex justify-between gap-1">
+                        <span id="monster-name" class="truncate max-w-[70%]">スライム</span>
+                        <span id="monster-hp-text">10/10</span>
+                    </div>
+                    <div class="w-full bg-slate-900 rounded-full h-1.5 border border-slate-700 overflow-hidden mt-0.5">
+                        <div id="monster-hp-bar" class="bg-red-500 h-full rounded-full hp-bar-transition" style="width: 100%;"></div>
+                    </div>
+                </div>
+                <div id="monster-svg-container" class="w-16 h-16 relative flex items-center justify-center"></div>
+            </div>
+        </div>
     </main>
 
-    <!-- 必殺技は画面下ドック（親指ゾーン） -->
-    <footer class="skills-dock">
-      <button class="skill-btn tap" id="hint-btn" type="button">💡<strong>HINT</strong><small>20</small></button>
-      <button class="skill-btn tap" id="half-btn" type="button">✂<strong>HALF</strong><small>30</small></button>
-      <button class="skill-btn tap" id="time-btn" type="button">⏱<strong>TIME</strong><small>30</small></button>
-      <button class="skill-btn tap" id="double-btn" type="button">⚡<strong>×2</strong><small>40</small></button>
-    </footer>
-  </div>
+    <!-- クイズ（残りの縦スペースを全部使う） -->
+    <section class="flex-1 min-h-0 flex flex-col bg-slate-800 border border-indigo-500/30 rounded-xl p-2.5 overflow-hidden">
+        <div class="flex justify-between items-center mb-1.5 shrink-0 gap-2">
+            <span id="word-level-badge" class="px-2 py-0.5 rounded-full text-[10px] font-extrabold bg-indigo-900 text-indigo-200 border border-indigo-700 truncate">
+                Lv.1 高校基礎単語
+            </span>
+            <button type="button" onclick="speakCurrentWord()" class="tap-btn px-2.5 py-1 bg-slate-700 border border-slate-500 rounded-lg text-[11px] font-bold shrink-0">
+                🔊 発音
+            </button>
+            <div class="text-[10px] font-bold text-slate-400 shrink-0">
+                討伐 <span id="kill-count" class="text-yellow-400 font-extrabold">0</span>/20
+            </div>
+        </div>
 
-  <div id="achievement" class="toast" hidden>
-    <span aria-hidden="true">🏆</span>
-    <div>
-      <div class="toast-title" id="achievement-title">アチーブメント</div>
-      <div class="toast-desc" id="achievement-desc"></div>
-    </div>
-  </div>
-  <div id="levelup" class="toast toast-level" hidden>
-    <span aria-hidden="true">🚀</span>
-    <div>
-      <div class="toast-title">LEVEL UP!</div>
-      <div class="toast-desc" id="levelup-level">Level 2</div>
-    </div>
-  </div>
+        <div class="bg-slate-900 border border-slate-700 rounded-lg px-2 py-2 text-center mb-2 shrink-0">
+            <span class="text-[10px] text-indigo-400 font-bold block">意味を選択</span>
+            <h2 id="question-word" class="text-2xl font-black text-amber-300 tracking-wide leading-tight">achieve</h2>
+            <p id="phonetic-text" class="text-[10px] text-slate-400 font-mono">[əčíːv]</p>
+        </div>
 
-  <script src="script.js"></script>
+        <div id="options-container"></div>
+
+        <div id="battle-log" class="mt-1.5 shrink-0 text-center text-[10px] font-bold text-slate-400 h-4 overflow-hidden">
+            正解して敵を攻撃！
+        </div>
+    </section>
+</div>
+
+    <!-- TAP TO START（iOS Audio unlock） -->
+    <div id="start-overlay">
+        <div class="text-4xl mb-3">⚔️</div>
+        <h2 class="pixel-font text-lg text-amber-300 mb-2">WORD QUEST</h2>
+        <p class="text-sm text-slate-300 mb-8 px-4 leading-relaxed">中学3年英単語 605語でモンスターを倒せ！<br>20の試練に挑戦しよう</p>
+        <button id="start-btn" type="button" class="tap-btn start-pulse w-full max-w-xs py-4 bg-gradient-to-r from-amber-500 to-orange-600 text-slate-900 font-black rounded-2xl text-lg shadow-xl border-2 border-amber-300" disabled>
+            読み込み中...
+        </button>
+        <p id="start-status" class="text-[11px] text-slate-500 mt-4">単語データを準備しています</p>
+    </div>
+
+    <!-- エリアクリア/ゲームクリアモーダル -->
+    <div id="modal-overlay" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4 hidden" style="padding: max(16px, env(safe-area-inset-top)) max(16px, env(safe-area-inset-right)) max(16px, env(safe-area-inset-bottom)) max(16px, env(safe-area-inset-left));">
+        <div class="bg-slate-800 border-2 border-amber-500 rounded-2xl p-5 max-w-md w-full text-center shadow-2xl relative">
+            <div id="modal-icon" class="text-4xl mb-2">🎉</div>
+            <h3 id="modal-title" class="text-xl font-black text-yellow-400 mb-2">エリアクリア！</h3>
+            <p id="modal-desc" class="text-sm text-slate-300 mb-5 leading-relaxed">
+                見事に敵を倒した！次の目的地へ進もう！
+            </p>
+            <button id="modal-next-btn" type="button" class="tap-btn w-full py-3.5 bg-gradient-to-r from-amber-500 to-orange-600 text-slate-900 font-black rounded-xl text-base shadow-lg">
+                次の戦いへ進む ⚔️
+            </button>
+        </div>
+    </div>
+
+    <script>
+        // ==========================================
+        // 1. ステージ定義 + vocabulary.json（中3・605語）読込
+        // ==========================================
+        const STAGE_META = [
+            { level: 1,  name: "はじまりの森", enemy: "緑スライム", color: "#22c55e" },
+            { level: 2,  name: "迷いの洞窟", enemy: "コウモリナイト", color: "#a855f7" },
+            { level: 3,  name: "静寂の湿地", enemy: "ポイズンフロッグ", color: "#10b981" },
+            { level: 4,  name: "荒れ果てた荒野", enemy: "ロックゴーレム", color: "#f59e0b" },
+            { level: 5,  name: "灼熱の火山", enemy: "ファイヤードラゴン", color: "#ef4444" },
+            { level: 6,  name: "氷結の雪原", enemy: "アイスウルフ", color: "#38bdf8" },
+            { level: 7,  name: "雷鳴の渓谷", enemy: "サンダーバード", color: "#eab308" },
+            { level: 8,  name: "呪われた廃城", enemy: "シャドウナイト", color: "#64748b" },
+            { level: 9,  name: "幻惑の樹海", enemy: "エント（動く大木）", color: "#15803d" },
+            { level: 10, name: "深淵の海底神殿", enemy: "クラーケン", color: "#0284c7" },
+            { level: 11, name: "天空の浮遊島", enemy: "グリフィン", color: "#a855f7" },
+            { level: 12, name: "砂塵のピラミッド", enemy: "ミイラキング", color: "#d97706" },
+            { level: 13, name: "鏡の迷宮", enemy: "ドッペルゲンガー", color: "#6366f1" },
+            { level: 14, name: "毒霧の沼地", enemy: "ヒドラ", color: "#15803d" },
+            { level: 15, name: "機械都市ルイン", enemy: "ガーディアンロボ", color: "#475569" },
+            { level: 16, name: "星降る祭壇", enemy: "アストラルビースト", color: "#ec4899" },
+            { level: 17, name: "煉獄の塔 1階", enemy: "ヘルハウンド", color: "#b91c1c" },
+            { level: 18, name: "煉獄の塔 2階", enemy: "アバドン（堕天使）", color: "#854d0e" },
+            { level: 19, name: "魔王城 門前", enemy: "デスナイト（近衛兵）", color: "#991b1b" },
+            { level: 20, name: "魔王の玉座", enemy: "魔王 ヴォルデグラード", color: "#4c1d95" }
+        ];
+
+        let WORD_DATABASE = [];
+        let vocabReady = false;
+        let vocabCount = 0;
+
+        function pickDummies(correctMean, poolMeans, count) {
+            const uniq = [...new Set(poolMeans.filter(m => m && m !== correctMean))];
+            shuffleArray(uniq);
+            const out = uniq.slice(0, count);
+            const fallback = ["違う意味", "別の意味", "誤った意味", "反対の意味", "無関係"];
+            let i = 0;
+            while (out.length < count) {
+                const f = fallback[i % fallback.length];
+                if (!out.includes(f) && f !== correctMean) out.push(f);
+                i++;
+            }
+            return out;
+        }
+
+        function buildWordDatabase(rawWords) {
+            const byCat = {};
+            rawWords.forEach(w => {
+                const cat = w.cat || "その他";
+                if (!byCat[cat]) byCat[cat] = [];
+                byCat[cat].push(w.mean);
+            });
+            const allMeans = rawWords.map(w => w.mean);
+
+            const converted = rawWords.map(w => {
+                const catMeans = byCat[w.cat || "その他"] || allMeans;
+                const pool = catMeans.length >= 4 ? catMeans : allMeans;
+                return {
+                    word: w.word,
+                    mean: w.mean,
+                    phonetic: w.ipa ? ("[" + w.ipa + "]") : "",
+                    kana: w.kana || "",
+                    cat: w.cat || "",
+                    dummy: pickDummies(w.mean, pool, 3)
+                };
+            });
+
+            const stageCount = STAGE_META.length;
+            const base = Math.floor(converted.length / stageCount);
+            let rem = converted.length % stageCount;
+            let cursor = 0;
+            WORD_DATABASE = STAGE_META.map((meta, idx) => {
+                const take = base + (idx < rem ? 1 : 0);
+                const words = converted.slice(cursor, cursor + take);
+                cursor += take;
+                return Object.assign({}, meta, { words: words });
+            });
+            vocabCount = converted.length;
+            vocabReady = true;
+            return WORD_DATABASE;
+        }
+
+        async function loadVocabulary() {
+            const res = await fetch("vocabulary.json", { cache: "no-store" });
+            if (!res.ok) throw new Error("vocabulary.json load failed: " + res.status);
+            const raw = await res.json();
+            if (!Array.isArray(raw) || raw.length === 0) throw new Error("vocabulary.json is empty");
+            buildWordDatabase(raw);
+            return vocabCount;
+        }
+
+        // ==========================================
+        // 2. Web Audio API サウンド効果ジェネレータ
+        // 音源ファイルを使わずにブラウザで直接RPG効果音を合成
+        // ==========================================
+        let audioCtx = null;
+        let isSoundOn = true;
+        let gameStarted = false;
+
+        function initAudio() {
+            if (!audioCtx) {
+                audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+            }
+            return audioCtx;
+        }
+
+        // iOS: ユーザージェスチャ内で AudioContext を解放
+        function unlockAudio() {
+            const ctx = initAudio();
+            if (ctx.state === 'suspended') {
+                ctx.resume();
+            }
+            try {
+                const buffer = ctx.createBuffer(1, 1, 22050);
+                const source = ctx.createBufferSource();
+                source.buffer = buffer;
+                source.connect(ctx.destination);
+                source.start(0);
+            } catch (e) { /* ignore */ }
+        }
+
+        function playSound(type) {
+            if (!isSoundOn) return;
+            unlockAudio();
+            if (!audioCtx) return;
+
+            const now = audioCtx.currentTime;
+            const osc = audioCtx.createOscillator();
+            const gain = audioCtx.createGain();
+            osc.connect(gain);
+            gain.connect(audioCtx.destination);
+
+            if (type === 'slash') {
+                // 攻撃斬撃音
+                osc.type = 'sawtooth';
+                osc.frequency.setValueAtTime(800, now);
+                osc.frequency.exponentialRampToValueAtTime(100, now + 0.15);
+                gain.gain.setValueAtTime(0.3, now);
+                gain.gain.exponentialRampToValueAtTime(0.01, now + 0.15);
+                osc.start(now);
+                osc.stop(now + 0.15);
+            } else if (type === 'hit') {
+                // 打撃ヒット音
+                osc.type = 'square';
+                osc.frequency.setValueAtTime(150, now);
+                osc.frequency.exponentialRampToValueAtTime(40, now + 0.2);
+                gain.gain.setValueAtTime(0.4, now);
+                gain.gain.exponentialRampToValueAtTime(0.01, now + 0.2);
+                osc.start(now);
+                osc.stop(now + 0.2);
+            } else if (type === 'correct') {
+                // 正解ピンポン音
+                osc.type = 'sine';
+                osc.frequency.setValueAtTime(523.25, now); // C5
+                osc.frequency.setValueAtTime(659.25, now + 0.1); // E5
+                gain.gain.setValueAtTime(0.2, now);
+                gain.gain.exponentialRampToValueAtTime(0.01, now + 0.3);
+                osc.start(now);
+                osc.stop(now + 0.3);
+            } else if (type === 'wrong') {
+                // 不正解ブザー音
+                osc.type = 'sawtooth';
+                osc.frequency.setValueAtTime(130, now);
+                osc.frequency.setValueAtTime(110, now + 0.12);
+                gain.gain.setValueAtTime(0.3, now);
+                gain.gain.exponentialRampToValueAtTime(0.01, now + 0.3);
+                osc.start(now);
+                osc.stop(now + 0.3);
+            } else if (type === 'fanfare') {
+                // 勝利ファンファーレ
+                const notes = [523.25, 659.25, 783.99, 1046.50];
+                notes.forEach((freq, idx) => {
+                    const o = audioCtx.createOscillator();
+                    const g = audioCtx.createGain();
+                    o.type = 'triangle';
+                    o.frequency.value = freq;
+                    o.connect(g);
+                    g.connect(audioCtx.destination);
+                    const startTime = now + idx * 0.1;
+                    g.gain.setValueAtTime(0.25, startTime);
+                    g.gain.exponentialRampToValueAtTime(0.001, startTime + 0.3);
+                    o.start(startTime);
+                    o.stop(startTime + 0.3);
+                });
+            }
+        }
+
+        function toggleSound() {
+            isSoundOn = !isSoundOn;
+            document.getElementById('sound-icon').innerText = isSoundOn ? '🔊' : '🔇';
+        }
+
+        // 携帯の打感（バイブ）
+        function hapticTap(ms) {
+            try {
+                if (navigator.vibrate) navigator.vibrate(ms || 15);
+            } catch (e) { /* ignore */ }
+        }
+
+        function bindTapFeedback(el, onTap) {
+            if (!el) return;
+            let armed = false;
+            const press = (e) => {
+                if (e.cancelable) e.preventDefault();
+                armed = true;
+                el.classList.add('is-pressed');
+                hapticTap(12);
+            };
+            const release = (e) => {
+                if (e.cancelable) e.preventDefault();
+                el.classList.remove('is-pressed');
+                if (!armed) return;
+                armed = false;
+                if (typeof onTap === 'function') onTap(e);
+            };
+            const cancel = () => {
+                armed = false;
+                el.classList.remove('is-pressed');
+            };
+            el.addEventListener('pointerdown', press);
+            el.addEventListener('pointerup', release);
+            el.addEventListener('pointercancel', cancel);
+            el.addEventListener('pointerleave', cancel);
+        }
+
+        // ==========================================
+        // 3. ゲーム状態管理
+        // ==========================================
+        const PLAYER_BASE_MAX_HP = 100;
+        let currentStageIndex = 0;
+        let monsterHp = 10;
+        let monsterMaxHp = 10;
+        let playerHp = PLAYER_BASE_MAX_HP;
+        let playerMaxHp = PLAYER_BASE_MAX_HP;
+        let comboCount = 0;
+        let currentWordObj = null;
+        let isAnswering = false;
+        // 間違えた問題の復習キュー（FIFOで連続出題）
+        let missedQueue = [];
+        let isReviewQuestion = false;
+        // 復習正解で得た恒久MaxHPボーナス（ゲームオーバー後も維持）
+        let reviewHpBonus = 0;
+
+        // モンスターのSVGグラフィック生成
+        function generateMonsterSVG(enemyName, color) {
+            let innerSVG = '';
+            
+            if (currentStageIndex === 19) {
+                // ラスボス 魔王
+                innerSVG = `
+                    <svg viewBox="0 0 120 120" class="w-full h-full drop-shadow-2xl animate-float">
+                        <!-- 翼 -->
+                        <path d="M 20,40 Q 0,10 10,70 L 35,50 Z" fill="#311042" />
+                        <path d="M 100,40 Q 120,10 110,70 L 85,50 Z" fill="#311042" />
+                        <!-- 体 -->
+                        <path d="M 35,45 L 85,45 L 75,100 L 45,100 Z" fill="${color}" />
+                        <!-- 肩鎧 -->
+                        <circle cx="35" cy="45" r="10" fill="#f59e0b" />
+                        <circle cx="85" cy="45" r="10" fill="#f59e0b" />
+                        <!-- 頭部 -->
+                        <path d="M 40,20 C 40,5 80,5 80,20 L 75,45 L 45,45 Z" fill="#1e1b4b" />
+                        <!-- 角 -->
+                        <path d="M 42,18 C 30,0 20,10 30,25" stroke="#ef4444" stroke-width="5" fill="none" />
+                        <path d="M 78,18 C 90,0 100,10 90,25" stroke="#ef4444" stroke-width="5" fill="none" />
+                        <!-- 目（赤く光る） -->
+                        <circle cx="50" cy="28" r="4" fill="#ef4444" />
+                        <circle cx="70" cy="28" r="4" fill="#ef4444" />
+                        <circle cx="51" cy="28" r="1.5" fill="#fff" />
+                        <circle cx="71" cy="28" r="1.5" fill="#fff" />
+                        <!-- マントオーラ -->
+                        <path d="M 40,100 Q 60,115 80,100" stroke="#a855f7" stroke-width="3" fill="none" />
+                    </svg>
+                `;
+            } else if (currentStageIndex % 3 === 0) {
+                // スライム系
+                innerSVG = `
+                    <svg viewBox="0 0 100 100" class="w-full h-full drop-shadow-xl animate-float">
+                        <path d="M 20,80 Q 10,40 50,20 Q 90,40 80,80 Q 50,95 20,80 Z" fill="${color}" opacity="0.9" />
+                        <ellipse cx="38" cy="50" rx="6" ry="9" fill="#fff" />
+                        <ellipse cx="62" cy="50" rx="6" ry="9" fill="#fff" />
+                        <circle cx="40" cy="51" r="3" fill="#000" />
+                        <circle cx="64" cy="51" r="3" fill="#000" />
+                        <path d="M 42,68 Q 50,75 58,68" stroke="#000" stroke-width="3" fill="none" stroke-linecap="round" />
+                        <!-- テカリ -->
+                        <ellipse cx="35" cy="32" rx="8" ry="4" fill="#fff" opacity="0.6" transform="rotate(-30 35 32)" />
+                    </svg>
+                `;
+            } else if (currentStageIndex % 3 === 1) {
+                // ドラゴン・野獣系
+                innerSVG = `
+                    <svg viewBox="0 0 100 100" class="w-full h-full drop-shadow-xl animate-float">
+                        <path d="M 30,90 L 70,90 L 75,50 L 25,50 Z" fill="${color}" />
+                        <path d="M 25,50 Q 15,20 50,20 Q 85,20 75,50 Z" fill="${color}" />
+                        <!-- 角 -->
+                        <polygon points="35,22 25,5 42,18" fill="#f59e0b" />
+                        <polygon points="65,22 75,5 58,18" fill="#f59e0b" />
+                        <!-- 怒り目 -->
+                        <polygon points="32,38 48,42 35,45" fill="#fef08a" />
+                        <polygon points="68,38 52,42 65,45" fill="#fef08a" />
+                        <circle cx="40" cy="41" r="2" fill="#000" />
+                        <circle cx="60" cy="41" r="2" fill="#000" />
+                        <!-- 牙 -->
+                        <polygon points="40,55 44,65 48,55" fill="#fff" />
+                        <polygon points="52,55 56,65 60,55" fill="#fff" />
+                    </svg>
+                `;
+            } else {
+                // 騎士・人型モンスター系
+                innerSVG = `
+                    <svg viewBox="0 0 100 100" class="w-full h-full drop-shadow-xl animate-float">
+                        <rect x="30" y="45" width="40" height="45" rx="5" fill="${color}" />
+                        <circle cx="50" cy="30" r="20" fill="#334155" />
+                        <!-- 兜のスリット -->
+                        <rect x="38" y="26" width="24" height="6" rx="2" fill="#ef4444" />
+                        <!-- 武器 -->
+                        <rect x="75" y="20" width="6" height="60" fill="#94a3b8" />
+                        <polygon points="78,10 70,25 86,25" fill="#cbd5e1" />
+                    </svg>
+                `;
+            }
+            return innerSVG;
+        }
+
+        // ステージ読み込み＆初期化
+        function loadStage(stageIdx) {
+            currentStageIndex = stageIdx;
+            const stageData = WORD_DATABASE[stageIdx];
+
+            // ステージUI更新
+            document.getElementById('stage-title').innerText = `ステージ ${stageIdx + 1} : ${stageData.name}`;
+            document.getElementById('progress-text').innerText = `${stageIdx + 1}/20`;
+            document.getElementById('map-progress-bar').style.width = `${((stageIdx + 1) / 20) * 100}%`;
+
+            // モンスター生成
+            monsterMaxHp = 10;
+            monsterHp = 10;
+            document.getElementById('monster-name').innerText = stageData.enemy;
+            updateMonsterHpUI();
+            
+            const monsterContainer = document.getElementById('monster-svg-container');
+            monsterContainer.innerHTML = generateMonsterSVG(stageData.enemy, stageData.color);
+
+            // 単語レベル表示
+            document.getElementById('word-level-badge').innerText = `Lv.${stageData.level} ${getStageLevelName(stageData.level)}`;
+
+            // 次の問題へ
+            nextQuestion();
+        }
+
+        function getStageLevelName(lvl) {
+            if (lvl <= 5) return "中3基礎";
+            if (lvl <= 10) return "中3標準";
+            if (lvl <= 15) return "中3応用";
+            return "中3発展";
+        }
+
+        // 音声発音（Web Speech API）
+        function speakCurrentWord() {
+            if (!currentWordObj || !('speechSynthesis' in window)) return;
+            window.speechSynthesis.cancel(); // 前の音声をキャンセル
+            const uttr = new SpeechSynthesisUtterance(currentWordObj.word);
+            uttr.lang = 'en-US';
+            uttr.rate = 0.85; // 少しゆっくりめで聞き取りやすく
+            window.speechSynthesis.speak(uttr);
+        }
+
+        // 間違いキューへ追加（同一単語は重複させない）
+        function enqueueMissedWord(wordObj) {
+            if (!wordObj) return;
+            const already = missedQueue.some(w => w.word === wordObj.word);
+            if (!already) {
+                missedQueue.push(wordObj);
+            }
+        }
+
+        // 復習正解時: キューから除去 + MaxHP+1（レベルアップ）
+        function resolveMissedWord(wordObj) {
+            const before = missedQueue.length;
+            missedQueue = missedQueue.filter(w => w.word !== wordObj.word);
+            if (missedQueue.length < before) {
+                reviewHpBonus += 1;
+                playerMaxHp = PLAYER_BASE_MAX_HP + reviewHpBonus;
+                playerHp = Math.min(playerMaxHp, playerHp + 1);
+                updatePlayerHpUI();
+                return true;
+            }
+            return false;
+        }
+
+        function updateReviewBadge() {
+            const badge = document.getElementById('review-badge');
+            const remaining = document.getElementById('review-remaining');
+            if (missedQueue.length > 0 || isReviewQuestion) {
+                badge.classList.remove('hidden');
+                remaining.innerText = String(Math.max(missedQueue.length, isReviewQuestion ? 1 : 0));
+            } else {
+                badge.classList.add('hidden');
+            }
+        }
+
+        // 次のクイズ作成（間違いキュー優先＝連続出題）
+        function nextQuestion() {
+            isAnswering = false;
+            const stageData = WORD_DATABASE[currentStageIndex];
+
+            if (missedQueue.length > 0) {
+                // 間違った問題を先頭から連続で出題（正解するまで残り続ける）
+                currentWordObj = missedQueue[0];
+                isReviewQuestion = true;
+            } else {
+                const randIndex = Math.floor(Math.random() * stageData.words.length);
+                currentWordObj = stageData.words[randIndex];
+                isReviewQuestion = false;
+            }
+
+            updateReviewBadge();
+
+            // UI反映
+            document.getElementById('question-word').innerText = currentWordObj.word;
+            const phoneticEl = document.getElementById('phonetic-text');
+            const kanaPart = currentWordObj.kana ? ` ${currentWordObj.kana}` : '';
+            phoneticEl.innerText = (currentWordObj.phonetic || '') + kanaPart;
+
+            // 単語の発音を自動再生
+            speakCurrentWord();
+
+            // 選択肢作成（正解 1 + ダミー 3）
+            const choices = [currentWordObj.mean, ...currentWordObj.dummy];
+            shuffleArray(choices);
+
+            const optionsContainer = document.getElementById('options-container');
+            optionsContainer.innerHTML = '';
+
+            choices.forEach((choiceText, index) => {
+                const btn = document.createElement('button');
+                btn.type = 'button';
+                btn.className = "opt-btn w-full px-2 py-2 bg-slate-700/90 border border-slate-600 rounded-xl text-left flex items-center gap-1.5 shadow-md";
+                const label = document.createElement('span');
+                label.className = "opt-label";
+                label.textContent = String(index + 1);
+                const textSpan = document.createElement('span');
+                textSpan.className = "opt-text";
+                textSpan.textContent = choiceText;
+                btn.appendChild(label);
+                btn.appendChild(textSpan);
+                bindTapFeedback(btn, () => handleAnswer(choiceText, btn));
+                optionsContainer.appendChild(btn);
+            });
+        }
+
+        // 回答判定処理
+        function handleAnswer(selectedText, btnElement) {
+            if (isAnswering) return;
+            isAnswering = true;
+
+            const isCorrect = (selectedText === currentWordObj.mean);
+            const battleLog = document.getElementById('battle-log');
+
+            if (isCorrect) {
+                // 正解の処理
+                playSound('correct');
+                playSound('slash');
+                hapticTap(20);
+                // ボタンのハイライト
+                btnElement.classList.remove('bg-slate-700/90');
+                btnElement.classList.add('bg-emerald-600', 'border-emerald-400', 'text-white');
+
+                // コンボ加算
+                comboCount++;
+                updateComboUI();
+
+                // 復習問題を正解 → MaxHP+1（レベルアップ）
+                const leveledUp = isReviewQuestion && resolveMissedWord(currentWordObj);
+                updateReviewBadge();
+
+                // 勇者の攻撃アニメーション
+                const heroSvg = document.getElementById('hero-svg-container');
+                heroSvg.classList.add('animate-hero-attack');
+                setTimeout(() => heroSvg.classList.remove('animate-hero-attack'), 300);
+
+                // モンスターのダメージアニメーション
+                const monsterSvg = document.getElementById('monster-svg-container');
+                monsterSvg.classList.add('animate-hurt');
+                setTimeout(() => monsterSvg.classList.remove('animate-hurt'), 400);
+
+                // ダメージ数値ポップアップ
+                showDamagePop(1);
+
+                // モンスターHP減少 (10問で10HP減削 = 1正解で1ダメージ)
+                monsterHp = Math.max(0, monsterHp - 1);
+                updateMonsterHpUI();
+
+                if (leveledUp) {
+                    battleLog.innerHTML = `<span class="text-amber-300">復習正解！ レベルアップ！ MaxHP+1（現在 ${playerMaxHp}）／敵に1ダメージ！</span>`;
+                } else {
+                    battleLog.innerHTML = `<span class="text-emerald-400">正解！ 勇者の攻撃！ 敵に1ダメージ！</span>`;
+                }
+
+                // 敵撃破チェック
+                if (monsterHp <= 0) {
+                    setTimeout(() => {
+                        onMonsterKilled();
+                    }, 500);
+                    return;
+                }
+            } else {
+                // 不正解の処理
+                playSound('wrong');
+                playSound('hit');
+                hapticTap([30, 40, 30]);
+                btnElement.classList.remove('bg-slate-700/90');
+                btnElement.classList.add('bg-rose-600', 'border-rose-400', 'text-white');
+
+                // 間違えた問題をキューへ（以降連続出題）
+                enqueueMissedWord(currentWordObj);
+                updateReviewBadge();
+
+                // コンボリセット
+                comboCount = 0;
+                updateComboUI();
+
+                // プレイヤーダメージ (固定10ダメージ)
+                playerHp = Math.max(0, playerHp - 10);
+                updatePlayerHpUI();
+
+                const meanSafe = currentWordObj.mean;
+                battleLog.innerHTML = '';
+                const wrongMsg = document.createElement('span');
+                wrongMsg.className = 'text-rose-400';
+                wrongMsg.textContent = `不正解... 正解は「${meanSafe}」。復習キューに追加！敵の反撃を受けた！`;
+                battleLog.appendChild(wrongMsg);
+
+                if (playerHp <= 0) {
+                    setTimeout(() => {
+                        onGameOver();
+                    }, 600);
+                    return;
+                }
+            }
+
+            // 次の問題へ（少しウェイトを置く）
+            setTimeout(() => {
+                nextQuestion();
+            }, 1200);
+        }
+
+        // ダメージ表示ポップ演出
+        function showDamagePop(damage) {
+            const container = document.getElementById('damage-container');
+            const pop = document.createElement('div');
+            pop.className = 'damage-pop';
+            pop.innerText = `-${damage}`;
+            
+            // 敵の位置付近に出現
+            pop.style.right = '20%';
+            pop.style.top = '35%';
+
+            container.appendChild(pop);
+            setTimeout(() => pop.remove(), 800);
+        }
+
+        // UI更新関数
+        function updateMonsterHpUI() {
+            const percentage = (monsterHp / monsterMaxHp) * 100;
+            document.getElementById('monster-hp-bar').style.width = `${percentage}%`;
+            document.getElementById('monster-hp-text').innerText = `${monsterHp}/${monsterMaxHp}`;
+        }
+
+        function updatePlayerHpUI() {
+            const percentage = (playerHp / playerMaxHp) * 100;
+            document.getElementById('player-hp-bar').style.width = `${percentage}%`;
+            document.getElementById('player-hp-text').innerText = `${playerHp}/${playerMaxHp}`;
+        }
+
+        function updateComboUI() {
+            const comboDisplay = document.getElementById('combo-display');
+            const comboCountEl = document.getElementById('combo-count');
+
+            if (comboCount >= 2) {
+                comboDisplay.classList.remove('hidden');
+                comboCountEl.innerText = `${comboCount}`;
+            } else {
+                comboDisplay.classList.add('hidden');
+            }
+        }
+
+        // 敵撃破時イベント
+        function onMonsterKilled() {
+            playSound('fanfare');
+            document.getElementById('kill-count').innerText = currentStageIndex + 1;
+
+            const modal = document.getElementById('modal-overlay');
+            const modalTitle = document.getElementById('modal-title');
+            const modalDesc = document.getElementById('modal-desc');
+            const modalIcon = document.getElementById('modal-icon');
+            const nextBtn = document.getElementById('modal-next-btn');
+
+            if (currentStageIndex >= 19) {
+                // 全クリア（魔王討伐）
+                modalIcon.innerText = "👑";
+                modalTitle.innerText = "完全制覇！魔王討伐達成！";
+                modalDesc.innerText = `おめでとう！全20ステージの英単語の試練を乗り越え、世界に平和が戻った！復習で鍛えた MaxHP は ${playerMaxHp} だった！`;
+                nextBtn.innerText = "最初からもう一度挑戦する 🔄";
+                nextBtn.onclick = () => {
+                    modal.classList.add('hidden');
+                    resetPlayerGrowth();
+                    loadStage(0);
+                };
+            } else {
+                // エリアクリア
+                modalIcon.innerText = "⚔️";
+                modalTitle.innerText = `ステージ ${currentStageIndex + 1} 突破！`;
+                const bonusNote = reviewHpBonus > 0 ? `（復習ボーナスで MaxHP ${playerMaxHp}）` : '';
+                modalDesc.innerText = `見事に【${WORD_DATABASE[currentStageIndex].enemy}】を倒した！体力が少し回復し、次の目的地へ進みます。${bonusNote}`;
+                
+                // HP少し回復
+                playerHp = Math.min(playerMaxHp, playerHp + 20);
+                updatePlayerHpUI();
+
+                nextBtn.innerText = "次のエリアへ移動 🏃‍♂️";
+                nextBtn.onclick = () => {
+                    modal.classList.add('hidden');
+                    loadStage(currentStageIndex + 1);
+                };
+            }
+
+            modal.classList.remove('hidden');
+        }
+
+        // 成長リセット（完全制覇後の最初から）
+        function resetPlayerGrowth() {
+            reviewHpBonus = 0;
+            playerMaxHp = PLAYER_BASE_MAX_HP;
+            playerHp = PLAYER_BASE_MAX_HP;
+            missedQueue = [];
+            isReviewQuestion = false;
+            comboCount = 0;
+            updatePlayerHpUI();
+            updateComboUI();
+            updateReviewBadge();
+        }
+
+        // ゲームオーバー処理（復習で得たMaxHPボーナスは維持して再開）
+        function onGameOver() {
+            const modal = document.getElementById('modal-overlay');
+            document.getElementById('modal-icon').innerText = "💀";
+            document.getElementById('modal-title').innerText = "力尽きてしまった...";
+            const bonusLine = reviewHpBonus > 0
+                ? `でも復習正解のおかげで MaxHP が ${playerMaxHp}（+${reviewHpBonus}）まで成長している！その体力で再挑戦できる。`
+                : '間違えた問題を正解すると MaxHP が増えた状態で再挑戦できるぞ！';
+            document.getElementById('modal-desc').innerText =
+                `【${WORD_DATABASE[currentStageIndex].enemy}】の攻撃により倒れた。${bonusLine}`;
+            
+            const nextBtn = document.getElementById('modal-next-btn');
+            nextBtn.innerText = `MaxHP ${playerMaxHp} で再挑戦 🔄`;
+            nextBtn.onclick = () => {
+                modal.classList.add('hidden');
+                // 復習で増えた MaxHP を満タンにして再開（ボーナスは消えない）
+                playerMaxHp = PLAYER_BASE_MAX_HP + reviewHpBonus;
+                playerHp = playerMaxHp;
+                // 未消化の間違いキューは残して連続復習を継続
+                updatePlayerHpUI();
+                updateReviewBadge();
+                loadStage(currentStageIndex);
+            };
+
+            modal.classList.remove('hidden');
+        }
+
+        // 配列シャッフル用ヘルパー
+        function shuffleArray(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+            }
+        }
+
+        // iOS タッチ鉄則（ズーム・選択・長押しメニュー防止）
+        let lastTap = 0;
+        document.addEventListener('touchstart', (e) => {
+            const now = Date.now();
+            if (now - lastTap < 300) e.preventDefault();
+            lastTap = now;
+        }, { passive: false });
+        document.addEventListener('touchend', (e) => {
+            const now = Date.now();
+            if (now - lastTap < 300 && now !== lastTap) {
+                // 直前の touchstart と同じジェスチャ連打を抑制
+            }
+        }, { passive: true });
+        document.addEventListener('touchmove', (e) => { e.preventDefault(); }, { passive: false });
+        document.addEventListener('dblclick', (e) => e.preventDefault());
+        document.addEventListener('contextmenu', (e) => e.preventDefault());
+        document.addEventListener('selectstart', (e) => e.preventDefault());
+        document.addEventListener('dragstart', (e) => e.preventDefault());
+        document.addEventListener('gesturestart', (e) => e.preventDefault());
+
+        function startGame() {
+            if (gameStarted || !vocabReady) return;
+            gameStarted = true;
+            unlockAudio();
+            hapticTap(15);
+            document.getElementById('start-overlay').classList.add('hidden');
+            loadStage(0);
+        }
+
+        // ゲーム開始（単語読込 → TAP TO START）
+        window.onload = async function() {
+            const startBtn = document.getElementById('start-btn');
+            const status = document.getElementById('start-status');
+            const modalBtn = document.getElementById('modal-next-btn');
+            const soundBtn = document.getElementById('sound-btn');
+
+            // 既存ボタンにも打感を付与
+            if (soundBtn) {
+                soundBtn.addEventListener('pointerdown', () => {
+                    soundBtn.classList.add('is-pressed');
+                    hapticTap(10);
+                });
+                soundBtn.addEventListener('pointerup', () => soundBtn.classList.remove('is-pressed'));
+                soundBtn.addEventListener('pointercancel', () => soundBtn.classList.remove('is-pressed'));
+            }
+            if (modalBtn) {
+                bindTapFeedback(modalBtn, () => {
+                    if (typeof modalBtn.onclick === 'function') modalBtn.onclick();
+                });
+            }
+
+            try {
+                const count = await loadVocabulary();
+                startBtn.disabled = false;
+                startBtn.textContent = 'TAP TO START';
+                status.textContent = `${count}語ロード完了・タップで開始`;
+                bindTapFeedback(startBtn, () => startGame());
+            } catch (err) {
+                startBtn.disabled = true;
+                startBtn.textContent = '読込失敗';
+                status.textContent = 'vocabulary.json を読み込めませんでした';
+            }
+        };
+    </script>
 </body>
 </html>

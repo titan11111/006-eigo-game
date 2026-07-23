@@ -2,29 +2,93 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>English Quest - 英単語クイズ</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+  <meta name="theme-color" content="#0c0c14" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="description" content="必殺技と5ステージで進める英単語クイズ" />
+  <title>English Quest</title>
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="game-features.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <div class="stars"></div><div class="stars2"></div><div class="stars3"></div>
-  <div class="container">
-    <header class="game-header"><div class="level-info"><div class="level-badge"><span class="level-number" id="level-number">1</span><span class="level-text">LEVEL</span></div><div class="exp-bar"><div class="exp-fill" id="exp-fill"></div><span class="exp-text" id="exp-text">0 / 100 XP</span></div></div><div class="stats"><div class="stat-item"><span class="stat-icon">🔥</span><span class="stat-value" id="streak">0</span><span class="stat-label">STREAK</span></div><div class="stat-item"><span class="stat-icon">⭐</span><span class="stat-value" id="total-score">0</span><span class="stat-label">SCORE</span></div></div></header>
-    <section class="stage-panel"><div class="stage-title"><span id="stage-icon">🌲</span> STAGE <span id="stage-number">1</span> — <span id="stage-name">単語の森</span></div><div class="stage-map" id="stage-map"></div></section>
-    <section class="battle-panel"><div class="battle-stat"><span>⚡ MP</span><div class="mp-bar"><div class="mp-fill" id="mp-fill"></div></div><span id="mp-text">0 / 100</span></div><div class="battle-stat timer-stat"><span>⏱ TIME</span><strong id="timer">15</strong></div></section>
-    <main class="game-main">
-      <div class="question-card" id="question-card"><div class="question-header"><div class="progress-bar"><div class="progress-fill" id="progress-fill"></div></div><div class="question-counter" id="question-counter">1 / 10</div></div><div class="question-content"><div id="question" class="question"></div></div></div>
-      <div class="choices-container"><div id="choices" class="choices"></div></div>
-      <section class="skills-panel"><div class="skills-title">SPECIAL SKILLS</div><div class="skills-grid"><button class="skill-btn" id="hint-btn">💡 <strong>HINT</strong><small>20 MP</small></button><button class="skill-btn" id="half-btn">✂️ <strong>HALF</strong><small>30 MP</small></button><button class="skill-btn" id="time-btn">⏱ <strong>TIME STOP</strong><small>30 MP / +5s</small></button><button class="skill-btn" id="double-btn">⚡ <strong>DOUBLE</strong><small>40 MP</small></button></div><div id="skill-message" class="skill-message"></div></section>
-      <div class="result-container"><div id="result" class="result"></div></div>
-      <div class="action-buttons"><button id="next-btn" class="action-btn next-btn" style="display:none;"><span class="btn-text">次へ</span><span class="btn-icon">→</span></button><button id="restart-btn" class="action-btn restart-btn" style="display:none;"><span class="btn-text">再挑戦</span><span class="btn-icon">🔄</span></button></div>
+  <div class="stars" aria-hidden="true"></div>
+  <div class="stars2" aria-hidden="true"></div>
+
+  <div class="app" id="app">
+    <!-- 1行HUD：情報を圧縮 -->
+    <header class="hud">
+      <div class="hud-lv">
+        <span class="hud-lv-num" id="level-number">1</span>
+        <span class="hud-lv-label">LV</span>
+      </div>
+      <div class="hud-mid">
+        <div class="hud-row">
+          <span class="hud-chip" title="連続正解"><span aria-hidden="true">🔥</span><span id="streak">0</span></span>
+          <span class="hud-chip" title="スコア"><span aria-hidden="true">⭐</span><span id="total-score">0</span></span>
+          <span class="hud-chip timer-chip" title="残り時間"><span aria-hidden="true">⏱</span><strong id="timer">15</strong></span>
+          <span class="hud-counter" id="question-counter">1/10</span>
+        </div>
+        <div class="hud-bars">
+          <div class="bar xp-bar" aria-hidden="true"><div class="bar-fill xp-fill" id="exp-fill"></div></div>
+          <div class="bar mp-bar" aria-hidden="true"><div class="bar-fill mp-fill" id="mp-fill"></div></div>
+        </div>
+        <div class="hud-bar-labels">
+          <span id="exp-text">0/100 XP</span>
+          <span id="mp-text">0/100 MP</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- ステージ：タイトル＋マップを1行に -->
+    <section class="stage-bar">
+      <div class="stage-now">
+        <span id="stage-icon">🌲</span>
+        <span class="stage-now-text"><span id="stage-number">1</span>. <span id="stage-name">単語の森</span></span>
+      </div>
+      <div class="stage-map" id="stage-map"></div>
+    </section>
+
+    <main class="play" id="play">
+      <div class="question-card" id="question-card">
+        <div class="progress-bar" aria-hidden="true"><div class="progress-fill" id="progress-fill"></div></div>
+        <div id="question" class="question" aria-live="polite"></div>
+      </div>
+
+      <div id="choices" class="choices"></div>
+
+      <div id="skill-message" class="skill-message" aria-live="polite"></div>
+      <div id="result" class="result" aria-live="polite"></div>
+
+      <div class="actions">
+        <button id="next-btn" class="action-btn next-btn tap" type="button" hidden>次へ →</button>
+        <button id="restart-btn" class="action-btn restart-btn tap" type="button" hidden>再挑戦</button>
+      </div>
     </main>
-    <div id="achievement" class="achievement-notification" style="display:none;"><div class="achievement-content"><span class="achievement-icon">🏆</span><div class="achievement-text"><div class="achievement-title" id="achievement-title">アチーブメント解除！</div><div class="achievement-desc" id="achievement-desc">説明文</div></div></div></div>
-    <div id="levelup" class="levelup-notification" style="display:none;"><div class="levelup-content"><div class="levelup-icon">🚀</div><div class="levelup-text"><div class="levelup-title">LEVEL UP!</div><div class="levelup-level" id="levelup-level">Level 2</div></div></div></div>
+
+    <!-- 必殺技は画面下ドック（親指ゾーン） -->
+    <footer class="skills-dock">
+      <button class="skill-btn tap" id="hint-btn" type="button">💡<strong>HINT</strong><small>20</small></button>
+      <button class="skill-btn tap" id="half-btn" type="button">✂<strong>HALF</strong><small>30</small></button>
+      <button class="skill-btn tap" id="time-btn" type="button">⏱<strong>TIME</strong><small>30</small></button>
+      <button class="skill-btn tap" id="double-btn" type="button">⚡<strong>×2</strong><small>40</small></button>
+    </footer>
   </div>
-  <audio id="seikai-sound" preload="none"></audio><audio id="fuseikai-sound" preload="none"></audio><audio id="levelup-sound" preload="none"></audio><audio id="achievement-sound" preload="none"></audio><audio id="bgm" preload="none"></audio>
+
+  <div id="achievement" class="toast" hidden>
+    <span aria-hidden="true">🏆</span>
+    <div>
+      <div class="toast-title" id="achievement-title">アチーブメント</div>
+      <div class="toast-desc" id="achievement-desc"></div>
+    </div>
+  </div>
+  <div id="levelup" class="toast toast-level" hidden>
+    <span aria-hidden="true">🚀</span>
+    <div>
+      <div class="toast-title">LEVEL UP!</div>
+      <div class="toast-desc" id="levelup-level">Level 2</div>
+    </div>
+  </div>
+
   <script src="script.js"></script>
 </body>
 </html>

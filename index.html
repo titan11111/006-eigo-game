@@ -579,13 +579,18 @@
         let comboCount = 0;
         let currentWordObj = null;
         let isAnswering = false;
-        // 間違えた問題の復習キュー（FIFOで連続出題）
+        // 間違えた問題の復習キュー
         let missedQueue = [];
         let isReviewQuestion = false;
         // 復習正解で得た恒久MaxHPボーナス（ゲームオーバー後も維持）
         let reviewHpBonus = 0;
-        // ステージ内の未出題デッキ（重複出題防止）
+        // 出題管理（分散・重複防止）
         let stageDeck = [];
+        let seenThisBattle = new Set();   // この敵戦で一度でも出した語
+        let solvedThisBattle = new Set(); // この敵戦で正解済みの語
+        let lastAskedWord = null;
+        let normalAsksSinceReview = 99;   // 復習を挟むまでの間隔カウンタ
+        const REVIEW_GAP = 5;             // 最低5問は別問題を挟んでから復習
 
         // モンスターのSVGグラフィック生成
         function generateMonsterSVG(enemyName, color) {
@@ -668,7 +673,9 @@
         }
 
         // ステージ読み込み＆初期化
-        function loadStage(stageIdx) {
+        function loadStage(stageIdx, options = {}) {
+            const isRetry = !!options.isRetry;
+            const prevStage = currentStageIndex;
             currentStageIndex = stageIdx;
             const stageData = WORD_DATABASE[stageIdx];
 
@@ -689,7 +696,13 @@
             // 単語レベル表示
             document.getElementById('word-level-badge').innerText = `Lv.${stageData.level} ${getStageLevelName(stageData.level)}`;
 
-            // このステージの単語デッキをシャッフル（同バトル内の重複防止）
+            // 出題履歴：新規ステージはリセット／同ステージ再挑戦は正解済みを維持
+            if (!isRetry || stageIdx !== prevStage) {
+                seenThisBattle = new Set();
+                solvedThisBattle = new Set();
+            }
+            lastAskedWord = null;
+            normalAsksSinceReview = 99;
             refillStageDeck();
 
             // 次の問題へ
@@ -698,13 +711,55 @@
 
         function refillStageDeck() {
             const stageData = WORD_DATABASE[currentStageIndex];
-            stageDeck = stageData && stageData.words ? stageData.words.slice() : [];
+            const words = stageData && stageData.words ? stageData.words : [];
+            // 未出題・未正解のみ。復習待ちも山札からは除外
+            const missedSet = new Set(missedQueue.map(w => w.word));
+            stageDeck = words.filter(w =>
+                !solvedThisBattle.has(w.word) &&
+                !seenThisBattle.has(w.word) &&
+                !missedSet.has(w.word)
+            );
             shuffleArray(stageDeck);
+
+            // 山が空なら「正解済み以外」から再構成（直前の語は避ける）
+            if (stageDeck.length === 0) {
+                stageDeck = words.filter(w =>
+                    !solvedThisBattle.has(w.word) &&
+                    w.word !== lastAskedWord &&
+                    !missedSet.has(w.word)
+                );
+                shuffleArray(stageDeck);
+            }
         }
 
-        function drawStageWord() {
-            if (stageDeck.length === 0) refillStageDeck();
-            return stageDeck.pop();
+        function drawFreshWord() {
+            // 直前と同じ語・正解済み・復習待ちを避けて引く
+            for (let guard = 0; guard < 3; guard++) {
+                if (stageDeck.length === 0) refillStageDeck();
+                while (stageDeck.length > 0) {
+                    const w = stageDeck.pop();
+                    if (!w) continue;
+                    if (w.word === lastAskedWord) continue;
+                    if (solvedThisBattle.has(w.word)) continue;
+                    if (missedQueue.some(m => m.word === w.word)) continue;
+                    return w;
+                }
+            }
+            // 最終手段：ステージ内から条件を緩めて取得
+            const words = WORD_DATABASE[currentStageIndex].words || [];
+            const fallback = words.find(w =>
+                w.word !== lastAskedWord && !solvedThisBattle.has(w.word)
+            ) || words.find(w => w.word !== lastAskedWord) || words[0];
+            return fallback;
+        }
+
+        function drawReviewWord() {
+            if (missedQueue.length === 0) return null;
+            if (normalAsksSinceReview < REVIEW_GAP) return null;
+            // 直前と違う復習問題を選ぶ（連続同一を禁止）
+            const idx = missedQueue.findIndex(w => w.word !== lastAskedWord);
+            if (idx < 0) return null;
+            return missedQueue[idx];
         }
 
         function getStageLevelName(lvl) {
@@ -758,18 +813,33 @@
             }
         }
 
-        // 次のクイズ作成（間違いキュー優先＝連続出題）
+        // 次のクイズ作成（新規は非重複／復習は間隔を空けて挿入）
         function nextQuestion() {
             isAnswering = false;
-            const stageData = WORD_DATABASE[currentStageIndex];
 
-            if (missedQueue.length > 0) {
-                // 間違った問題を先頭から連続で出題（正解するまで残り続ける）
-                currentWordObj = missedQueue[0];
+            let next = drawReviewWord();
+            if (next) {
                 isReviewQuestion = true;
+                normalAsksSinceReview = 0;
             } else {
-                currentWordObj = drawStageWord();
+                next = drawFreshWord();
                 isReviewQuestion = false;
+                normalAsksSinceReview += 1;
+            }
+
+            // 連続同一の最終ガード
+            if (next && lastAskedWord && next.word === lastAskedWord) {
+                const alt = drawFreshWord();
+                if (alt && alt.word !== lastAskedWord) {
+                    next = alt;
+                    isReviewQuestion = false;
+                }
+            }
+
+            currentWordObj = next;
+            if (currentWordObj) {
+                lastAskedWord = currentWordObj.word;
+                seenThisBattle.add(currentWordObj.word);
             }
 
             updateReviewBadge();
@@ -830,6 +900,7 @@
 
                 // 復習問題を正解 → MaxHP+1（レベルアップ）
                 const leveledUp = isReviewQuestion && resolveMissedWord(currentWordObj);
+                solvedThisBattle.add(currentWordObj.word);
                 updateReviewBadge();
 
                 // 勇者の攻撃アニメーション
@@ -870,8 +941,9 @@
                 btnElement.classList.remove('bg-slate-700/90');
                 btnElement.classList.add('bg-rose-600', 'border-rose-400', 'text-white');
 
-                // 間違えた問題をキューへ（以降連続出題）
+                // 間違えた問題を復習キューへ（すぐ出さず、間隔を空けて再出題）
                 enqueueMissedWord(currentWordObj);
+                normalAsksSinceReview = 0;
                 updateReviewBadge();
 
                 // コンボリセット
@@ -886,7 +958,7 @@
                 battleLog.innerHTML = '';
                 const wrongMsg = document.createElement('span');
                 wrongMsg.className = 'text-rose-400';
-                wrongMsg.textContent = `不正解... 正解は「${meanSafe}」。復習キューに追加！敵の反撃を受けた！`;
+                wrongMsg.textContent = `不正解... 正解は「${meanSafe}」。復習枠に追加（しばらくして再出題）！`;
                 battleLog.appendChild(wrongMsg);
 
                 if (playerHp <= 0) {
@@ -993,6 +1065,11 @@
             playerHp = PLAYER_BASE_MAX_HP;
             missedQueue = [];
             isReviewQuestion = false;
+            seenThisBattle = new Set();
+            solvedThisBattle = new Set();
+            lastAskedWord = null;
+            normalAsksSinceReview = 99;
+            stageDeck = [];
             comboCount = 0;
             updatePlayerHpUI();
             updateComboUI();
@@ -1020,7 +1097,7 @@
                 // 未消化の間違いキューは残して連続復習を継続
                 updatePlayerHpUI();
                 updateReviewBadge();
-                loadStage(currentStageIndex);
+                loadStage(currentStageIndex, { isRetry: true });
             };
 
             modal.classList.remove('hidden');

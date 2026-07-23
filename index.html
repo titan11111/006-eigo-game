@@ -295,7 +295,7 @@
             <span id="word-level-badge" class="px-2 py-0.5 rounded-full text-[10px] font-extrabold bg-indigo-900 text-indigo-200 border border-indigo-700 truncate">
                 Lv.1 高校基礎単語
             </span>
-            <button type="button" onclick="speakCurrentWord()" class="tap-btn px-2.5 py-1 bg-slate-700 border border-slate-500 rounded-lg text-[11px] font-bold shrink-0">
+            <button id="speak-btn" type="button" onclick="speakCurrentWord()" class="tap-btn px-2.5 py-1 bg-slate-700 border border-slate-500 rounded-lg text-[11px] font-bold shrink-0">
                 🔊 発音
             </button>
             <div class="text-[10px] font-bold text-slate-400 shrink-0">
@@ -304,7 +304,7 @@
         </div>
 
         <div class="bg-slate-900 border border-slate-700 rounded-lg px-2 py-2 text-center mb-2 shrink-0">
-            <span class="text-[10px] text-indigo-400 font-bold block">意味を選択</span>
+            <span id="question-prompt" class="text-[10px] text-indigo-400 font-bold block">意味を選択</span>
             <h2 id="question-word" class="text-2xl font-black text-amber-300 tracking-wide leading-tight">achieve</h2>
             <p id="phonetic-text" class="text-[10px] text-slate-400 font-mono">[əčíːv]</p>
         </div>
@@ -317,15 +317,22 @@
     </section>
 </div>
 
-    <!-- TAP TO START（iOS Audio unlock） -->
+    <!-- タイトル / モード選択（iOS Audio unlock） -->
     <div id="start-overlay">
         <div class="text-4xl mb-3">⚔️</div>
         <h2 class="pixel-font text-lg text-amber-300 mb-2">WORD QUEST</h2>
-        <p class="text-sm text-slate-300 mb-8 px-4 leading-relaxed">中学3年英単語 605語でモンスターを倒せ！<br>20の試練に挑戦しよう</p>
-        <button id="start-btn" type="button" class="tap-btn start-pulse w-full max-w-xs py-4 bg-gradient-to-r from-amber-500 to-orange-600 text-slate-900 font-black rounded-2xl text-lg shadow-xl border-2 border-amber-300" disabled>
-            読み込み中...
-        </button>
-        <p id="start-status" class="text-[11px] text-slate-500 mt-4">単語データを準備しています</p>
+        <p class="text-sm text-slate-300 mb-5 px-4 leading-relaxed">中学3年英単語 605語<br>モードを選んで冒険を始めよう</p>
+        <p id="start-status" class="text-[11px] text-slate-500 mb-4">単語データを準備しています</p>
+        <div id="mode-buttons" class="w-full max-w-xs flex flex-col gap-3 opacity-40 pointer-events-none">
+            <button id="mode-ja-btn" type="button" class="tap-btn mode-select-btn w-full py-3.5 px-4 bg-slate-800 text-amber-200 font-black rounded-2xl text-left shadow-xl border-2 border-amber-400/80">
+                <div class="text-base">① 日本語で答える</div>
+                <div class="text-[11px] font-bold text-slate-300 mt-0.5">英単語 → 日本語 4択</div>
+            </button>
+            <button id="mode-en-btn" type="button" class="tap-btn mode-select-btn w-full py-3.5 px-4 bg-slate-800 text-amber-200 font-black rounded-2xl text-left shadow-xl border-2 border-amber-400/80">
+                <div class="text-base">② 英語で答える</div>
+                <div class="text-[11px] font-bold text-slate-300 mt-0.5">日本語 → 英単語 4択</div>
+            </button>
+        </div>
     </div>
 
     <!-- エリアクリア/ゲームクリアモーダル -->
@@ -373,40 +380,51 @@
         let WORD_DATABASE = [];
         let vocabReady = false;
         let vocabCount = 0;
+        // 'ja' = 英→日4択（現行） / 'en' = 日→英4択（逆）
+        let gameMode = 'ja';
 
-        function pickDummies(correctMean, poolMeans, count) {
-            const uniq = [...new Set(poolMeans.filter(m => m && m !== correctMean))];
+        function pickDummies(correct, pool, count, fallbacks) {
+            const uniq = [...new Set(pool.filter(m => m && m !== correct))];
             shuffleArray(uniq);
             const out = uniq.slice(0, count);
-            const fallback = ["違う意味", "別の意味", "誤った意味", "反対の意味", "無関係"];
+            const fb = fallbacks || ["違う意味", "別の意味", "誤った意味", "反対の意味", "無関係"];
             let i = 0;
             while (out.length < count) {
-                const f = fallback[i % fallback.length];
-                if (!out.includes(f) && f !== correctMean) out.push(f);
+                const f = fb[i % fb.length] + (i > fb.length ? String(i) : "");
+                if (!out.includes(f) && f !== correct) out.push(f);
                 i++;
             }
             return out;
         }
 
         function buildWordDatabase(rawWords) {
-            const byCat = {};
+            const byCatMean = {};
+            const byCatWord = {};
             rawWords.forEach(w => {
                 const cat = w.cat || "その他";
-                if (!byCat[cat]) byCat[cat] = [];
-                byCat[cat].push(w.mean);
+                if (!byCatMean[cat]) byCatMean[cat] = [];
+                if (!byCatWord[cat]) byCatWord[cat] = [];
+                byCatMean[cat].push(w.mean);
+                byCatWord[cat].push(w.word);
             });
             const allMeans = rawWords.map(w => w.mean);
+            const allWords = rawWords.map(w => w.word);
+            const enFallback = ["accept", "create", "other", "value", "simple"];
 
             const converted = rawWords.map(w => {
-                const catMeans = byCat[w.cat || "その他"] || allMeans;
-                const pool = catMeans.length >= 4 ? catMeans : allMeans;
+                const cat = w.cat || "その他";
+                const meanPool = (byCatMean[cat] || allMeans);
+                const wordPool = (byCatWord[cat] || allWords);
+                const mPool = meanPool.length >= 4 ? meanPool : allMeans;
+                const wPool = wordPool.length >= 4 ? wordPool : allWords;
                 return {
                     word: w.word,
                     mean: w.mean,
                     phonetic: w.ipa ? ("[" + w.ipa + "]") : "",
                     kana: w.kana || "",
-                    cat: w.cat || "",
-                    dummy: pickDummies(w.mean, pool, 3)
+                    cat: cat,
+                    dummyJa: pickDummies(w.mean, mPool, 3),
+                    dummyEn: pickDummies(w.word, wPool, 3, enFallback)
                 };
             });
 
@@ -693,13 +711,20 @@
         }
 
         // 音声発音（Web Speech API）
-        function speakCurrentWord() {
-            if (!currentWordObj || !('speechSynthesis' in window)) return;
-            window.speechSynthesis.cancel(); // 前の音声をキャンセル
-            const uttr = new SpeechSynthesisUtterance(currentWordObj.word);
+        function speakEnglish(text) {
+            if (!text || !('speechSynthesis' in window)) return;
+            window.speechSynthesis.cancel();
+            const uttr = new SpeechSynthesisUtterance(String(text));
             uttr.lang = 'en-US';
-            uttr.rate = 0.85; // 少しゆっくりめで聞き取りやすく
+            uttr.rate = 0.85;
             window.speechSynthesis.speak(uttr);
+        }
+
+        // 日本語4択モード用：問題の英単語を発音（逆モードでは答え漏洩防止で無効）
+        function speakCurrentWord() {
+            if (gameMode === 'en') return;
+            if (!currentWordObj) return;
+            speakEnglish(currentWordObj.word);
         }
 
         // 間違いキューへ追加（同一単語は重複させない）
@@ -767,18 +792,45 @@
 
             updateReviewBadge();
 
-            // UI反映
-            document.getElementById('question-word').innerText = currentWordObj.word;
+            const promptEl = document.getElementById('question-prompt');
+            const qEl = document.getElementById('question-word');
             const phoneticEl = document.getElementById('phonetic-text');
-            const kanaPart = currentWordObj.kana ? ` ${currentWordObj.kana}` : '';
-            phoneticEl.innerText = (currentWordObj.phonetic || '') + kanaPart;
+            const badgeEl = document.getElementById('word-level-badge');
+            const stageData = WORD_DATABASE[currentStageIndex];
+            const modeLabel = gameMode === 'en' ? '英語4択' : '日本語4択';
 
-            // 単語の発音を自動再生
-            speakCurrentWord();
+            if (badgeEl && stageData) {
+                badgeEl.innerText = `Lv.${stageData.level} ${getStageLevelName(stageData.level)} / ${modeLabel}`;
+            }
 
-            // 選択肢作成（正解 1 + ダミー 3）
-            const choices = [currentWordObj.mean, ...currentWordObj.dummy];
+            let choices;
+            if (gameMode === 'en') {
+                // 日本語を見て英単語を選ぶ
+                promptEl.innerText = '英単語を選択';
+                qEl.innerText = currentWordObj.mean;
+                qEl.className = 'text-xl font-black text-amber-300 tracking-wide leading-tight';
+                phoneticEl.innerText = '';
+                choices = [currentWordObj.word, ...(currentWordObj.dummyEn || [])];
+            } else {
+                // 英単語を見て日本語を選ぶ（現行）
+                promptEl.innerText = '意味を選択';
+                qEl.innerText = currentWordObj.word;
+                qEl.className = 'text-2xl font-black text-amber-300 tracking-wide leading-tight';
+                const kanaPart = currentWordObj.kana ? ` ${currentWordObj.kana}` : '';
+                phoneticEl.innerText = (currentWordObj.phonetic || '') + kanaPart;
+                choices = [currentWordObj.mean, ...(currentWordObj.dummyJa || currentWordObj.dummy || [])];
+            }
+
             shuffleArray(choices);
+
+            // 日本語4択のみ問題の英単語を自動再生（逆モードは答え漏洩になるのでしない）
+            const speakBtn = document.getElementById('speak-btn');
+            if (gameMode === 'en') {
+                if (speakBtn) speakBtn.classList.add('hidden');
+            } else {
+                if (speakBtn) speakBtn.classList.remove('hidden');
+                speakCurrentWord();
+            }
 
             const optionsContainer = document.getElementById('options-container');
             optionsContainer.innerHTML = '';
@@ -800,12 +852,27 @@
             });
         }
 
+        function getCorrectAnswer() {
+            if (!currentWordObj) return '';
+            return gameMode === 'en' ? currentWordObj.word : currentWordObj.mean;
+        }
+
         // 回答判定処理
         function handleAnswer(selectedText, btnElement) {
             if (isAnswering) return;
             isAnswering = true;
 
-            const isCorrect = (selectedText === currentWordObj.mean);
+            // 英語4択：選んだ英単語を先に発音してから判定
+            if (gameMode === 'en') {
+                speakEnglish(selectedText);
+                setTimeout(() => resolveAnswer(selectedText, btnElement), 450);
+                return;
+            }
+            resolveAnswer(selectedText, btnElement);
+        }
+
+        function resolveAnswer(selectedText, btnElement) {
+            const isCorrect = (selectedText === getCorrectAnswer());
             const battleLog = document.getElementById('battle-log');
 
             if (isCorrect) {
@@ -877,7 +944,7 @@
                 playerHp = Math.max(0, playerHp - 10);
                 updatePlayerHpUI();
 
-                const meanSafe = currentWordObj.mean;
+                const meanSafe = getCorrectAnswer();
                 battleLog.innerHTML = '';
                 const wrongMsg = document.createElement('span');
                 wrongMsg.className = 'text-rose-400';
@@ -954,11 +1021,10 @@
                 modalIcon.innerText = "👑";
                 modalTitle.innerText = "完全制覇！魔王討伐達成！";
                 modalDesc.innerText = `おめでとう！全20ステージの英単語の試練を乗り越え、世界に平和が戻った！復習で鍛えた MaxHP は ${playerMaxHp} だった！`;
-                nextBtn.innerText = "最初からもう一度挑戦する 🔄";
+                nextBtn.innerText = "タイトルに戻る 🏠";
                 nextBtn.onclick = () => {
                     modal.classList.add('hidden');
-                    resetPlayerGrowth();
-                    loadStage(0);
+                    returnToTitle();
                 };
             } else {
                 // エリアクリア
@@ -1054,23 +1120,38 @@
         document.addEventListener('dragstart', (e) => e.preventDefault());
         document.addEventListener('gesturestart', (e) => e.preventDefault());
 
-        function startGame() {
+        function startGame(mode) {
             if (gameStarted || !vocabReady) return;
+            gameMode = (mode === 'en') ? 'en' : 'ja';
             gameStarted = true;
             unlockAudio();
             hapticTap(15);
             document.getElementById('start-overlay').classList.add('hidden');
+            document.getElementById('kill-count').innerText = '0';
             loadStage(0);
         }
 
-        // ゲーム開始（単語読込 → TAP TO START）
-        window.onload = async function() {
-            const startBtn = document.getElementById('start-btn');
+        function returnToTitle() {
+            gameStarted = false;
+            resetPlayerGrowth();
+            document.getElementById('kill-count').innerText = '0';
+            const overlay = document.getElementById('start-overlay');
+            overlay.classList.remove('hidden');
             const status = document.getElementById('start-status');
+            if (status && vocabReady) {
+                status.textContent = `${vocabCount}語ロード済み・モードを選んで開始`;
+            }
+        }
+
+        // ゲーム開始（単語読込 → モード選択）
+        window.onload = async function() {
+            const status = document.getElementById('start-status');
+            const modeButtons = document.getElementById('mode-buttons');
+            const modeJaBtn = document.getElementById('mode-ja-btn');
+            const modeEnBtn = document.getElementById('mode-en-btn');
             const modalBtn = document.getElementById('modal-next-btn');
             const soundBtn = document.getElementById('sound-btn');
 
-            // 既存ボタンにも打感を付与
             if (soundBtn) {
                 soundBtn.addEventListener('pointerdown', () => {
                     soundBtn.classList.add('is-pressed');
@@ -1087,14 +1168,13 @@
 
             try {
                 const count = await loadVocabulary();
-                startBtn.disabled = false;
-                startBtn.textContent = 'TAP TO START';
-                status.textContent = `${count}語ロード完了・タップで開始`;
-                bindTapFeedback(startBtn, () => startGame());
+                status.textContent = `${count}語ロード完了・モードを選んで開始`;
+                modeButtons.classList.remove('opacity-40', 'pointer-events-none');
+                bindTapFeedback(modeJaBtn, () => startGame('ja'));
+                bindTapFeedback(modeEnBtn, () => startGame('en'));
             } catch (err) {
-                startBtn.disabled = true;
-                startBtn.textContent = '読込失敗';
                 status.textContent = 'vocabulary.json を読み込めませんでした';
+                modeButtons.classList.add('opacity-40', 'pointer-events-none');
             }
         };
     </script>

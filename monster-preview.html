@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Monster SVG Preview — Word Quest</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Hiragino Sans", "Noto Sans JP", sans-serif;
+      background: #0f172a;
+      color: #e2e8f0;
+      padding: 16px;
+    }
+    h1 { font-size: 1.25rem; margin: 0 0 4px; color: #fbbf24; }
+    p { margin: 0 0 16px; color: #94a3b8; font-size: 0.85rem; }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+      gap: 12px;
+    }
+    .card {
+      background: #1e293b;
+      border: 1px solid #334155;
+      border-radius: 12px;
+      padding: 10px;
+      text-align: center;
+    }
+    .stage {
+      font-size: 0.7rem;
+      color: #818cf8;
+      font-weight: 700;
+    }
+    .name {
+      font-size: 0.8rem;
+      font-weight: 800;
+      margin: 4px 0 8px;
+      min-height: 2.4em;
+    }
+    .art {
+      height: 120px;
+      background:
+        linear-gradient(#1e1b4b, #312e81 70%, #064e3b 70%, #022c22);
+      border-radius: 8px;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      padding-bottom: 6px;
+    }
+    .art > svg { width: 100px; height: 100px; }
+  </style>
+</head>
+<body>
+  <h1>WORD QUEST — 敵SVG一覧（20体）</h1>
+  <p>色違い量産ではなく、1体ずつ固有デザインになっているか確認用</p>
+  <div class="grid" id="grid"></div>
+  <script src="monsters.js"></script>
+  <script>
+    const META = [
+      { enemy: "緑スライム", color: "#22c55e" },
+      { enemy: "コウモリナイト", color: "#a855f7" },
+      { enemy: "ポイズンフロッグ", color: "#10b981" },
+      { enemy: "ロックゴーレム", color: "#f59e0b" },
+      { enemy: "ファイヤードラゴン", color: "#ef4444" },
+      { enemy: "アイスウルフ", color: "#38bdf8" },
+      { enemy: "サンダーバード", color: "#eab308" },
+      { enemy: "シャドウナイト", color: "#64748b" },
+      { enemy: "エント（動く大木）", color: "#15803d" },
+      { enemy: "クラーケン", color: "#0284c7" },
+      { enemy: "グリフィン", color: "#a855f7" },
+      { enemy: "ミイラキング", color: "#d97706" },
+      { enemy: "ドッペルゲンガー", color: "#6366f1" },
+      { enemy: "ヒドラ", color: "#15803d" },
+      { enemy: "ガーディアンロボ", color: "#475569" },
+      { enemy: "アストラルビースト", color: "#ec4899" },
+      { enemy: "ヘルハウンド", color: "#b91c1c" },
+      { enemy: " vis（堕天使）", color: "#854d0e" },
+      { enemy: "デスナイト（近衛兵）", color: "#991b1b" },
+      { enemy: "魔王 ヴォルデグラード", color: "#4c1d95" }
+    ];
+    const grid = document.getElementById("grid");
+    META.forEach((m, i) => {
+      const card = document.createElement("div");
+      card.className = "card";
+      card.innerHTML =
+        '<div class="stage">STAGE ' + (i + 1) + '</div>' +
+        '<div class="name"></div>' +
+        '<div class="art"></div>';
+      card.querySelector(".name").textContent = m.enemy;
+      card.querySelector(".art").innerHTML = generateMonsterSVG(i, m.color);
+      grid.appendChild(card);
+    });
+  </script>
+</body>
+</html>
